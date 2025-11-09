@@ -1,0 +1,738 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Database - NCR Launch Watch</title>
+    <meta name="description" content="Comprehensive database of real estate projects in Delhi NCR with detailed analysis, pricing, and investment insights.">
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&family=Inter:wght@300;400;500;600&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+    
+    <!-- Core Libraries -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/splitting@1.0.6/dist/splitting.css">
+    <script src="https://unpkg.com/splitting@1.0.6/dist/splitting.min.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'navy': '#0a0a1f',
+                        'charcoal': '#1a1a2e',
+                        'light-gray': '#f5f7fa',
+                        'muted-gray': '#8892b0',
+                        'teal': '#00d4ff',
+                        'gold': '#d4af37'
+                    },
+                    fontFamily: {
+                        'poppins': ['Poppins', 'sans-serif'],
+                        'inter': ['Inter', 'sans-serif'],
+                        'dm-sans': ['DM Sans', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        body {
+            background: linear-gradient(135deg, #0a0a1f 0%, #1a1a2e 100%);
+            font-family: 'Inter', sans-serif;
+        }
+        
+        .glassmorphism {
+            background: rgba(26, 26, 46, 0.8);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .gradient-text {
+            background: linear-gradient(135deg, #00d4ff 0%, #d4af37 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .section-reveal {
+            opacity: 0;
+            transform: translateY(30px);
+        }
+        
+        .section-reveal.revealed {
+            opacity: 1;
+            transform: translateY(0);
+            transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .project-card {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .project-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 25px 50px -12px rgba(0, 212, 255, 0.25);
+        }
+        
+        .filter-tag {
+            transition: all 0.2s ease;
+        }
+        
+        .filter-tag.active {
+            background: #00d4ff;
+            color: #0a0a1f;
+        }
+        
+        #map {
+            height: 400px;
+            border-radius: 12px;
+        }
+        
+        .leaflet-container {
+            background: #1a1a2e;
+        }
+        
+        .price-range-slider {
+            -webkit-appearance: none;
+            appearance: none;
+            height: 6px;
+            background: #1a1a2e;
+            border-radius: 3px;
+            outline: none;
+        }
+        
+        .price-range-slider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 20px;
+            height: 20px;
+            background: #00d4ff;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+        
+        .price-range-slider::-moz-range-thumb {
+            width: 20px;
+            height: 20px;
+            background: #00d4ff;
+            border-radius: 50%;
+            cursor: pointer;
+            border: none;
+        }
+    </style>
+</head>
+<body class="text-light-gray overflow-x-hidden">
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full z-50 glassmorphism">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <a href="index.html" class="text-xl font-poppins font-bold gradient-text">NCR Launch Watch</a>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-8">
+                        <a href="index.html" class="text-light-gray hover:text-teal transition-colors duration-200 font-medium">Home</a>
+                        <a href="insights.html" class="text-light-gray hover:text-teal transition-colors duration-200 font-medium">Insights</a>
+                        <a href="projects.html" class="text-teal font-medium">Projects</a>
+                        <a href="index.html#faq" class="text-light-gray hover:text-teal transition-colors duration-200 font-medium">FAQ</a>
+                        <a href="index.html#contact" class="text-light-gray hover:text-teal transition-colors duration-200 font-medium">Contact</a>
+                        <button class="bg-teal hover:bg-opacity-80 text-navy px-6 py-2 rounded-lg font-semibold transition-all duration-200">
+                            Subscribe
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="pt-24 pb-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h1 class="text-4xl md:text-5xl font-poppins font-bold gradient-text mb-4">
+                    Project Database
+                </h1>
+                <p class="text-xl text-muted-gray font-inter max-w-3xl mx-auto">
+                    Explore comprehensive real estate projects across Delhi NCR with detailed analysis, pricing insights, and investment potential.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Filters Section -->
+    <section class="py-8 section-reveal">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="glassmorphism rounded-xl p-6 mb-8">
+                <h2 class="text-xl font-poppins font-semibold gradient-text mb-6">Filter Projects</h2>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <!-- Location Filter -->
+                    <div>
+                        <label class="block text-sm font-medium text-light-gray mb-2">Location</label>
+                        <select id="location-filter" class="w-full px-4 py-2 bg-charcoal border border-gray-700 rounded-lg text-light-gray focus:outline-none focus:border-teal">
+                            <option value="">All Locations</option>
+                            <option value="gurgaon">Gurgaon</option>
+                            <option value="noida">Noida</option>
+                            <option value="greater-noida">Greater Noida</option>
+                            <option value="ghaziabad">Ghaziabad</option>
+                            <option value="faridabad">Faridabad</option>
+                        </select>
+                    </div>
+                    
+                    <!-- Price Range -->
+                    <div>
+                        <label class="block text-sm font-medium text-light-gray mb-2">Price Range</label>
+                        <div class="space-y-2">
+                            <input type="range" id="price-min" class="price-range-slider w-full" min="50" max="500" value="50">
+                            <input type="range" id="price-max" class="price-range-slider w-full" min="50" max="500" value="500">
+                            <div class="flex justify-between text-sm text-muted-gray">
+                                <span>₹50L</span>
+                                <span>₹5Cr+</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Project Status -->
+                    <div>
+                        <label class="block text-sm font-medium text-light-gray mb-2">Status</label>
+                        <select id="status-filter" class="w-full px-4 py-2 bg-charcoal border border-gray-700 rounded-lg text-light-gray focus:outline-none focus:border-teal">
+                            <option value="">All Status</option>
+                            <option value="pre-launch">Pre-launch</option>
+                            <option value="under-construction">Under Construction</option>
+                            <option value="ready-to-move">Ready to Move</option>
+                        </select>
+                    </div>
+                    
+                    <!-- Property Type -->
+                    <div>
+                        <label class="block text-sm font-medium text-light-gray mb-2">Property Type</label>
+                        <select id="type-filter" class="w-full px-4 py-2 bg-charcoal border border-gray-700 rounded-lg text-light-gray focus:outline-none focus:border-teal">
+                            <option value="">All Types</option>
+                            <option value="apartment">Apartment</option>
+                            <option value="villa">Villa</option>
+                            <option value="plot">Plot</option>
+                            <option value="commercial">Commercial</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="flex flex-wrap gap-2 mt-4">
+                    <span class="text-sm text-muted-gray mr-2">Quick filters:</span>
+                    <button class="filter-tag px-3 py-1 bg-charcoal text-muted-gray rounded-full text-sm" data-filter="premium">Premium</button>
+                    <button class="filter-tag px-3 py-1 bg-charcoal text-muted-gray rounded-full text-sm" data-filter="investment">Investment</button>
+                    <button class="filter-tag px-3 py-1 bg-charcoal text-muted-gray rounded-full text-sm" data-filter="ready-possession">Ready Possession</button>
+                    <button class="filter-tag px-3 py-1 bg-charcoal text-muted-gray rounded-full text-sm" data-filter="new-launch">New Launch</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Map Section -->
+    <section class="py-8 section-reveal">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="glassmorphism rounded-xl p-6 mb-8">
+                <h2 class="text-xl font-poppins font-semibold gradient-text mb-4">Project Locations</h2>
+                <div id="map"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Grid -->
+    <section class="py-8 section-reveal">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center mb-8">
+                <h2 class="text-2xl font-poppins font-bold gradient-text">
+                    <span id="project-count">24</span> Projects Found
+                </h2>
+                <div class="flex items-center space-x-4">
+                    <label class="text-sm text-muted-gray">Sort by:</label>
+                    <select id="sort-filter" class="px-4 py-2 bg-charcoal border border-gray-700 rounded-lg text-light-gray focus:outline-none focus:border-teal">
+                        <option value="price-low">Price: Low to High</option>
+                        <option value="price-high">Price: High to Low</option>
+                        <option value="date-new">Date: Newest First</option>
+                        <option value="date-old">Date: Oldest First</option>
+                        <option value="name">Name: A-Z</option>
+                    </select>
+                </div>
+            </div>
+            
+            <div id="projects-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Project cards will be populated by JavaScript -->
+            </div>
+            
+            <div class="text-center mt-12">
+                <button id="load-more" class="bg-teal hover:bg-opacity-80 text-navy px-8 py-3 rounded-lg font-semibold transition-all duration-200">
+                    Load More Projects
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Project Detail Modal -->
+    <div id="project-modal" class="fixed inset-0 bg-black bg-opacity-50 backdrop-blur-sm z-50 hidden items-center justify-center">
+        <div class="glassmorphism rounded-xl max-w-4xl w-full mx-4 max-h-[90vh] overflow-y-auto">
+            <div class="p-8">
+                <div class="flex justify-between items-start mb-6">
+                    <div>
+                        <h3 id="modal-title" class="text-2xl font-poppins font-bold gradient-text mb-2"></h3>
+                        <p id="modal-location" class="text-muted-gray"></p>
+                    </div>
+                    <button id="close-modal" class="text-muted-gray hover:text-light-gray">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+                        </svg>
+                    </button>
+                </div>
+                
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                    <div>
+                        <img id="modal-image" src="" alt="" class="w-full h-64 object-cover rounded-lg mb-6">
+                        <div class="space-y-4">
+                            <div class="flex justify-between">
+                                <span class="text-muted-gray">Developer:</span>
+                                <span id="modal-developer" class="text-light-gray font-semibold"></span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span class="text-muted-gray">Status:</span>
+                                <span id="modal-status" class="text-light-gray font-semibold"></span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span class="text-muted-gray">Property Type:</span>
+                                <span id="modal-type" class="text-light-gray font-semibold"></span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span class="text-muted-gray">Possession:</span>
+                                <span id="modal-possession" class="text-light-gray font-semibold"></span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <div class="mb-6">
+                            <h4 class="text-lg font-poppins font-semibold text-light-gray mb-4">Pricing</h4>
+                            <div class="space-y-2">
+                                <div class="flex justify-between">
+                                    <span class="text-muted-gray">Price Range:</span>
+                                    <span id="modal-price" class="text-teal font-bold"></span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span class="text-muted-gray">Price per sq.ft:</span>
+                                    <span id="modal-price-sqft" class="text-light-gray"></span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="mb-6">
+                            <h4 class="text-lg font-poppins font-semibold text-light-gray mb-4">Investment Analysis</h4>
+                            <div class="space-y-2">
+                                <div class="flex justify-between">
+                                    <span class="text-muted-gray">ROI Potential:</span>
+                                    <span id="modal-roi" class="text-gold font-semibold"></span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span class="text-muted-gray">Risk Level:</span>
+                                    <span id="modal-risk" class="text-light-gray"></span>
+                                </div>
+                                <div class="flex justify-between">
+                                    <span class="text-muted-gray">Market Rating:</span>
+                                    <span id="modal-rating" class="text-teal font-semibold"></span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="mb-6">
+                            <h4 class="text-lg font-poppins font-semibold text-light-gray mb-4">Key Features</h4>
+                            <ul id="modal-features" class="space-y-1 text-muted-gray text-sm">
+                                <!-- Features will be populated by JavaScript -->
+                            </ul>
+                        </div>
+                        
+                        <div class="flex space-x-4">
+                            <button class="flex-1 bg-teal hover:bg-opacity-80 text-navy py-3 rounded-lg font-semibold transition-all duration-200">
+                                Get Detailed Report
+                            </button>
+                            <button class="flex-1 border border-teal text-teal hover:bg-teal hover:text-navy py-3 rounded-lg font-semibold transition-all duration-200">
+                                Contact Developer
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-navy border-t border-gray-800 py-12 mt-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-xl font-poppins font-bold gradient-text mb-4">NCR Launch Watch</h3>
+                    <p class="text-muted-gray font-inter leading-relaxed">Premium real estate intelligence for Delhi NCR. Track launches, analyze markets, make informed decisions.</p>
+                </div>
+                <div>
+                    <h4 class="font-poppins font-semibold text-light-gray mb-4">Company</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-muted-gray hover:text-teal transition-colors duration-200">About</a></li>
+                        <li><a href="#" class="text-muted-gray hover:text-teal transition-colors duration-200">Team</a></li>
+                        <li><a href="index.html#contact" class="text-muted-gray hover:text-teal transition-colors duration-200">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-poppins font-semibold text-light-gray mb-4">Resources</h4>
+                    <ul class="space-y-2">
+                        <li><a href="insights.html" class="text-muted-gray hover:text-teal transition-colors duration-200">Insights</a></li>
+                        <li><a href="projects.html" class="teal">Projects</a></li>
+                        <li><a href="index.html#faq" class="text-muted-gray hover:text-teal transition-colors duration-200">FAQ</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-poppins font-semibold text-light-gray mb-4">Connect</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-muted-gray hover:text-teal transition-colors duration-200">LinkedIn</a></li>
+                        <li><a href="#" class="text-muted-gray hover:text-teal transition-colors duration-200">Twitter</a></li>
+                        <li><a href="#" class="text-muted-gray hover:text-teal transition-colors duration-200">Instagram</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center">
+                <p class="text-muted-gray font-inter">© 2025 NCR Launch Watch. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Sample project data
+        const projectsData = [
+            {
+                id: 1,
+                name: "DLF Privana North",
+                location: "Sector 76, Gurgaon",
+                price: "₹2.5Cr - ₹4.2Cr",
+                priceNum: 2500000,
+                status: "pre-launch",
+                type: "apartment",
+                image: "https://kimi-web-img.moonshot.cn/img/i.pinimg.com/ab7371408cf9cb3b8b67dec6f03eb57cf8d97c1c.jpg",
+                developer: "DLF Limited",
+                possession: "Dec 2028",
+                priceSqft: "₹12,500/sq.ft",
+                roi: "15-18%",
+                risk: "Low",
+                rating: "4.8/5",
+                features: ["Luxury specifications", "Clubhouse", "Swimming pool", "24/7 security", "Power backup"],
+                coordinates: [28.4595, 77.0266]
+            },
+            {
+                id: 2,
+                name: "Ace Hanei",
+                location: "Noida Extension, Greater Noida",
+                price: "₹2.5Cr - ₹4.6Cr",
+                priceNum: 2500000,
+                status: "under-construction",
+                type: "apartment",
+                image: "https://kimi-web-img.moonshot.cn/img/media.istockphoto.com/97d86f49fb98288eda9e5b208a18c4261880f93a.jpg",
+                developer: "ACE Group",
+                possession: "Mar 2027",
+                priceSqft: "₹11,800/sq.ft",
+                roi: "12-15%",
+                risk: "Medium",
+                rating: "4.5/5",
+                features: ["Modern amenities", "Sports facilities", "Landscaped gardens", "Shopping complex", "School nearby"],
+                coordinates: [28.4089, 77.3178]
+            },
+            {
+                id: 3,
+                name: "Elite X",
+                location: "Sector 10, Noida Extension",
+                price: "₹1.8Cr - ₹3.1Cr",
+                priceNum: 1800000,
+                status: "under-construction",
+                type: "apartment",
+                image: "https://kimi-web-img.moonshot.cn/img/i.pinimg.com/92ee2ed5b6ad3c1e825684b624b42528fef1f4a5.jpg",
+                developer: "Elite Group",
+                possession: "Jun 2026",
+                priceSqft: "₹10,950/sq.ft",
+                roi: "14-16%",
+                risk: "Medium",
+                rating: "4.3/5",
+                features: ["Premium fittings", "Gymnasium", "Children's play area", "Multipurpose hall", "Jogging track"],
+                coordinates: [28.4089, 77.3178]
+            },
+            {
+                id: 4,
+                name: "Palm Olympia Phase 3",
+                location: "Noida Extension, Greater Noida",
+                price: "₹2.1Cr - ₹3.1Cr",
+                priceNum: 2100000,
+                status: "under-construction",
+                type: "apartment",
+                image: "https://kimi-web-img.moonshot.cn/img/static.vecteezy.com/199e6680c556a632d8766b3540be74b9d8b06245.jpg",
+                developer: "Sam India",
+                possession: "Sep 2026",
+                priceSqft: "₹12,960/sq.ft",
+                roi: "13-16%",
+                risk: "Low",
+                rating: "4.6/5",
+                features: ["Luxury apartments", "Clubhouse", "Swimming pool", "Sports facilities", "Green surroundings"],
+                coordinates: [28.4089, 77.3178]
+            },
+            {
+                id: 5,
+                name: "Escon Panache Villas",
+                location: "Surajpur, Greater Noida",
+                price: "₹2.7Cr - ₹3.4Cr",
+                priceNum: 2700000,
+                status: "ready-to-move",
+                type: "villa",
+                image: "https://kimi-web-img.moonshot.cn/img/www.shutterstock.com/81e1987dfc8993c0a326e299e0ec5fc0c2dd4ff9.jpg",
+                developer: "Radhike Greens",
+                possession: "Ready",
+                priceSqft: "₹9,500/sq.ft",
+                roi: "10-12%",
+                risk: "Low",
+                rating: "4.4/5",
+                features: ["Independent villas", "Private garden", "Modern architecture", "Gated community", "Premium location"],
+                coordinates: [28.4089, 77.3178]
+            },
+            {
+                id: 6,
+                name: "CRC Maesta",
+                location: "Sector 1, Greater Noida West",
+                price: "₹2.3Cr - ₹3.1Cr",
+                priceNum: 2300000,
+                status: "under-construction",
+                type: "apartment",
+                image: "https://kimi-web-img.moonshot.cn/img/bendheim.com/7714a248adae54f65c1b7927f010af05504e34eb.jpg",
+                developer: "CRC Group",
+                possession: "Dec 2027",
+                priceSqft: "₹13,360/sq.ft",
+                roi: "15-18%",
+                risk: "Medium",
+                rating: "4.2/5",
+                features: ["Modern design", "Smart homes", "Rooftop amenities", "Shopping arcade", "School within complex"],
+                coordinates: [28.4089, 77.3178]
+            }
+        ];
+
+        let filteredProjects = [...projectsData];
+        let currentPage = 1;
+        const projectsPerPage = 6;
+
+        // Initialize page
+        document.addEventListener('DOMContentLoaded', function() {
+            initializeMap();
+            renderProjects();
+            initializeFilters();
+            initializeAnimations();
+        });
+
+        function initializeMap() {
+            const map = L.map('map').setView([28.4595, 77.0266], 10);
+            
+            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                attribution: '© OpenStreetMap contributors'
+            }).addTo(map);
+
+            // Add markers for projects
+            projectsData.forEach(project => {
+                const marker = L.marker(project.coordinates).addTo(map);
+                marker.bindPopup(`
+                    <div class="text-gray-900">
+                        <h3 class="font-semibold">${project.name}</h3>
+                        <p class="text-sm">${project.location}</p>
+                        <p class="font-semibold text-blue-600">${project.price}</p>
+                    </div>
+                `);
+            });
+        }
+
+        function renderProjects() {
+            const grid = document.getElementById('projects-grid');
+            const startIndex = (currentPage - 1) * projectsPerPage;
+            const endIndex = startIndex + projectsPerPage;
+            const projectsToShow = filteredProjects.slice(0, endIndex);
+
+            grid.innerHTML = projectsToShow.map(project => `
+                <div class="project-card glassmorphism rounded-xl overflow-hidden cursor-pointer" data-project-id="${project.id}">
+                    <img src="${project.image}" alt="${project.name}" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-3">
+                            <h3 class="text-xl font-poppins font-semibold text-light-gray">${project.name}</h3>
+                            <span class="bg-${project.status === 'pre-launch' ? 'gold' : project.status === 'ready-to-move' ? 'teal' : 'gray-600'}/20 text-${project.status === 'pre-launch' ? 'gold' : project.status === 'ready-to-move' ? 'teal' : 'gray-400'} px-3 py-1 rounded-full text-sm capitalize">
+                                ${project.status.replace('-', ' ')}
+                            </span>
+                        </div>
+                        <p class="text-muted-gray mb-4">${project.location}</p>
+                        <div class="flex justify-between items-center mb-4">
+                            <span class="text-teal font-bold text-lg">${project.price}</span>
+                            <div class="flex items-center">
+                                <span class="text-gold mr-1">★</span>
+                                <span class="text-light-gray text-sm">${project.rating}</span>
+                            </div>
+                        </div>
+                        <div class="flex justify-between items-center mb-4 text-sm">
+                            <span class="text-muted-gray">Developer: ${project.developer}</span>
+                            <span class="text-muted-gray">Possession: ${project.possession}</span>
+                        </div>
+                        <div class="flex space-x-2 mb-4">
+                            <span class="bg-charcoal text-muted-gray px-2 py-1 rounded text-xs capitalize">${project.type}</span>
+                            <span class="bg-charcoal text-muted-gray px-2 py-1 rounded text-xs">${project.risk} Risk</span>
+                        </div>
+                        <button class="w-full bg-teal hover:bg-opacity-80 text-navy py-2 rounded-lg font-semibold transition-all duration-200">
+                            View Details
+                        </button>
+                    </div>
+                </div>
+            `).join('');
+
+            // Update project count
+            document.getElementById('project-count').textContent = filteredProjects.length;
+
+            // Show/hide load more button
+            const loadMoreBtn = document.getElementById('load-more');
+            loadMoreBtn.style.display = endIndex < filteredProjects.length ? 'block' : 'none';
+
+            // Add click listeners
+            document.querySelectorAll('.project-card').forEach(card => {
+                card.addEventListener('click', function() {
+                    const projectId = parseInt(this.dataset.projectId);
+                    showProjectModal(projectId);
+                });
+            });
+        }
+
+        function showProjectModal(projectId) {
+            const project = projectsData.find(p => p.id === projectId);
+            if (!project) return;
+
+            // Populate modal content
+            document.getElementById('modal-title').textContent = project.name;
+            document.getElementById('modal-location').textContent = project.location;
+            document.getElementById('modal-image').src = project.image;
+            document.getElementById('modal-image').alt = project.name;
+            document.getElementById('modal-developer').textContent = project.developer;
+            document.getElementById('modal-status').textContent = project.status.replace('-', ' ').toUpperCase();
+            document.getElementById('modal-type').textContent = project.type.toUpperCase();
+            document.getElementById('modal-possession').textContent = project.possession;
+            document.getElementById('modal-price').textContent = project.price;
+            document.getElementById('modal-price-sqft').textContent = project.priceSqft;
+            document.getElementById('modal-roi').textContent = project.roi;
+            document.getElementById('modal-risk').textContent = project.risk;
+            document.getElementById('modal-rating').textContent = project.rating;
+
+            // Populate features
+            const featuresList = document.getElementById('modal-features');
+            featuresList.innerHTML = project.features.map(feature => `<li>• ${feature}</li>`).join('');
+
+            // Show modal
+            document.getElementById('project-modal').classList.remove('hidden');
+            document.getElementById('project-modal').classList.add('flex');
+        }
+
+        function initializeFilters() {
+            // Filter change handlers
+            document.getElementById('location-filter').addEventListener('change', applyFilters);
+            document.getElementById('status-filter').addEventListener('change', applyFilters);
+            document.getElementById('type-filter').addEventListener('change', applyFilters);
+            document.getElementById('sort-filter').addEventListener('change', applyFilters);
+
+            // Quick filter buttons
+            document.querySelectorAll('.filter-tag').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    this.classList.toggle('active');
+                    applyFilters();
+                });
+            });
+
+            // Load more button
+            document.getElementById('load-more').addEventListener('click', function() {
+                currentPage++;
+                renderProjects();
+            });
+
+            // Close modal
+            document.getElementById('close-modal').addEventListener('click', function() {
+                document.getElementById('project-modal').classList.add('hidden');
+                document.getElementById('project-modal').classList.remove('flex');
+            });
+        }
+
+        function applyFilters() {
+            const location = document.getElementById('location-filter').value;
+            const status = document.getElementById('status-filter').value;
+            const type = document.getElementById('type-filter').value;
+            const sort = document.getElementById('sort-filter').value;
+
+            // Filter projects
+            filteredProjects = projectsData.filter(project => {
+                if (location && !project.location.toLowerCase().includes(location)) return false;
+                if (status && project.status !== status) return false;
+                if (type && project.type !== type) return false;
+                return true;
+            });
+
+            // Apply quick filters
+            const activeFilters = Array.from(document.querySelectorAll('.filter-tag.active')).map(btn => btn.dataset.filter);
+            if (activeFilters.length > 0) {
+                filteredProjects = filteredProjects.filter(project => {
+                    return activeFilters.some(filter => {
+                        switch(filter) {
+                            case 'premium':
+                                return project.priceNum > 2500000;
+                            case 'investment':
+                                return project.roi.includes('15') || project.roi.includes('16') || project.roi.includes('18');
+                            case 'ready-possession':
+                                return project.status === 'ready-to-move';
+                            case 'new-launch':
+                                return project.status === 'pre-launch';
+                            default:
+                                return false;
+                        }
+                    });
+                });
+            }
+
+            // Sort projects
+            filteredProjects.sort((a, b) => {
+                switch(sort) {
+                    case 'price-low':
+                        return a.priceNum - b.priceNum;
+                    case 'price-high':
+                        return b.priceNum - a.priceNum;
+                    case 'name':
+                        return a.name.localeCompare(b.name);
+                    default:
+                        return 0;
+                }
+            });
+
+            currentPage = 1;
+            renderProjects();
+        }
+
+        function initializeAnimations() {
+            // Reveal animations
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const observer = new IntersectionObserver(function(entries) {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('revealed');
+                    }
+                });
+            }, observerOptions);
+
+            document.querySelectorAll('.section-reveal').forEach(el => {
+                observer.observe(el);
+            });
+        }
+    </script>
+</body>
+</html>
