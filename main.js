@@ -321,7 +321,7 @@ class NCRLaunchWatch {
 
     initializeClickHandlers() {
         // Newsletter subscription buttons
-        const subscribeButtons = document.querySelectorAll('#subscribe-btn, #subscribe-hero, #subscribe-final');
+        const subscribeButtons = document.querySelectorAll('#subscribe-btn, #subscribe-hero, #subscribe-final, #subscribe-mobile');
         subscribeButtons.forEach(btn => {
             btn.addEventListener('click', () => this.showNewsletterModal());
         });
