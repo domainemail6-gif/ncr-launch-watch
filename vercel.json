@@ -7,6 +7,10 @@
   "framework": null,
   "rewrites": [
     {
+      "source": "/newsletter",
+      "destination": "/public/newsletter/index.html"
+    },
+    {
       "source": "/newsletter/latest",
       "destination": "/public/newsletter/latest/index.html"
     },
