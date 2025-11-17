@@ -1,0 +1,42 @@
+{
+  "version": 2,
+  "buildCommand": null,
+  "outputDirectory": ".",
+  "devCommand": null,
+  "installCommand": null,
+  "framework": null,
+  "rewrites": [
+    {
+      "source": "/newsletter/latest",
+      "destination": "/public/newsletter/latest/index.html"
+    },
+    {
+      "source": "/newsletter/archive",
+      "destination": "/public/newsletter/archive/index.html"
+    },
+    {
+      "source": "/newsletter/:year/:month/:day",
+      "destination": "/public/newsletter/:year/:month/:day/index.html"
+    }
+  ],
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        },
+        {
+          "key": "X-Frame-Options",
+          "value": "DENY"
+        },
+        {
+          "key": "X-XSS-Protection",
+          "value": "1; mode=block"
+        }
+      ]
+    }
+  ]
+}
+
