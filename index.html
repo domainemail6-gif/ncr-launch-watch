@@ -149,16 +149,7 @@
             }
         }
         
-        /* Reduce hero section min-height slightly for better fit */
-        #hero {
-            min-height: 90vh !important;
-        }
-        
-        @media (max-width: 767px) {
-            #hero {
-                min-height: 85vh !important;
-            }
-        }
+        /* Hero section uses min-h-[70vh] from Tailwind classes */
         
         /* Reduce section heading margins from mb-16 (64px) to mb-8 (32px) */
         section[id] .text-center > h2,
@@ -332,7 +323,7 @@
     </nav>
 
     <!-- Hero Section -->
-    <section id="hero" class="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <section id="hero" class="relative min-h-[70vh] flex items-center justify-center overflow-hidden pt-16 pb-12">
         <canvas id="hero-canvas"></canvas>
         <div class="hero-content max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <div class="max-w-4xl mx-auto">
