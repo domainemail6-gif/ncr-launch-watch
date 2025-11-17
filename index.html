@@ -151,6 +151,17 @@
         
         /* Hero section uses min-h-[70vh] from Tailwind classes */
         
+        /* Reduce spacing between hero and value-prop sections */
+        #hero {
+            margin-bottom: 0 !important;
+            padding-bottom: 2rem !important;
+        }
+        
+        #value-prop {
+            padding-top: 1rem !important;
+            margin-top: -2rem !important;
+        }
+        
         /* Reduce section heading margins from mb-16 (64px) to mb-8 (32px) */
         section[id] .text-center > h2,
         section[id] h2.text-center {
@@ -323,7 +334,7 @@
     </nav>
 
     <!-- Hero Section -->
-    <section id="hero" class="relative min-h-[90vh] flex flex-col justify-center overflow-hidden pt-32 md:pt-40 lg:pt-48 mb-8 scroll-mt-24">
+    <section id="hero" class="relative min-h-[90vh] flex flex-col justify-center overflow-hidden pt-32 md:pt-40 lg:pt-48 scroll-mt-24">
         <canvas id="hero-canvas"></canvas>
         <div class="hero-content max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <div class="max-w-4xl mx-auto">
@@ -344,7 +355,7 @@
     </section>
 
     <!-- Value Proposition -->
-    <section id="value-prop" class="py-12 section-reveal">
+    <section id="value-prop" class="py-6 section-reveal">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-12">
                 <h2 class="text-3xl md:text-4xl font-poppins font-bold gradient-text mb-3">Why NCR Launch Watch</h2>
