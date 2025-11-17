@@ -4,7 +4,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NCR Launch Watch — Newsletter Archive</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&family=Inter:wght@300;400;500;600&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'navy': '#0a0a1f',
+                        'charcoal': '#1a1a2e',
+                        'light-gray': '#f5f7fa',
+                        'muted-gray': '#8892b0',
+                        'teal': '#00d4ff',
+                        'gold': '#d4af37'
+                    },
+                    fontFamily: {
+                        'poppins': ['Poppins', 'sans-serif'],
+                        'inter': ['Inter', 'sans-serif'],
+                        'dm-sans': ['DM Sans', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
     <style>
         * {
             margin: 0;
@@ -181,7 +205,7 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-16">
                 <div class="flex items-center">
-                    <a href="/" class="text-xl font-poppins font-bold gradient-text">NCR Launch Watch</a>
+                    <h1 class="text-xl font-poppins font-bold gradient-text">NCR Launch Watch</h1>
                 </div>
                 <div class="hidden md:block">
                     <div class="ml-10 flex items-baseline space-x-8">
@@ -189,6 +213,9 @@
                         <a href="/newsletter/archive" class="text-light-gray hover:text-teal transition-colors duration-200 font-medium">Newsletter</a>
                         <a href="/#faq" class="text-light-gray hover:text-teal transition-colors duration-200 font-medium">FAQ</a>
                         <a href="mailto:realestatewithbhavik@gmail.com" class="text-light-gray hover:text-teal transition-colors duration-200 font-medium">Contact</a>
+                        <button id="subscribe-btn" class="bg-teal hover:bg-opacity-80 text-navy px-6 py-2 rounded-lg font-semibold transition-all duration-200 hover:glow-effect">
+                            Subscribe
+                        </button>
                     </div>
                 </div>
                 <div class="md:hidden">
@@ -208,6 +235,7 @@
                 <a href="/newsletter/archive" class="block px-3 py-2 text-light-gray hover:text-teal">Newsletter</a>
                 <a href="/#faq" class="block px-3 py-2 text-light-gray hover:text-teal">FAQ</a>
                 <a href="mailto:realestatewithbhavik@gmail.com" class="block px-3 py-2 text-light-gray hover:text-teal">Contact</a>
+                 <button id="subscribe-mobile" class="w-full text-left px-3 py-2 text-teal font-semibold">Subscribe</button>
             </div>
         </div>
     </nav>
@@ -245,6 +273,22 @@
         if (mobileMenuBtn && mobileMenu) {
             mobileMenuBtn.addEventListener('click', () => {
                 mobileMenu.classList.toggle('hidden');
+            });
+        }
+        
+        // Subscribe button handlers (matching homepage)
+        const subscribeBtn = document.getElementById('subscribe-btn');
+        const subscribeMobile = document.getElementById('subscribe-mobile');
+        
+        if (subscribeBtn) {
+            subscribeBtn.addEventListener('click', () => {
+                window.location.href = '/#subscribe';
+            });
+        }
+        
+        if (subscribeMobile) {
+            subscribeMobile.addEventListener('click', () => {
+                window.location.href = '/#subscribe';
             });
         }
     </script>
