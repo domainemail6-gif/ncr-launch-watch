@@ -8,7 +8,11 @@
   "rewrites": [
     {
       "source": "/newsletter",
-      "destination": "/public/newsletter/index.html"
+      "destination": "/public/newsletter/10-11-2025.html"
+    },
+    {
+      "source": "/newsletter/10-11-2025.html",
+      "destination": "/public/newsletter/10-11-2025.html"
     },
     {
       "source": "/newsletter/latest",
