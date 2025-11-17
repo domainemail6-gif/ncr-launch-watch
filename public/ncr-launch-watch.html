@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Subscribe to NCR Launch Watch</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+            line-height: 1.7;
+            color: #1a1a1a;
+            background: #ffffff;
+            font-size: 16px;
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+        
+        .hero {
+            background: linear-gradient(135deg, #0a0a1f 0%, #1a1a2e 100%);
+            color: #ffffff;
+            padding: 80px 0;
+            text-align: center;
+        }
+        
+        .hero h1 {
+            font-size: 48px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            letter-spacing: -1px;
+        }
+        
+        .hero .subheadline {
+            font-size: 22px;
+            color: #e0e0e0;
+            margin-bottom: 40px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .hero .cta-button {
+            display: inline-block;
+            background: linear-gradient(135deg, #00d4ff 0%, #0099cc 100%);
+            color: #ffffff;
+            padding: 18px 48px;
+            font-size: 20px;
+            font-weight: 600;
+            text-decoration: none;
+            border-radius: 6px;
+            transition: transform 0.2s, box-shadow 0.2s;
+            box-shadow: 0 4px 12px rgba(0, 212, 255, 0.3);
+        }
+        
+        .hero .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(0, 212, 255, 0.4);
+        }
+        
+        section {
+            padding: 64px 0;
+        }
+        
+        h2 {
+            font-size: 36px;
+            font-weight: 700;
+            margin-bottom: 32px;
+            color: #0a0a1f;
+            text-align: center;
+            letter-spacing: -0.5px;
+        }
+        
+        h3 {
+            font-size: 24px;
+            font-weight: 600;
+            margin-bottom: 16px;
+            color: #1a1a1a;
+        }
+        
+        .preview-section {
+            background: #f8f9fa;
+        }
+        
+        .preview-list {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        .preview-list ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .preview-list li {
+            padding: 20px;
+            margin-bottom: 16px;
+            background: #ffffff;
+            border-left: 4px solid #00d4ff;
+            border-radius: 4px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+        }
+        
+        .preview-list li strong {
+            color: #0a0a1f;
+            display: block;
+            margin-bottom: 8px;
+            font-size: 18px;
+        }
+        
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+            margin-top: 32px;
+        }
+        
+        .project-card {
+            background: #ffffff;
+            border: 1px solid #e5e5e5;
+            border-radius: 8px;
+            padding: 24px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        
+        .project-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+        }
+        
+        .project-card h4 {
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 12px;
+            color: #0a0a1f;
+        }
+        
+        .project-card p {
+            color: #666;
+            font-size: 15px;
+            line-height: 1.6;
+        }
+        
+        .why-subscribe {
+            background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+        }
+        
+        .benefits {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 32px;
+            margin-top: 32px;
+        }
+        
+        .benefit-item {
+            text-align: center;
+        }
+        
+        .benefit-item h4 {
+            font-size: 20px;
+            font-weight: 600;
+            margin: 16px 0 12px;
+            color: #0a0a1f;
+        }
+        
+        .benefit-item p {
+            color: #666;
+            font-size: 15px;
+        }
+        
+        .form-section {
+            background: #ffffff;
+            padding: 64px 0;
+        }
+        
+        .form-container {
+            max-width: 600px;
+            margin: 0 auto;
+            background: #f8f9fa;
+            padding: 48px;
+            border-radius: 8px;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+        }
+        
+        .form-group {
+            margin-bottom: 24px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #1a1a1a;
+            font-size: 15px;
+        }
+        
+        .form-group input,
+        .form-group select {
+            width: 100%;
+            padding: 14px 16px;
+            font-size: 16px;
+            border: 2px solid #e5e5e5;
+            border-radius: 6px;
+            transition: border-color 0.2s;
+            font-family: inherit;
+        }
+        
+        .form-group input:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: #00d4ff;
+        }
+        
+        .form-group input::placeholder {
+            color: #999;
+        }
+        
+        .submit-button {
+            width: 100%;
+            background: linear-gradient(135deg, #00d4ff 0%, #0099cc 100%);
+            color: #ffffff;
+            padding: 16px;
+            font-size: 18px;
+            font-weight: 600;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+            box-shadow: 0 4px 12px rgba(0, 212, 255, 0.3);
+        }
+        
+        .submit-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(0, 212, 255, 0.4);
+        }
+        
+        .submit-button:active {
+            transform: translateY(0);
+        }
+        
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 32px;
+            }
+            
+            .hero .subheadline {
+                font-size: 18px;
+            }
+            
+            h2 {
+                font-size: 28px;
+            }
+            
+            .form-container {
+                padding: 32px 24px;
+            }
+            
+            .container {
+                padding: 0 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="hero">
+        <div class="container">
+            <h1>Join NCR Launch Watch</h1>
+            <p class="subheadline">Get verified insights on new projects, infrastructure updates, and developer movements — trusted by end-users and investors alike.</p>
+            <a href="#subscribe" class="cta-button">Subscribe Free</a>
+        </div>
+    </div>
+    
+    <section class="preview-section">
+        <div class="container">
+            <h2>This Week's Highlights</h2>
+            <div class="preview-list">
+                <ul>
+                    <li>
+                        <strong>M3M India to Invest ₹7,200 crore in Gurgaon International City</strong>
+                        <span>Major integrated township development in partnership with Smartworld in Manesar, expecting revenue of ₹12,000 crore.</span>
+                    </li>
+                    <li>
+                        <strong>DLF Reports Strong Luxury Sales Worth ₹1,600 crore</strong>
+                        <span>221 super-luxury flats sold in The Dahlias project at DLF Phase 5, reflecting robust demand in Gurugram's premium housing segment.</span>
+                    </li>
+                    <li>
+                        <strong>RERA Clears 22 Projects for Construction Resumption</strong>
+                        <span>UP RERA removed projects from abeyance list, enabling construction of 8,856 units across Noida and Greater Noida.</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    
+    <section>
+        <div class="container">
+            <h2>Projects to Watch</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <h4>M3M Jacob & Co Residences</h4>
+                    <p>Branded luxury development in Noida, introducing designer-led residences to the high-net-worth segment.</p>
+                </div>
+                <div class="project-card">
+                    <h4>Gaur Chrysalis</h4>
+                    <p>Latest residential venture in Sector 22D, Yamuna Expressway, positioned in the growing airport corridor.</p>
+                </div>
+                <div class="project-card">
+                    <h4>Emaar Serenity Hills</h4>
+                    <p>New 25.9-acre high-rise development in Sector 86, New Gurgaon, marking one of Emaar's largest recent launches.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="why-subscribe">
+        <div class="container">
+            <h2>Why Subscribe?</h2>
+            <div class="benefits">
+                <div class="benefit-item">
+                    <h4>Real Data, Not Hype</h4>
+                    <p>Backed by verified sources, RERA updates, and developer filings for authentic market intelligence.</p>
+                </div>
+                <div class="benefit-item">
+                    <h4>Weekly Insights</h4>
+                    <p>Fresh insights delivered every Monday to start your week with market intelligence.</p>
+                </div>
+                <div class="benefit-item">
+                    <h4>Grounded Analysis</h4>
+                    <p>Clear takeaways and practical insights that help you make informed decisions without the hype.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section id="subscribe" class="form-section">
+        <div class="container">
+            <h2>Subscribe to NCR Launch Watch</h2>
+            <div class="form-container">
+                <form method="POST" action="">
+                    <div class="form-group">
+                        <label for="fullName">Full Name *</label>
+                        <input type="text" id="fullName" name="fullName" placeholder="Enter your full name" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Email Address *</label>
+                        <input type="email" id="email" name="email" placeholder="Enter your email address" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" name="phone" placeholder="Enter your phone number">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="role">Your Role</label>
+                        <select id="role" name="role">
+                            <option value="">Select your role</option>
+                            <option value="investor">Real Estate Investor</option>
+                            <option value="end-user">End-user Buyer</option>
+                            <option value="professional">Industry Professional</option>
+                        </select>
+                    </div>
+                    
+                    <button type="submit" class="submit-button">Subscribe Free</button>
+                </form>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
+

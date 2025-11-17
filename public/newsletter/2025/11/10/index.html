@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NCR Launch Watch — 10 November 2025</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #0a0a1f 0%, #1a1a2e 100%);
+            font-family: 'Inter', sans-serif;
+            color: #f5f7fa;
+            min-height: 100vh;
+        }
+        
+        .glassmorphism {
+            background: rgba(26, 26, 46, 0.8);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .gradient-text {
+            background: linear-gradient(135deg, #00d4ff 0%, #d4af37 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 50;
+            padding: 0;
+        }
+        
+        nav .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+        
+        nav .nav-content {
+            display: flex;
+            justify-between;
+            align-items: center;
+            height: 4rem;
+        }
+        
+        nav .logo {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 700;
+            font-size: 1.25rem;
+        }
+        
+        nav .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+        }
+        
+        nav a {
+            color: #f5f7fa;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+        
+        nav a:hover {
+            color: #00d4ff;
+        }
+        
+        .back-link {
+            color: #8892b0;
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.2s;
+        }
+        
+        .back-link:hover {
+            color: #00d4ff;
+        }
+        
+        main {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 6rem 1rem 3rem;
+        }
+        
+        .newsletter-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .newsletter-header h1 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            background: linear-gradient(135deg, #00d4ff 0%, #d4af37 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .newsletter-header .subtitle {
+            color: #8892b0;
+            font-size: 1.125rem;
+            margin-top: 0.5rem;
+        }
+        
+        .newsletter-content {
+            background: rgba(26, 26, 46, 0.8);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 1rem;
+            padding: 3rem;
+            margin-bottom: 2rem;
+        }
+        
+        .intro {
+            color: #8892b0;
+            font-style: italic;
+            margin-bottom: 2.5rem;
+            padding: 1.5rem;
+            background: rgba(0, 212, 255, 0.1);
+            border-left: 4px solid #00d4ff;
+            border-radius: 0.5rem;
+        }
+        
+        section {
+            margin-bottom: 3rem;
+        }
+        
+        section:last-child {
+            margin-bottom: 0;
+        }
+        
+        h2 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.75rem;
+            font-weight: 700;
+            color: #f5f7fa;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.75rem;
+            border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        h3 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: #f5f7fa;
+            margin: 2rem 0 1rem;
+        }
+        
+        p {
+            color: #8892b0;
+            line-height: 1.75;
+            margin-bottom: 1.25rem;
+            font-size: 1rem;
+        }
+        
+        article {
+            margin-bottom: 2rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        
+        article:last-child {
+            border-bottom: none;
+        }
+        
+        .project-item {
+            background: rgba(0, 212, 255, 0.05);
+            border: 1px solid rgba(0, 212, 255, 0.2);
+            border-radius: 0.5rem;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .project-item h3 {
+            margin-top: 0;
+            color: #00d4ff;
+        }
+        
+        .project-item p {
+            margin-bottom: 0.75rem;
+        }
+        
+        .project-item em {
+            color: #8892b0;
+            font-size: 0.9rem;
+        }
+        
+        footer {
+            text-align: center;
+            color: #8892b0;
+            font-size: 0.875rem;
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        @media (max-width: 768px) {
+            main {
+                padding: 5rem 1rem 2rem;
+            }
+            
+            .newsletter-header h1 {
+                font-size: 2rem;
+            }
+            
+            .newsletter-content {
+                padding: 2rem 1.5rem;
+            }
+            
+            nav .nav-links {
+                gap: 1rem;
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="glassmorphism">
+        <div class="container">
+            <div class="nav-content">
+                <a href="/" class="logo gradient-text">NCR Launch Watch</a>
+                <div class="nav-links">
+                    <a href="/">Home</a>
+                    <a href="/newsletter/latest">Newsletter</a>
+                    <a href="/newsletter/archive">Archive</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+    
+    <main>
+        <div class="newsletter-header">
+            <h1>NCR Launch Watch</h1>
+            <p class="subtitle">10 November 2025 • Weekly Briefing</p>
+            <a href="/newsletter/archive" class="back-link">← Back to Newsletter Archive</a>
+        </div>
+        
+        <div class="newsletter-content">
+            <div class="intro">
+                <p><strong>Dear Reader,</strong></p>
+                <p>This week's edition covers major developments across Delhi NCR's real estate landscape, from luxury launches to infrastructure breakthroughs that are reshaping the region's property market.</p>
+                <p>A concise overview of fresh launches and key developments across Delhi NCR.</p>
+            </div>
+            
+            <section>
+                <h2>GURGAON</h2>
+                
+                <article>
+                    <h3>M3M India to Invest ₹7,200 crore in Gurgaon International City</h3>
+                    <p>M3M India plans to invest ₹7,200 crore in Gurgaon International City, expecting revenue of ₹12,000 crore. The integrated township is being developed in partnership with Smartworld in Manesar.</p>
+                </article>
+                
+                <article>
+                    <h3>DLF reports strong luxury Sales worth ₹1,600 crore</h3>
+                    <p>DLF sold 221 super-luxury flats worth ₹1,600 crore in its The Dahlias project at DLF Phase 5. The sales reflect robust demand in Gurugram's premium housing segment.</p>
+                </article>
+                
+                <article>
+                    <h3>Zomato expands office footprint with 270,000 sq ft lease</h3>
+                    <p>Zomato has leased 270,000 sq ft at Tata Realty's Intellion Park and is in talks for additional 1 million sq ft. The expansion signals revival in Grade A office demand.</p>
+                </article>
+                
+                <article>
+                    <h3>Dalcore partners with YOO for Philippe Starck-designed residences</h3>
+                    <p>Dalcore collaborates with YOO to launch The Falcon on Golf Course Road. The ₹500 crore project features 96 ultra-luxury residences priced at ₹10 crore and above.</p>
+                </article>
+                
+                <article>
+                    <h3>HSIIDC to revamp 6 km stretch of Pataudi Road ahead of Global City Project</h3>
+                    <p>HSIIDC has been assigned to prepare a comprehensive plan for upgrading the 6 km stretch of Pataudi Road connecting several residential and industrial areas. The project, earlier under MCG, has been transferred after months of delay. The improvement work will support connectivity to the upcoming Global City development and address persistent civic concerns in the corridor.</p>
+                </article>
+            </section>
+            
+            <section>
+                <h2>NOIDA</h2>
+                
+                <article>
+                    <h3>LG Corp establishes ₹1,000 crore R&D centre</h3>
+                    <p>LG Corp will invest ₹1,000 crore to establish a Global R&D Centre in Sector Phase-II Industrial Plot. The 27,129 sq metre facility will create approximately 500 jobs.</p>
+                </article>
+                
+                <article>
+                    <h3>RERA clears 22 projects for construction resumption</h3>
+                    <p>UP RERA removed 22 housing and commercial projects from abeyance list, enabling construction of 8,856 units. Noida accounts for 5,663 units across six projects.</p>
+                </article>
+                
+                <article>
+                    <h3>New Noida land acquisition to begin soon</h3>
+                    <p>Land acquisition for Dadri–Noida–Ghaziabad Investment Region will begin using hybrid model across 80 villages. The 209 sq km township will be developed in four phases.</p>
+                </article>
+            </section>
+            
+            <section>
+                <h2>YAMUNA EXPRESSWAY</h2>
+                
+                <article>
+                    <h3>Gaurs Group targets ₹2,000 crore revenue from new project</h3>
+                    <p>Gaurs Group anticipates ₹2,000 crore revenue from its 12-acre premium housing project. The first phase includes approximately 950 units with mall and hotel planned.</p>
+                </article>
+                
+                <article>
+                    <h3>Foreign investment transforms Yamuna Expressway</h3>
+                    <p>Make in India initiatives have turned Yamuna Expressway into a foreign investment hotspot, boosting real estate demand in the region.</p>
+                </article>
+            </section>
+            
+            <section>
+                <h2>GREATER NOIDA</h2>
+                
+                <article>
+                    <h3>Multi-modal logistics hub construction to begin soon</h3>
+                    <p>Work on the multi-modal logistics hub in Greater Noida is set to commence, marking significant infrastructure development for the region.</p>
+                </article>
+                
+                <article>
+                    <h3>6 stalled projects removed from UP RERA abeyance list</h3>
+                    <p>Six stalled projects in Greater Noida have been removed from UP RERA's abeyance list, allowing construction to resume and providing relief to affected homebuyers.</p>
+                </article>
+            </section>
+            
+            <section>
+                <h2>PANCHKULA</h2>
+                
+                <article>
+                    <h3>Trident Realty launches 199 plots targeting ₹1,200 crore revenue</h3>
+                    <p>Delhi-NCR based Trident Realty has launched 199 residential plots in its 200-acre Panchkula development, expecting ₹1,200 crore in sales revenue.</p>
+                </article>
+            </section>
+            
+            <section>
+                <h2>DELHI</h2>
+                
+                <article>
+                    <h3>Parsvnath opens luxury mall Unity One Elegante</h3>
+                    <p>Parsvnath Developers opened Unity One Elegante at Netaji Subhash Place. The 489,530 sq ft mall targets high-income groups with luxury retail and entertainment.</p>
+                </article>
+                
+                <article>
+                    <h3>Homeland Group enters Delhi NCR market</h3>
+                    <p>Homeland Group has entered the Delhi NCR market with a new office space on Golf Course Road, marking their expansion into the region's commercial real estate sector.</p>
+                </article>
+            </section>
+            
+            <section>
+                <h2>NCR</h2>
+                
+                <article>
+                    <h3>Second calibration flight completed</h3>
+                    <p>Airports Authority of India conducted the second mandatory calibration flight at Noida International Airport, paving way for commercial operations to begin soon.</p>
+                </article>
+                
+                <article>
+                    <h3>Max Estates reports 24% revenue growth</h3>
+                    <p>Max Estates reported 24% revenue growth and announced plans for INR 9,500 crore worth of project launches in the coming fiscal year across NCR.</p>
+                </article>
+                
+                <article>
+                    <h3>NCLAT sets aside insolvency proceedings against Mahagun</h3>
+                    <p>The National Company Law Appellate Tribunal has set aside insolvency proceedings against Mahagun, directing NCLT to rehear the case with fresh consideration.</p>
+                </article>
+                
+                <article>
+                    <h3>Adani likely to win Jaiprakash Associates insolvency bid</h3>
+                    <p>Adani Group is reportedly poised to win the insolvency bid for Jaiprakash Associates with a faster payment plan, potentially accelerating resolution of the company's debt issues.</p>
+                </article>
+                
+                <article>
+                    <h3>Godrej Properties targets record sales performance</h3>
+                    <p>Godrej Properties is on track to exceed its annual sales target of ₹32,500 crore, positioning for a record-breaking year despite market challenges.</p>
+                </article>
+                
+                <article>
+                    <h3>TDI Infrastructure invests ₹100 crore in Kundli township development</h3>
+                    <p>TDI Infrastructure Ltd will invest ₹100 crore in its 1,100-acre TDI City, Kundli. The integrated township aims to become the "Gurgaon of the North" with infrastructure upgrades including Urban Extension Road-II and KMP Expressway.</p>
+                </article>
+            </section>
+            
+            <section>
+                <h2>PROJECTS TO WATCH</h2>
+                
+                <div class="project-item">
+                    <h3>M3M JACOB & CO RESIDENCES – NOIDA</h3>
+                    <p>M3M India has announced M3M Jacob & Co Residences in Noida, a branded luxury development in partnership with Jacob & Co. The project will introduce designer-led residences to Noida's high-net-worth segment, setting a new benchmark for branded living in NCR.</p>
+                    <p><em>Connect on WhatsApp</em></p>
+                </div>
+                
+                <div class="project-item">
+                    <h3>GAUR CHRYSALIS – SECTOR 22D, YAMUNA EXPRESSWAY</h3>
+                    <p>Gaur Chrysalis at Sector 22D, Yamuna Expressway, marks Gaursons' latest residential venture in the airport corridor. Positioned amid growing industrial and logistics activity, the project aims to cater to mid- to premium-homebuyers seeking long-term capital appreciation.</p>
+                    <p><em>Connect on WhatsApp</em></p>
+                </div>
+                
+                <div class="project-item">
+                    <h3>TRIDENT HILLS – PANCHKULA</h3>
+                    <p>In Panchkula, Trident Realty has launched Trident Hills, a 200-acre low-rise township along the Chandigarh–Shimla corridor. The project focuses on plotted housing and villa developments catering to NCR's northern luxury segment.</p>
+                    <p><em>Connect on WhatsApp</em></p>
+                </div>
+                
+                <div class="project-item">
+                    <h3>GODREJ ARDEN – SIGMA 3, GREATER NOIDA</h3>
+                    <p>Godrej Properties is set to launch Godrej Arden in Sigma 3, Greater Noida. The boutique residential community emphasizes low-density planning, landscaped greens, and sustainable architecture in one of the region's most organized sectors.</p>
+                    <p><em>Connect on WhatsApp</em></p>
+                </div>
+                
+                <div class="project-item">
+                    <h3>EMAAR SERENITY HILLS – PHASE 1</h3>
+                    <p>Emaar India has launched Serenity Hills, a new 25.9-acre high-rise residential development in Sector 86, New Gurgaon. The project comprises seven towers on a contiguous 26-acre land parcel, marking one of Emaar's largest recent launches in the region. This new offering adds to the developer's Grade-A residential portfolio and signals renewed activity within the New Gurgaon corridor.</p>
+                    <p><em>Connect on WhatsApp</em></p>
+                </div>
+                
+                <div class="project-item">
+                    <h3>DESTINO CENTRAL PARK – SECTOR 104, GURGAON</h3>
+                    <p>Central Park has announced Destino Central Park in Sector 104, Gurgaon. Designed around wellness and resort-style amenities, the development reinforces Central Park's positioning along the Dwarka Expressway luxury belt.</p>
+                    <p><em>Connect on WhatsApp</em></p>
+                </div>
+                
+                <div class="project-item">
+                    <h3>GURGAON INTERNATIONAL CITY – MANESAR (M3M & SMARTWORLD)</h3>
+                    <p>M3M India and Smartworld Developers have launched Gurgaon International City in Manesar, a large-scale integrated township planned over 150 acres. The project is designed as a self-sustained residential and commercial ecosystem featuring global-standard infrastructure.</p>
+                    <p><em>Connect on WhatsApp</em></p>
+                </div>
+                
+                <div class="project-item">
+                    <h3>ASHIANA AMARAH – PHASE 6, GURGAON</h3>
+                    <p>Ashiana Housing has unveiled Amarah – Phase 6 in New Gurgaon, expanding its flagship child-centric housing series. The project continues Ashiana's focus on family-friendly planning and integrated learning environments for children.</p>
+                    <p><em>Connect on WhatsApp</em></p>
+                </div>
+                
+                <div class="project-item">
+                    <h3>M3M ELIE SAAB – SECTOR 111, GURGAON</h3>
+                    <p>M3M Elie Saab at Sector 111, Gurgaon, brings the second phase of M3M's designer collaboration with global fashion house Elie Saab. The project features branded residences overlooking Dwarka Expressway and targets NCR's high-end homebuyers.</p>
+                    <p><em>Connect on WhatsApp</em></p>
+                </div>
+                
+                <div class="project-item">
+                    <h3>ASHTECH PRESIDENTIAL TOWERS – GREATER NOIDA</h3>
+                    <p>Ashtech Presidential Towers in Greater Noida introduces luxury high-rise residences with large floor plates and upgraded clubhouse facilities. The project is expected to strengthen Greater Noida's inventory of premium homes.</p>
+                    <p><em>Connect on WhatsApp</em></p>
+                </div>
+                
+                <div class="project-item">
+                    <h3>BIRLA PRAVAAH – SECTOR 71, GURGAON</h3>
+                    <p>Birla Estates is set to launch Birla Pravaah in Sector 71, Gurgaon, featuring high-rise sustainable residences near Southern Peripheral Road. The project reflects the developer's continued focus on environmentally conscious design and premium urban living.</p>
+                    <p><em>Connect on WhatsApp</em></p>
+                </div>
+            </section>
+        </div>
+        
+        <footer>
+            <p>Compiled by NCR Launch Watch</p>
+            <p>Your weekly window into Delhi NCR's property market.</p>
+        </footer>
+    </main>
+</body>
+</html>
+

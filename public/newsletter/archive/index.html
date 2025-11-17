@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NCR Launch Watch — Newsletter Archive</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #0a0a1f 0%, #1a1a2e 100%);
+            font-family: 'Inter', sans-serif;
+            color: #f5f7fa;
+            min-height: 100vh;
+        }
+        
+        .glassmorphism {
+            background: rgba(26, 26, 46, 0.8);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .gradient-text {
+            background: linear-gradient(135deg, #00d4ff 0%, #d4af37 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 50;
+            padding: 0;
+        }
+        
+        nav .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+        
+        nav .nav-content {
+            display: flex;
+            justify-between;
+            align-items: center;
+            height: 4rem;
+        }
+        
+        nav .logo {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 700;
+            font-size: 1.25rem;
+        }
+        
+        nav .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+        }
+        
+        nav a {
+            color: #f5f7fa;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+        
+        nav a:hover {
+            color: #00d4ff;
+        }
+        
+        main {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 6rem 1rem 3rem;
+        }
+        
+        .archive-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .archive-header h1 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            background: linear-gradient(135deg, #00d4ff 0%, #d4af37 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .archive-header p {
+            color: #8892b0;
+            font-size: 1.125rem;
+            margin-top: 0.5rem;
+        }
+        
+        .year-group {
+            margin-bottom: 3rem;
+        }
+        
+        .year-title {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.75rem;
+            font-weight: 700;
+            color: #00d4ff;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.75rem;
+            border-bottom: 2px solid rgba(0, 212, 255, 0.3);
+        }
+        
+        .month-group {
+            margin-bottom: 2rem;
+            margin-left: 1.5rem;
+        }
+        
+        .month-title {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #d4af37;
+            margin-bottom: 1rem;
+        }
+        
+        .issues-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-left: 1.5rem;
+        }
+        
+        .issue-card {
+            background: rgba(26, 26, 46, 0.8);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 0.75rem;
+            padding: 1.5rem;
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+        
+        .issue-card:hover {
+            transform: translateY(-4px);
+            border-color: rgba(0, 212, 255, 0.5);
+            box-shadow: 0 8px 24px rgba(0, 212, 255, 0.2);
+        }
+        
+        .issue-card a {
+            color: #f5f7fa;
+            text-decoration: none;
+            display: block;
+        }
+        
+        .issue-card h3 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.125rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: #00d4ff;
+        }
+        
+        .issue-card .date {
+            color: #8892b0;
+            font-size: 0.875rem;
+            margin-bottom: 0.75rem;
+        }
+        
+        .issue-card .preview {
+            color: #8892b0;
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+        
+        .back-link {
+            color: #8892b0;
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.2s;
+            display: inline-block;
+            margin-top: 1rem;
+        }
+        
+        .back-link:hover {
+            color: #00d4ff;
+        }
+        
+        @media (max-width: 768px) {
+            main {
+                padding: 5rem 1rem 2rem;
+            }
+            
+            .archive-header h1 {
+                font-size: 2rem;
+            }
+            
+            .issues-list {
+                grid-template-columns: 1fr;
+                margin-left: 0;
+            }
+            
+            .month-group {
+                margin-left: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="glassmorphism">
+        <div class="container">
+            <div class="nav-content">
+                <a href="/" class="logo gradient-text">NCR Launch Watch</a>
+                <div class="nav-links">
+                    <a href="/">Home</a>
+                    <a href="/newsletter/latest">Newsletter</a>
+                    <a href="/newsletter/archive">Archive</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+    
+    <main>
+        <div class="archive-header">
+            <h1>Newsletter Archive</h1>
+            <p>Browse all past issues of NCR Launch Watch</p>
+            <a href="/newsletter/latest" class="back-link">← Back to Latest Newsletter</a>
+        </div>
+        
+        <div class="year-group">
+            <div class="year-title">2025</div>
+            
+            <div class="month-group">
+                <div class="month-title">November</div>
+                <div class="issues-list">
+                    <div class="issue-card">
+                        <a href="/newsletter/2025/11/10/">
+                            <h3>Issue 10 November 2025</h3>
+                            <div class="date">November 10, 2025</div>
+                            <div class="preview">Major developments across Delhi NCR's real estate landscape, from luxury launches to infrastructure breakthroughs.</div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
+
