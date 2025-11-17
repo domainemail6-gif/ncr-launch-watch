@@ -8,15 +8,15 @@
   "rewrites": [
     {
       "source": "/newsletter",
-      "destination": "/public/newsletter/2025/10-11-2025.html"
+      "destination": "/public/newsletter/2025/10-11-2025/index.html"
     },
     {
-      "source": "/newsletter/10-11-2025.html",
-      "destination": "/public/newsletter/2025/10-11-2025.html"
+      "source": "/newsletter/2025/10-11-2025",
+      "destination": "/public/newsletter/2025/10-11-2025/index.html"
     },
     {
-      "source": "/newsletter/2025/10-11-2025.html",
-      "destination": "/public/newsletter/2025/10-11-2025.html"
+      "source": "/newsletter/2025/10-11-2025/",
+      "destination": "/public/newsletter/2025/10-11-2025/index.html"
     },
     {
       "source": "/newsletter/latest",

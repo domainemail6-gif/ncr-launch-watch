@@ -37,43 +37,6 @@
             top: 0;
             width: 100%;
             z-index: 50;
-            padding: 0;
-        }
-        
-        nav .container {
-            max-width: 1280px;
-            margin: 0 auto;
-            padding: 0 1rem;
-        }
-        
-        nav .nav-content {
-            display: flex;
-            justify-between;
-            align-items: center;
-            height: 4rem;
-        }
-        
-        nav .logo {
-            font-family: 'Poppins', sans-serif;
-            font-weight: 700;
-            font-size: 1.25rem;
-        }
-        
-        .nav-links {
-            display: flex;
-            align-items: center;
-            gap: 2rem;
-        }
-        
-        nav a {
-            color: #f5f7fa;
-            text-decoration: none;
-            font-weight: 500;
-            transition: color 0.2s;
-        }
-        
-        nav a:hover {
-            color: #00d4ff;
         }
         
         main {
@@ -214,15 +177,37 @@
     </style>
 </head>
 <body>
-    <nav class="glassmorphism">
-        <div class="container">
-            <div class="nav-content">
-                <a href="/" class="logo gradient-text">NCR Launch Watch</a>
-                <nav class="nav-links">
-                    <a href="/">Home</a>
-                    <a href="/newsletter/archive">Newsletter</a>
-                    <a href="/newsletter/archive">Archive</a>
-                </nav>
+    <nav id="navbar" class="fixed top-0 w-full z-50 glassmorphism transition-transform duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <a href="/" class="text-xl font-poppins font-bold gradient-text">NCR Launch Watch</a>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-8">
+                        <a href="/" class="text-light-gray hover:text-teal transition-colors duration-200 font-medium">Home</a>
+                        <a href="/newsletter/archive" class="text-light-gray hover:text-teal transition-colors duration-200 font-medium">Newsletter</a>
+                        <a href="/#faq" class="text-light-gray hover:text-teal transition-colors duration-200 font-medium">FAQ</a>
+                        <a href="mailto:realestatewithbhavik@gmail.com" class="text-light-gray hover:text-teal transition-colors duration-200 font-medium">Contact</a>
+                    </div>
+                </div>
+                <div class="md:hidden">
+                    <button id="mobile-menu-btn" class="text-light-gray hover:text-teal">
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="md:hidden hidden glassmorphism border-t border-gray-700">
+            <div class="px-2 pt-2 pb-3 space-y-1">
+                <a href="/" class="block px-3 py-2 text-light-gray hover:text-teal">Home</a>
+                <a href="/newsletter/archive" class="block px-3 py-2 text-light-gray hover:text-teal">Newsletter</a>
+                <a href="/#faq" class="block px-3 py-2 text-light-gray hover:text-teal">FAQ</a>
+                <a href="mailto:realestatewithbhavik@gmail.com" class="block px-3 py-2 text-light-gray hover:text-teal">Contact</a>
             </div>
         </div>
     </nav>
@@ -231,7 +216,7 @@
         <div class="archive-header">
             <h1>Newsletter Archive</h1>
             <p>Browse all past issues of NCR Launch Watch</p>
-            <a href="../2025/10-11-2025.html" class="back-link">← Back to Newsletter</a>
+            <a href="../2025/10-11-2025/" class="back-link">← Back to Newsletter</a>
         </div>
         
         <div class="year-group">
@@ -241,7 +226,7 @@
                 <div class="month-title">November</div>
                 <div class="issues-list">
                     <div class="issue-card">
-                        <a href="../2025/10-11-2025.html">
+                        <a href="../2025/10-11-2025/">
                             <h3>Issue 10 November 2025</h3>
                             <div class="date">November 10, 2025</div>
                             <div class="preview">Major developments across Delhi NCR's real estate landscape, from luxury launches to infrastructure breakthroughs.</div>
@@ -251,6 +236,18 @@
             </div>
         </div>
     </main>
+    
+    <script>
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        if (mobileMenuBtn && mobileMenu) {
+            mobileMenuBtn.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+        }
+    </script>
 </body>
 </html>
 
