@@ -8,27 +8,19 @@
   "rewrites": [
     {
       "source": "/newsletter",
-      "destination": "/public/newsletter/2025/10-11-2025/index.html"
+      "destination": "/newsletter/2025/10-11-2025/"
     },
     {
       "source": "/newsletter/2025/10-11-2025",
-      "destination": "/public/newsletter/2025/10-11-2025/index.html"
-    },
-    {
-      "source": "/newsletter/2025/10-11-2025/",
-      "destination": "/public/newsletter/2025/10-11-2025/index.html"
+      "destination": "/newsletter/2025/10-11-2025/"
     },
     {
       "source": "/newsletter/latest",
-      "destination": "/public/newsletter/latest/index.html"
+      "destination": "/newsletter/latest/index.html"
     },
     {
       "source": "/newsletter/archive",
-      "destination": "/public/newsletter/archive/index.html"
-    },
-    {
-      "source": "/newsletter/:year/:month/:day",
-      "destination": "/public/newsletter/:year/:month/:day/index.html"
+      "destination": "/newsletter/archive/index.html"
     }
   ],
   "headers": [
