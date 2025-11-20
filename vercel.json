@@ -15,6 +15,14 @@
       "destination": "/public/newsletter/2025/11/10/index.html"
     },
     {
+      "source": "/2025/11/17",
+      "destination": "/public/newsletter/2025/11/17/index.html"
+    },
+    {
+      "source": "/2025/11/17/",
+      "destination": "/public/newsletter/2025/11/17/index.html"
+    },
+    {
       "source": "/newsletter",
       "destination": "/public/newsletter/2025/11/10/index.html"
     },
