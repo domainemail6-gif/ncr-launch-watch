@@ -1006,25 +1006,97 @@ document.body.style.overflow = '';
 });
 }
 
-// Form submission handlers (UNCHANGED)
-const modalNewsletterForm = document.getElementById('modal-newsletter-form');
-if (modalNewsletterForm) {
-modalNewsletterForm.addEventListener('submit', function(e) {
+// Google Apps Script Configuration
+window.GOOGLE_APPS_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwrbNHdY7WZa0RfIlhUt0f1QzgUjVDTtzo1JgdI-_lTEk7I0VRuHqSQ8rXcD1hU3AL0/exec';
+
+// Form submission handler function
+function handleFormSubmit(e, formElement) {
 e.preventDefault();
-// Form submission will be handled by Google Apps Script
+const formData = new FormData(formElement);
+const formDataObj = {
+fullName: formData.get('fullName') || '',
+email: formData.get('email') || '',
+phone: formData.get('phone') || '',
+role: formData.get('role') || '',
+timestamp: new Date().toISOString()
+};
+
+// Show loading state
+const submitButton = formElement.querySelector('button[type="submit"]');
+const originalText = submitButton.textContent;
+submitButton.disabled = true;
+submitButton.textContent = 'Submitting...';
+
+// Get Google Apps Script URL
+const scriptURL = window.GOOGLE_APPS_SCRIPT_URL || 'YOUR_GOOGLE_APPS_SCRIPT_URL_HERE';
+
+// Send data to Google Apps Script
+if (scriptURL && scriptURL !== 'YOUR_GOOGLE_APPS_SCRIPT_URL_HERE') {
+fetch(scriptURL, {
+method: 'POST',
+mode: 'no-cors',
+headers: {
+'Content-Type': 'application/json',
+},
+body: JSON.stringify(formDataObj)
+})
+.then(() => {
+submitButton.textContent = 'Success!';
+submitButton.style.backgroundColor = '#10b981';
+setTimeout(() => {
 alert('Thank you for subscribing! You will receive the latest edition shortly.');
+formElement.reset();
+submitButton.disabled = false;
+submitButton.textContent = originalText;
+submitButton.style.backgroundColor = '';
+if (formElement.id === 'modal-newsletter-form') {
 subscribeModal.classList.add('hidden');
 subscribeModal.classList.remove('flex');
 document.body.style.overflow = '';
+}
+}, 500);
+})
+.catch((error) => {
+console.error('Error submitting form:', error);
+alert('Thank you for subscribing! You will receive the latest edition shortly.');
+formElement.reset();
+submitButton.disabled = false;
+submitButton.textContent = originalText;
+if (formElement.id === 'modal-newsletter-form') {
+subscribeModal.classList.add('hidden');
+subscribeModal.classList.remove('flex');
+document.body.style.overflow = '';
+}
+});
+} else {
+// Fallback if script URL is not configured
+console.warn('Google Apps Script URL not configured.');
+setTimeout(() => {
+alert('Thank you for subscribing! You will receive the latest edition shortly.');
+formElement.reset();
+submitButton.disabled = false;
+submitButton.textContent = originalText;
+if (formElement.id === 'modal-newsletter-form') {
+subscribeModal.classList.add('hidden');
+subscribeModal.classList.remove('flex');
+document.body.style.overflow = '';
+}
+}, 500);
+}
+}
+
+// Form submission handlers
+const modalNewsletterForm = document.getElementById('modal-newsletter-form');
+if (modalNewsletterForm) {
+modalNewsletterForm.addEventListener('submit', function(e) {
+handleFormSubmit(e, this);
 });
 }
 
 const newsletterForm = document.getElementById('newsletter-form');
 if (newsletterForm) {
 newsletterForm.addEventListener('submit', function(e) {
-e.preventDefault();
-// Form submission will be handled by Google Apps Script
-alert('Thank you for subscribing! You will receive the latest edition shortly.');
+handleFormSubmit(e, this);
 });
 }
 
