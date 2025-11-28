@@ -1,0 +1,1387 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-W04CLN4BZM"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+
+gtag('config', 'G-W04CLN4BZM');
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NCR Launch Watch Newsletter - November 24, 2025</title>
+<meta name="description" content="Get verified insights on new projects, infrastructure updates, and developer movements across Delhi NCR. Weekly newsletter delivered every Monday.">
+
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&family=Inter:wght@300;400;500;600&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = {
+theme: {
+extend: {
+colors: {
+'navy': '#0a0a1f',
+'charcoal': '#1a1a2e',
+'light-gray': '#f5f7fa',
+'muted-gray': '#8892b0',
+'teal': '#00d4ff',
+'gold': '#d4af37'
+},
+fontFamily: {
+'poppins': ['Poppins', 'sans-serif'],
+'inter': ['Inter', 'sans-serif'],
+'dm-sans': ['DM Sans', 'sans-serif']
+}
+}
+}
+}
+</script>
+
+<style>
+body {
+background: linear-gradient(135deg, #0a0a1f 0%, #1a1a2e 100%);
+font-family: 'Inter', sans-serif;
+}
+
+.glassmorphism {
+background: rgba(26, 26, 46, 0.8);
+backdrop-filter: blur(10px);
+border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.gradient-text {
+background: linear-gradient(135deg, #00d4ff 0%, #d4af37 100%);
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+background-clip: text;
+}
+
+.hover-lift {
+transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.hover-lift:hover {
+transform: translateY(-8px);
+box-shadow: 0 25px 50px -12px rgba(0, 212, 255, 0.25);
+}
+
+.glow-effect {
+box-shadow: 0 0 20px rgba(0, 212, 255, 0.3);
+}
+
+.city-card {
+transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+overflow: hidden;
+}
+
+.city-card-header {
+cursor: pointer;
+user-select: none;
+}
+
+.city-card-content {
+max-height: 0;
+overflow: hidden;
+transition: max-height 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.city-card.expanded .city-card-content {
+max-height: 2000px;
+}
+
+.city-card.expanded .chevron-icon {
+transform: rotate(180deg);
+}
+
+.chevron-icon {
+transition: transform 0.3s ease;
+}
+
+.article-list {
+max-height: 600px;
+overflow-y: auto;
+scrollbar-width: thin;
+scrollbar-color: rgba(0, 212, 255, 0.3) rgba(26, 26, 46, 0.5);
+}
+
+.article-list::-webkit-scrollbar {
+width: 8px;
+}
+
+.article-list::-webkit-scrollbar-track {
+background: rgba(26, 26, 46, 0.5);
+border-radius: 4px;
+}
+
+.article-list::-webkit-scrollbar-thumb {
+background: rgba(0, 212, 255, 0.3);
+border-radius: 4px;
+}
+
+.article-list::-webkit-scrollbar-thumb:hover {
+background: rgba(0, 212, 255, 0.5);
+}
+
+.city-banner {
+width: 100%;
+height: 200px;
+object-fit: cover;
+background: linear-gradient(135deg, rgba(0, 212, 255, 0.2) 0%, rgba(212, 175, 55, 0.2) 100%);
+display: flex;
+align-items: center;
+justify-content: center;
+color: rgba(255, 255, 255, 0.3);
+font-size: 1.5rem;
+font-weight: 600;
+}
+
+#subscribe-modal {
+display: none;
+}
+
+#subscribe-modal.flex {
+display: flex !important;
+}
+
+.section-reveal {
+opacity: 0;
+transform: translateY(30px);
+transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.section-reveal.revealed {
+opacity: 1;
+transform: translateY(0);
+}
+
+/* Revolutionary Projects Section Styles */
+.city-nav-scroll {
+scrollbar-width: none;
+-ms-overflow-style: none;
+}
+.city-nav-scroll::-webkit-scrollbar {
+display: none;
+}
+
+.city-nav-btn {
+position: relative;
+transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.city-nav-btn::before {
+content: '';
+position: absolute;
+inset: 0;
+background: linear-gradient(45deg, rgba(0, 212, 255, 0.1), rgba(212, 175, 55, 0.1));
+opacity: 0;
+transition: opacity 0.3s ease;
+border-radius: 0.5rem;
+}
+
+.city-nav-btn:hover::before {
+opacity: 1;
+}
+
+.city-nav-btn.active {
+background: rgba(26, 26, 46, 0.8);
+border: 1px solid rgba(0, 212, 255, 0.3);
+box-shadow: 0 0 20px rgba(0, 212, 255, 0.15);
+}
+
+.city-nav-btn.active .city-icon {
+color: #00d4ff;
+transform: scale(1.1);
+}
+
+.project-card-3d {
+transform-style: preserve-3d;
+transition: transform 0.3s ease-out;
+}
+
+.project-card-3d:hover {
+z-index: 10;
+}
+
+.card-content-reveal {
+grid-template-rows: 0fr;
+transition: grid-template-rows 0.4s ease-out;
+}
+
+.project-card-3d:hover .card-content-reveal {
+grid-template-rows: 1fr;
+}
+
+.card-shine {
+background: radial-gradient(
+800px circle at var(--mouse-x) var(--mouse-y),
+rgba(255, 255, 255, 0.06),
+transparent 40%
+);
+}
+</style>
+</head>
+<body class="text-light-gray overflow-x-hidden">
+<!-- Navigation -->
+<nav id="navbar" class="fixed top-0 w-full z-50 glassmorphism transition-transform duration-300">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex justify-between items-center h-16">
+<div class="flex items-center">
+<a href="/" class="text-xl font-poppins font-bold gradient-text">NCR Launch Watch</a>
+</div>
+<div class="hidden md:block">
+<div class="ml-10 flex items-baseline space-x-8">
+<a href="/" class="text-light-gray hover:text-teal transition-colors duration-200 font-medium">Home</a>
+<a href="/newsletter/archive" class="text-light-gray hover:text-teal transition-colors duration-200 font-medium">Newsletter</a>
+<a href="/#faq" class="text-light-gray hover:text-teal transition-colors duration-200 font-medium">FAQ</a>
+<a href="mailto:realestatewithbhavik@gmail.com" class="text-light-gray hover:text-teal transition-colors duration-200 font-medium">Contact</a>
+</div>
+</div>
+<div class="md:hidden">
+<button id="mobile-menu-btn" class="text-light-gray hover:text-teal">
+<svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+</svg>
+</button>
+</div>
+</div>
+</div>
+
+<!-- Mobile Menu -->
+<div id="mobile-menu" class="md:hidden hidden glassmorphism border-t border-gray-700">
+<div class="px-2 pt-2 pb-3 space-y-1">
+<a href="/" class="block px-3 py-2 text-light-gray hover:text-teal">Home</a>
+<a href="/newsletter/archive" class="block px-3 py-2 text-light-gray hover:text-teal">Newsletter</a>
+<a href="/#faq" class="block px-3 py-2 text-light-gray hover:text-teal">FAQ</a>
+<a href="mailto:realestatewithbhavik@gmail.com" class="block px-3 py-2 text-light-gray hover:text-teal">Contact</a>
+</div>
+</div>
+</nav>
+
+<!-- Hero Section -->
+<section class="relative min-h-[85vh] flex items-center justify-center overflow-hidden pt-20 pb-12">
+<!-- Background Effects -->
+<div class="absolute inset-0 z-0">
+<div class="absolute top-0 left-1/2 -translate-x-1/2 w-[1000px] h-[600px] bg-teal/10 rounded-full blur-[120px] opacity-50 animate-pulse"></div>
+<div class="absolute bottom-0 right-0 w-[800px] h-[600px] bg-navy/80 rounded-full blur-[100px]"></div>
+</div>
+
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
+<div class="grid lg:grid-cols-2 gap-12 items-center">
+<!-- Left Column: Copy -->
+<div class="text-center lg:text-left">
+<div class="inline-block px-4 py-1.5 rounded-full border border-teal/30 bg-teal/10 text-teal text-sm font-bold mb-6 backdrop-blur-sm animate-bounce">
+✨ Week of November 24, 2025
+</div>
+<h1 class="text-5xl md:text-6xl lg:text-7xl font-poppins font-bold mb-6 leading-tight">
+Week of November 24, 2025
+</h1>
+<p class="text-xl text-muted-gray mb-8 font-inter leading-relaxed max-w-2xl mx-auto lg:mx-0">
+Join <span class="text-light-gray font-bold">250+ subscribers</span> getting verified insights on new launches, price trends, and infrastructure updates. No spam, just intelligence.
+</p>
+
+<div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-10">
+<button id="open-subscribe-modal" class="bg-teal hover:bg-teal/90 text-navy px-8 py-4 rounded-xl font-bold text-lg transition-all duration-300 shadow-[0_0_20px_rgba(0,212,255,0.3)] hover:shadow-[0_0_30px_rgba(0,212,255,0.5)] transform hover:-translate-y-1 flex items-center justify-center gap-2">
+<span>Get Weekly Insights</span>
+<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+</button>
+<a href="#projects-section" class="px-8 py-4 rounded-xl border border-gray-700 hover:border-teal/50 text-light-gray font-semibold transition-all duration-300 hover:bg-white/5">
+Explore Projects
+</a>
+</div>
+
+<!-- Social Proof (simple, grounded) -->
+<div class="flex items-center justify-center lg:justify-start gap-8 border-t border-gray-800 pt-8">
+<div>
+<p class="text-3xl font-bold text-white">250+</p>
+<p class="text-sm text-muted-gray">Subscribers so far</p>
+</div>
+</div>
+</div>
+
+<!-- Right Column: Newsletter Preview/Card -->
+<div class="hidden lg:block relative perspective-1000">
+<div class="relative z-10 bg-charcoal/90 backdrop-blur-xl border border-gray-700 rounded-2xl p-8 shadow-2xl transform rotate-y-[-5deg] hover:rotate-y-0 transition-transform duration-500">
+<!-- Header / Meta -->
+<div class="mb-6">
+<p class="text-xs font-mono text-muted-gray mb-1">From: <span class="text-light-gray font-semibold">NCR Launch Watch</span></p>
+<p class="text-xs font-mono text-muted-gray">Subject: <span class="text-light-gray">NCR Weekly Brief — Nov 24, 2025</span></p>
+</div>
+
+<h3 class="text-2xl font-bold text-white mb-4">Inside This Week&apos;s Issue</h3>
+
+<div class="space-y-4">
+<!-- Snippet 1 -->
+<article class="group relative p-4 bg-black/30 rounded-xl border border-gray-800 hover:border-teal/40 transition-all duration-300 overflow-hidden">
+<div class="flex items-start gap-3">
+<span class="text-2xl">🚀</span>
+<div>
+<h4 class="font-semibold text-light-gray mb-1">Trehan Iris x Knox: Wellness Living</h4>
+<p class="text-sm text-muted-gray">Trehan Iris partners with Knox for wellness-focused residential developments in Gurgaon.</p>
+</div>
+</div>
+</article>
+
+<!-- Snippet 2 -->
+<article class="group relative p-4 bg-black/30 rounded-xl border border-gray-800 hover:border-teal/40 transition-all duration-300 overflow-hidden">
+<div class="flex items-start gap-3">
+<span class="text-2xl">📈</span>
+<div>
+<h4 class="font-semibold text-light-gray mb-1">Noida RERA Approvals</h4>
+<p class="text-sm text-muted-gray">RERA approves projects worth ₹1,500 crore across flats and villas in Noida.</p>
+</div>
+</div>
+</article>
+
+<!-- Snippet 3 -->
+<article class="group relative p-4 bg-black/30 rounded-xl border border-gray-800 hover:border-teal/40 transition-all duration-300 overflow-hidden">
+<div class="flex items-start gap-3">
+<span class="text-2xl">💎</span>
+<div>
+<h4 class="font-semibold text-light-gray mb-1">The Monarque at Yamuna Expressway</h4>
+<p class="text-sm text-muted-gray">Greenbay launches &quot;The Monarque&quot; luxury residential project with ₹1,000 crore potential.</p>
+</div>
+</div>
+</article>
+</div>
+
+<div class="mt-6 pt-4 border-t border-gray-700 flex items-center justify-between text-sm text-muted-gray">
+<span>Read time: <span class="text-light-gray font-semibold">4 min</span></span>
+<span>Date: <span class="text-light-gray font-semibold">Nov 24, 2025</span></span>
+</div>
+
+<div class="mt-4 flex items-center justify-between">
+<button type="button" onclick="scrollToNewsletter()" class="px-4 py-2 rounded-lg bg-teal text-navy text-sm font-semibold hover:bg-teal/90 transition-colors">
+Preview Full Issue
+</button>
+<div class="flex gap-3 text-muted-gray text-xs">
+<span class="uppercase tracking-wide mr-1">Share:</span>
+<a href="#" class="hover:text-teal transition-colors">LinkedIn</a>
+<a href="#" class="hover:text-teal transition-colors">X</a>
+<a href="#" class="hover:text-teal transition-colors">WhatsApp</a>
+</div>
+</div>
+</div>
+
+<!-- Decor Elements -->
+<div class="absolute -top-10 -right-10 w-40 h-40 bg-gradient-to-br from-teal to-blue-600 rounded-full blur-[60px] opacity-40"></div>
+<div class="absolute -bottom-10 -left-10 w-40 h-40 bg-gradient-to-br from-gold to-orange-600 rounded-full blur-[60px] opacity-30"></div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- Newsletter Preview Modal -->
+<div id="issue-preview-modal" class="fixed inset-0 bg-black/70 backdrop-blur-sm z-50 hidden items-center justify-center px-4">
+<div class="glassmorphism max-w-3xl w-full rounded-2xl p-6 md:p-8 relative">
+<button id="close-issue-preview" class="absolute top-4 right-4 text-muted-gray hover:text-light-gray transition-colors">
+<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+</svg>
+</button>
+
+<header class="mb-6">
+<p class="text-xs font-mono text-muted-gray mb-1">From: <span class="text-light-gray font-semibold">NCR Launch Watch &lt;newsletter@ncrlaunchwatch.com&gt;</span></p>
+<p class="text-xs font-mono text-muted-gray mb-1">To: <span class="text-light-gray">You</span></p>
+<p class="text-xs font-mono text-muted-gray">Subject: <span class="text-light-gray">NCR Weekly Brief — Nov 24, 2025</span></p>
+</header>
+
+<div class="border border-gray-800 rounded-xl bg-navy/60 overflow-hidden">
+<div class="px-6 py-5 border-b border-gray-800 bg-gradient-to-r from-navy to-charcoal">
+<h2 class="text-2xl font-poppins font-bold gradient-text mb-1">NCR Launch Watch</h2>
+<p class="text-sm text-muted-gray">Delhi NCR Real Estate Intelligence • Nov 24, 2025 • 4 minute read</p>
+</div>
+<div class="px-6 py-6 space-y-5 max-h-[60vh] overflow-y-auto">
+<p class="text-sm text-muted-gray">
+This week, we track how Gurgaon&apos;s wellness-first launches, Noida&apos;s fresh supply and Yamuna Expressway&apos;s luxury plays are shaping the NCR investment map.
+</p>
+
+<div>
+<h3 class="text-sm font-semibold text-teal mb-1 uppercase tracking-wide">🚀 Gurgaon's Wellness-First Launch</h3>
+<p class="text-sm text-light-gray mb-1">Trehan Iris &amp; Knox bring a wellness-focused residential play to Gurgaon.</p>
+</div>
+
+<div>
+<h3 class="text-sm font-semibold text-teal mb-1 uppercase tracking-wide">📈 Noida’s Fresh Supply</h3>
+<p class="text-sm text-light-gray mb-1">RERA clears ₹1,500 crore worth of projects across flats and villas.</p>
+</div>
+
+<div>
+<h3 class="text-sm font-semibold text-teal mb-1 uppercase tracking-wide">💎 Yamuna Expressway Luxury Bet</h3>
+<p class="text-sm text-light-gray mb-1">Greenbay&apos;s &quot;The Monarque&quot; positions itself as a ₹1,000 crore luxury corridor play.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<!-- Intro / Full Newsletter Anchor Section -->
+<section id="newsletter-content" class="pt-0 pb-12 section-reveal">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="glassmorphism rounded-xl p-8 md:p-12">
+<div class="max-w-4xl mx-auto">
+<div class="intro mb-8 p-6 bg-charcoal rounded-lg border-l-4 border-teal">
+<p class="text-sm md:text-lg text-muted-gray font-inter leading-relaxed">
+This week witnessed significant regulatory actions and market movements across Delhi NCR, with land acquisitions indicating developer confidence and infrastructure developments reshaping micro-markets. The region continues its premiumisation trajectory, particularly in Gurgaon's high-street retail and Noida's emerging luxury corridors, while value-driven investments maintain strong momentum across residential segments.
+</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- City Cards Section -->
+<!-- (Same content as current Nov 24 page – omitted here for brevity but identical to index.html city sections) -->
+<!-- For implementation, we keep all the city cards, projects section, market deep dives, forms, share section, footer, modal, and scripts exactly as in the current enhanced page. -->
+
+<!-- The remainder of the body is identical to public/newsletter/2025/11/24/index.html -->
+<!-- BEGIN COPY of rest of body from existing index.html -->
+<!-- City Cards Section -->
+<section class="py-12 section-reveal">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="text-center mb-12">
+<h2 class="text-3xl md:text-4xl font-poppins font-bold gradient-text mb-4">Regional Updates</h2>
+<p class="text-lg text-muted-gray font-inter">Click on any city to explore the latest developments</p>
+</div>
+
+<div class="space-y-6">
+<!-- GURGAON Card -->
+<div class="city-card glassmorphism rounded-xl overflow-hidden">
+<div class="city-card-header p-6 flex justify-between items-center" data-city="gurgaon">
+<h2 class="text-2xl font-poppins font-bold text-light-gray">GURGAON</h2>
+<svg class="chevron-icon w-6 h-6 text-teal" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+</svg>
+</div>
+<div class="city-card-content">
+<div class="city-banner">GURGAON</div>
+<div class="article-list p-6 space-y-6">
+<article class="pb-6 border-b border-gray-800">
+<h3 class="text-xl font-poppins font-semibold text-light-gray mb-3">Trehan Iris partners with Knox for wellness-focused living</h3>
+<p class="text-muted-gray font-inter leading-relaxed">Trehan Iris has partnered with Knox to introduce a new era of wellness-focused residential developments in Gurgaon. Industry analysts note this collaboration reflects the growing demand for health-centric amenities in premium housing projects, a trend accelerated by post-pandemic lifestyle preferences.</p>
+</article>
+
+<article class="pb-6 border-b border-gray-800">
+<h3 class="text-xl font-poppins font-semibold text-light-gray mb-3">Central Park announces ₹2,000 crore luxury project on Dwarka Expressway</h3>
+<p class="text-muted-gray font-inter leading-relaxed">Central Park will invest ₹2,000 crore in a luxury residential project along the Dwarka Expressway, targeting the ultra-premium segment. Market observers highlight how the expressway corridor is emerging as Gurgaon's next luxury destination, with improved connectivity driving developer interest.</p>
+</article>
+
+<article class="pb-6 border-b border-gray-800">
+<h3 class="text-xl font-poppins font-semibold text-light-gray mb-3">Starbucks Reserve store signals premium retail expansion</h3>
+<p class="text-muted-gray font-inter leading-relaxed">Starbucks has marked a major milestone with a new Reserve store in Gurgaon, joining other premium international brands like Magnolia Bakery. Industry watchers believe this influx of global premium retailers signals a significant shift in Gurgaon's positioning, creating a micro-premiumisation effect that enhances property values in surrounding areas.</p>
+</article>
+
+<article class="pb-6 border-b border-gray-800">
+<h3 class="text-xl font-poppins font-semibold text-light-gray mb-3">Max Estates' forest-themed project gains traction</h3>
+<p class="text-muted-gray font-inter leading-relaxed">Max Estates' upcoming forest-themed project near Dwarka Expressway is generating strong market interest. The location context suggests developers are increasingly leveraging natural surroundings as a key differentiator in Gurgaon's competitive luxury market.</p>
+</article>
+
+<article class="pb-6 border-b border-gray-800">
+<h3 class="text-xl font-poppins font-semibold text-light-gray mb-3">Godrej commercial project to enhance Golf Course Road ecosystem</h3>
+<p class="text-muted-gray font-inter leading-relaxed">Godrej Properties is developing a premium commercial project on Golf Course Road, further strengthening the area's position as a corporate hub. Market analysts highlight how such developments are creating self-sustaining ecosystems where premium residential and commercial spaces complement each other.</p>
+</article>
+
+<article class="pb-6 border-b border-gray-800">
+<h3 class="text-xl font-poppins font-semibold text-light-gray mb-3">New design philosophy: creating shared vistas</h3>
+<p class="text-muted-gray font-inter leading-relaxed">Industry observers note an emerging trend where Gurgaon developers are designing projects to create shared vistas and uninterrupted sightlines. This architectural approach enhances the premium perception of multiple developments simultaneously, creating value across micro-locations.</p>
+</article>
+</div>
+</div>
+</div>
+
+<!-- NOIDA Card -->
+<div class="city-card glassmorphism rounded-xl overflow-hidden">
+<div class="city-card-header p-6 flex justify-between items-center" data-city="noida">
+<h2 class="text-2xl font-poppins font-bold text-light-gray">NOIDA</h2>
+<svg class="chevron-icon w-6 h-6 text-teal" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+</svg>
+</div>
+<div class="city-card-content">
+<div class="city-banner">NOIDA</div>
+<div class="article-list p-6 space-y-6">
+<article class="pb-6 border-b border-gray-800">
+<h3 class="text-xl font-poppins font-semibold text-light-gray mb-3">RERA approves projects worth ₹1,500 crore</h3>
+<p class="text-muted-gray font-inter leading-relaxed">Noida's RERA has approved projects worth ₹1,500 crore, including both flats and villas, indicating regulatory confidence in the market. These approvals are expected to add approximately 2,500 housing units to address the region's supply-demand gap.</p>
+</article>
+
+<article class="pb-6 border-b border-gray-800">
+<h3 class="text-xl font-poppins font-semibold text-light-gray mb-3">County Group acquires 5-acre land parcel for ₹473 crore</h3>
+<p class="text-muted-gray font-inter leading-relaxed">County Group has acquired a 5-acre land parcel in Noida for ₹473 crore, signaling strong developer confidence in the region. Market analysts note this acquisition is strategically positioned near Experion's Sector 151 project, potentially creating a premium micro-cluster.</p>
+</article>
+
+<article class="pb-6 border-b border-gray-800">
+<h3 class="text-xl font-poppins font-semibold text-light-gray mb-3">Experion Sector 151 emerges as premium cluster</h3>
+<p class="text-muted-gray font-inter leading-relaxed">Experion's Sector 151 project is gaining prominence as a premium residential destination, particularly with its proximity to the TCS campus. The location context suggests strong potential for rental yields and capital appreciation, with connectivity improvements further enhancing its attractiveness.</p>
+</article>
+
+<article class="pb-6 border-b border-gray-800">
+<h3 class="text-xl font-poppins font-semibold text-light-gray mb-3">DAMAC opens GCC in Noida</h3>
+<p class="text-muted-gray font-inter leading-relaxed">Dubai-based DAMAC has opened a Global Capability Center in Noida, with plans for a second facility in Pune. This development underscores Noida's growing appeal to international corporates, potentially boosting demand for premium housing in the vicinity.</p>
+</article>
+
+<article class="pb-6 border-b border-gray-800">
+<h3 class="text-xl font-poppins font-semibold text-light-gray mb-3">Noida's retail boom driven by airport connectivity</h3>
+<p class="text-muted-gray font-inter leading-relaxed">Noida's retail sector is experiencing significant growth, driven by the upcoming Noida International Airport and improved connectivity. Market analysts highlight how infrastructure developments are transforming Noida into a commercial hub, attracting both national and international retail brands.</p>
+</article>
+
+<article class="pb-6 border-b border-gray-800">
+<h3 class="text-xl font-poppins font-semibold text-light-gray mb-3">New development narrative replacing JP legacy</h3>
+<p class="text-muted-gray font-inter leading-relaxed">Industry observers note that Noida is witnessing a shift in its development narrative, with stronger developers replacing the JP legacy. This transition is bringing improved execution capabilities and financial stability to projects across the region.</p>
+</article>
+</div>
+</div>
+</div>
+
+<!-- GREATER NOIDA Card -->
+<div class="city-card glassmorphism rounded-xl overflow-hidden">
+<div class="city-card-header p-6 flex justify-between items-center" data-city="greater-noida">
+<h2 class="text-2xl font-poppins font-bold text-light-gray">GREATER NOIDA</h2>
+<svg class="chevron-icon w-6 h-6 text-teal" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+</svg>
+</div>
+<div class="city-card-content">
+<div class="city-banner">GREATER NOIDA</div>
+<div class="article-list p-6 space-y-6">
+<article class="pb-6 border-b border-gray-800">
+<h3 class="text-xl font-poppins font-semibold text-light-gray mb-3">NBCC sells 609 Amrapali units for ₹1,070 crore via e-auction</h3>
+<p class="text-muted-gray font-inter leading-relaxed">NBCC has sold 609 Amrapali units in Greater Noida for ₹1,070 crore through e-auction, marking progress in the resolution of stalled projects. This development brings relief to homebuyers who have been awaiting possession for several years.</p>
+</article>
+
+<article class="pb-6 border-b border-gray-800">
+<h3 class="text-xl font-poppins font-semibold text-light-gray mb-3">Authority to act against realtors over pending registries</h3>
+<p class="text-muted-gray font-inter leading-relaxed">Greater Noida Authority is set to take action against realtors regarding pending registries and dues. This regulatory enforcement is expected to bring more accountability to the sector, potentially benefiting homebuyers in the long term.</p>
+</article>
+</div>
+</div>
+</div>
+
+<!-- DELHI Card -->
+<div class="city-card glassmorphism rounded-xl overflow-hidden">
+<div class="city-card-header p-6 flex justify-between items-center" data-city="delhi">
+<h2 class="text-2xl font-poppins font-bold text-light-gray">DELHI</h2>
+<svg class="chevron-icon w-6 h-6 text-teal" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+</svg>
+</div>
+<div class="city-card-content">
+<div class="city-banner">DELHI</div>
+<div class="article-list p-6 space-y-6">
+<article class="pb-6 border-b border-gray-800">
+<h3 class="text-xl font-poppins font-semibold text-light-gray mb-3">Circle rate overhaul to align with market prices</h3>
+<p class="text-muted-gray font-inter leading-relaxed">Delhi is planning a major circle rate overhaul to align property valuations with current market prices. This move is expected to bring more transparency to transactions and potentially impact the overall real estate market dynamics in the capital.</p>
+</article>
+
+<article class="pb-6 border-b border-gray-800">
+<h3 class="text-xl font-poppins font-semibold text-light-gray mb-3">Khan Market retains global premium position</h3>
+<p class="text-muted-gray font-inter leading-relaxed">Delhi's Khan Market has retained its position among the world's most expensive retail destinations, reinforcing the capital's appeal to luxury brands. This distinction highlights the continued strength of Delhi's premium retail segment despite emerging competition from NCR micro-markets.</p>
+</article>
+
+<article class="pb-6 border-b border-gray-800">
+<h3 class="text-xl font-poppins font-semibold text-light-gray mb-3">Southern Ridge declared reserve forest after 31 years</h3>
+<p class="text-muted-gray font-inter leading-relaxed">Delhi has finally declared 4,080 hectares of Southern Ridge as reserve forest after 31 years of deliberation. This environmental protection measure is expected to enhance the green cover and potentially increase property values in surrounding areas.</p>
+</article>
+
+<article class="pb-6 border-b border-gray-800">
+<h3 class="text-xl font-poppins font-semibold text-light-gray mb-3">Danube's Shahrukhz towers planned for Delhi</h3>
+<p class="text-muted-gray font-inter leading-relaxed">Shahrukhz by Danube, which debuted in Dubai, is planning similar towers in Delhi among other global cities. This international development concept reflects Delhi's growing appeal to global developers and its position in the ultra-luxury segment.</p>
+</article>
+</div>
+</div>
+</div>
+
+<!-- YAMUNA EXPRESSWAY Card -->
+<div class="city-card glassmorphism rounded-xl overflow-hidden">
+<div class="city-card-header p-6 flex justify-between items-center" data-city="yamuna-expressway">
+<h2 class="text-2xl font-poppins font-bold text-light-gray">YAMUNA EXPRESSWAY</h2>
+<svg class="chevron-icon w-6 h-6 text-teal" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+</svg>
+</div>
+<div class="city-card-content">
+<div class="city-banner">YAMUNA EXPRESSWAY</div>
+<div class="article-list p-6 space-y-6">
+<article class="pb-6 border-b border-gray-800">
+<h3 class="text-xl font-poppins font-semibold text-light-gray mb-3">Greenbay launches "The Monarque" luxury project</h3>
+<p class="text-muted-gray font-inter leading-relaxed">Greenbay Infrastructure has launched "The Monarque," a luxury residential project at Yamuna Expressway with an estimated revenue potential of ₹1,000 crore. This development underscores the corridor's transformation into a premium residential destination.</p>
+</article>
+
+<article class="pb-6 border-b border-gray-800">
+<h3 class="text-xl font-poppins font-semibold text-light-gray mb-3">Adani Group to acquire Jaypee assets</h3>
+<p class="text-muted-gray font-inter leading-relaxed">Adani Enterprises has been chosen to acquire Jaypee Group assets despite offering less than Vedanta. Industry analysts believe this acquisition could bring better preparedness and longer-term vision to projects along the Yamuna Expressway, potentially accelerating development in the region.</p>
+</article>
+
+<article class="pb-6 border-b border-gray-800">
+<h3 class="text-xl font-poppins font-semibold text-light-gray mb-3">Gaur Chrysalis benefits from airport proximity</h3>
+<p class="text-muted-gray font-inter leading-relaxed">Gaur Chrysalis, located near the Noida International Airport corridor, is gaining increased attention as the airport nears completion. The project exemplifies how airport connectivity is reshaping real estate dynamics along the Yamuna Expressway.</p>
+</article>
+</div>
+</div>
+</div>
+
+<!-- NCR (REGION-WIDE) Card -->
+<div class="city-card glassmorphism rounded-xl overflow-hidden">
+<div class="city-card-header p-6 flex justify-between items-center" data-city="ncr">
+<h2 class="text-2xl font-poppins font-bold text-light-gray">NCR (REGION-WIDE)</h2>
+<svg class="chevron-icon w-6 h-6 text-teal" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+</svg>
+</div>
+<div class="city-card-content">
+<div class="city-banner">NCR REGION-WIDE</div>
+<div class="article-list p-6 space-y-6">
+<article class="pb-6 border-b border-gray-800">
+<h3 class="text-xl font-poppins font-semibold text-light-gray mb-3">Commercial Grade A supply surge of 5 million sqft</h3>
+<p class="text-muted-gray font-inter leading-relaxed">Delhi NCR commercial real estate is set for a major supply boost with 5 million sqft of new Grade A space expected in the coming months. This addition will address the growing demand from domestic and international companies expanding their presence in the region.</p>
+</article>
+
+<article class="pb-6 border-b border-gray-800">
+<h3 class="text-xl font-poppins font-semibold text-light-gray mb-3">Magicbricks report: NCR outperforms in rental market</h3>
+<p class="text-muted-gray font-inter leading-relaxed">According to Magicbricks rental index report, rentals have stabilized across India, with NCR outperforming strongly. This trend indicates robust demand for rental properties, particularly in premium residential segments across the region.</p>
+</article>
+
+<article class="pb-6 border-b border-gray-800">
+<h3 class="text-xl font-poppins font-semibold text-light-gray mb-3">Top 28 listed realty firms sell ₹92,500 crore properties</h3>
+<p class="text-muted-gray font-inter leading-relaxed">Top 28 listed realty firms sold properties worth ₹92,500 crore in April-September, with Prestige Group leading the sales. This performance reflects the overall strength of the real estate sector and consumer confidence despite economic uncertainties.</p>
+</article>
+
+<article class="pb-6 border-b border-gray-800">
+<h3 class="text-xl font-poppins font-semibold text-light-gray mb-3">Lodha enters NCR with ₹1,900 crore investment</h3>
+<p class="text-muted-gray font-inter leading-relaxed">Lodha will invest ₹1,900 crore in a Delhi NCR project, marking the Mumbai-based developer's significant entry into the region. The project is eyed for April 2026 launch, indicating long-term confidence in NCR's real estate market.</p>
+</article>
+
+<article class="pb-6 border-b border-gray-800">
+<h3 class="text-xl font-poppins font-semibold text-light-gray mb-3">ATS Homekraft repays ₹1,250 crore to HDFC Capital</h3>
+<p class="text-muted-gray font-inter leading-relaxed">ATS Homekraft has repaid ₹1,250 crore to HDFC Capital, demonstrating the financial strength of the developer. This repayment reflects the improving financial health of established developers in the NCR region.</p>
+</article>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- Projects to Watch Section -->
+<section id="projects-section" class="py-20 relative overflow-hidden">
+<!-- Dynamic Background -->
+<div class="absolute inset-0 opacity-30 pointer-events-none">
+<div class="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_50%_50%,rgba(0,212,255,0.1),transparent_70%)]"></div>
+</div>
+
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+<div class="text-center mb-16">
+<span class="text-teal font-mono text-sm tracking-widest uppercase mb-2 block">Curated Selection</span>
+<h2 class="text-4xl md:text-6xl font-poppins font-bold mb-6">
+<span class="gradient-text">Projects to Watch</span>
+</h2>
+<p class="text-xl text-muted-gray font-inter max-w-2xl mx-auto">
+A glimpse into the future of NCR living. Handpicked developments setting new benchmarks.
+</p>
+</div>
+
+<!-- City Navigation -->
+<div class="flex justify-center mb-8">
+<div class="city-nav-scroll flex space-x-4 overflow-x-auto pb-2 px-2 max-w-full">
+<button onclick="switchCity('gurgaon')" class="city-nav-btn active group flex flex-col items-center px-4 py-2 rounded-xl min-w-[110px] cursor-pointer" data-city="gurgaon">
+<span class="city-icon text-xs mb-1 text-muted-gray tracking-wide">GURGAON</span>
+<span class="h-1 w-8 rounded-full bg-teal/70 group-hover:bg-teal transition-colors"></span>
+</button>
+<button onclick="switchCity('noida')" class="city-nav-btn group flex flex-col items-center px-4 py-2 rounded-xl min-w-[110px] cursor-pointer" data-city="noida">
+<span class="city-icon text-xs mb-1 text-muted-gray tracking-wide">NOIDA</span>
+<span class="h-1 w-8 rounded-full bg-gray-700 group-hover:bg-teal transition-colors"></span>
+</button>
+<button onclick="switchCity('greater-noida')" class="city-nav-btn group flex flex-col items-center px-4 py-2 rounded-xl min-w-[130px] cursor-pointer" data-city="greater-noida">
+<span class="city-icon text-xs mb-1 text-muted-gray tracking-wide">GREATER NOIDA</span>
+<span class="h-1 w-8 rounded-full bg-gray-700 group-hover:bg-teal transition-colors"></span>
+</button>
+<button onclick="switchCity('yamuna-expressway')" class="city-nav-btn group flex flex-col items-center px-4 py-2 rounded-xl min-w-[140px] cursor-pointer" data-city="yamuna-expressway">
+<span class="city-icon text-xs mb-1 text-muted-gray tracking-wide">YAMUNA EXPRESSWAY</span>
+<span class="h-1 w-8 rounded-full bg-gray-700 group-hover:bg-teal transition-colors"></span>
+</button>
+</div>
+</div>
+
+<!-- Projects Grid -->
+<div id="projects-grid" class="grid grid-cols-1 md:grid-cols-2 gap-8 min-h-[400px]">
+<!-- Projects injected via JS -->
+</div>
+
+<!-- Lead Capture -->
+<div class="mt-20 relative group">
+<div class="absolute -inset-1 bg-gradient-to-r from-teal to-gold rounded-2xl blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200"></div>
+<div class="relative glassmorphism rounded-2xl p-8 md:p-12 overflow-hidden">
+<div class="grid md:grid-cols-2 gap-12 items-center">
+<div>
+<h3 class="text-3xl font-bold font-poppins text-white mb-4">Don't Just Watch. Act.</h3>
+<p class="text-muted-gray mb-8 text-lg">Get exclusive pre-launch pricing and detailed investment analysis for these projects before they hit the public market.</p>
+<div class="flex flex-col sm:flex-row gap-4">
+<button onclick="document.getElementById('open-subscribe-modal').click()" class="bg-teal text-navy px-8 py-4 rounded-lg font-bold text-lg hover:shadow-[0_0_20px_rgba(0,212,255,0.4)] transition-all duration-300 transform hover:-translate-y-1">
+Schedule Strategy Call
+</button>
+<button onclick="document.getElementById('open-subscribe-modal').click()" class="border border-gray-600 text-light-gray px-8 py-4 rounded-lg font-bold text-lg hover:border-teal hover:text-teal transition-all duration-300">
+Download Reports
+</button>
+</div>
+</div>
+<div class="hidden md:block relative">
+<div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-teal/20 rounded-full blur-[100px]"></div>
+<div class="relative rounded-lg border border-white/10 bg-gradient-to-br from-navy to-charcoal p-6 shadow-2xl">
+<p class="text-sm text-muted-gray mb-2 uppercase tracking-wide">Snapshot</p>
+<p class="text-light-gray text-lg font-semibold">Get a text-first brief of every launch that matters – before the hoardings go up.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- Market Deep Dives Section -->
+<section class="py-12 section-reveal">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="text-center mb-12">
+<h2 class="text-3xl md:text-4xl font-poppins font-bold gradient-text mb-4">MARKET DEEP DIVES</h2>
+</div>
+
+<div class="space-y-8">
+<div class="glassmorphism rounded-xl p-8 md:p-12 hover-lift">
+<h3 class="text-2xl font-poppins font-bold text-light-gray mb-6">The Rise of Dual-Parcel Planning</h3>
+<p class="text-muted-gray font-inter leading-relaxed">
+Industry observers note an emerging trend of developers strategically aligning adjacent land parcels to create enhanced value propositions. This approach allows for shared green views, uninterrupted internal vistas, and a more premium perception across multiple developments. The County–Experion Sector 151 cluster exemplifies this strategy.
+</p>
+</div>
+
+<div class="glassmorphism rounded-xl p-8 md:p-12 hover-lift">
+<h3 class="text-2xl font-poppins font-bold text-light-gray mb-6">The Premiumisation of Gurgaon Through High-Street Global Brands</h3>
+<p class="text-muted-gray font-inter leading-relaxed">
+Starbucks Reserve, Magnolia Bakery, and upcoming ultra-premium retailers are creating a halo effect that elevates entire micro-markets like Golf Course Road and Dwarka Expressway.
+</p>
+</div>
+
+<div class="glassmorphism rounded-xl p-8 md:p-12 hover-lift">
+<h3 class="text-2xl font-poppins font-bold text-light-gray mb-6">Value-Driven Investing Continues to Dominate</h3>
+<p class="text-muted-gray font-inter leading-relaxed">
+Strong responses for projects like Birla Pravaah show that buyers continue prioritising strong location fundamentals, future potential, and pricing power over branding or themes.
+</p>
+</div>
+</div>
+</div>
+</section>
+
+<!-- Signup Form Section -->
+<section id="subscribe" class="py-20 section-reveal relative overflow-hidden">
+<!-- Background Glow -->
+<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-teal/5 rounded-full blur-[100px]"></div>
+
+<div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+<div class="glassmorphism rounded-2xl p-1 bg-gradient-to-b from-gray-700 to-gray-800">
+<div class="bg-charcoal rounded-xl p-8 md:p-16 text-center">
+<div class="w-16 h-16 bg-teal/10 rounded-2xl flex items-center justify-center mx-auto mb-6 rotate-3">
+<svg class="w-8 h-8 text-teal" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+</div>
+
+<h2 class="text-3xl md:text-5xl font-poppins font-bold mb-4">
+Start Your Week <span class="gradient-text">Smarter</span>
+</h2>
+<p class="text-xl text-muted-gray font-inter mb-8 max-w-xl mx-auto">
+Join 250+ subscribers who read NCR Launch Watch every Monday morning. Verified data, no fluff.
+</p>
+
+<!-- FORM: kept EXACTLY as in existing Nov 24 page -->
+<form id="newsletter-form" method="POST" action="" class="max-w-md mx-auto space-y-4 text-left">
+<div>
+<label class="block text-xs font-bold text-muted-gray uppercase tracking-wider mb-2 ml-1">Your Details</label>
+<input type="text" name="fullName" placeholder="Full Name" class="w-full px-4 py-4 bg-black/50 border border-gray-700 rounded-xl text-light-gray focus:outline-none focus:border-teal transition-colors" required>
+</div>
+<div>
+<input type="email" name="email" placeholder="Email Address" class="w-full px-4 py-4 bg-black/50 border border-gray-700 rounded-xl text-light-gray focus:outline-none focus:border-teal transition-colors" required>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<input type="tel" name="phone" placeholder="Phone Number" class="w-full px-4 py-4 bg-black/50 border border-gray-700 rounded-xl text-light-gray focus:outline-none focus:border-teal transition-colors">
+<select name="role" class="w-full px-4 py-4 bg-black/50 border border-gray-700 rounded-xl text-light-gray focus:outline-none focus:border-teal transition-colors appearance-none">
+<option value="">Select your role</option>
+<option value="investor">Real Estate Investor</option>
+<option value="end-user">End-user Buyer</option>
+<option value="professional">Industry Professional</option>
+</select>
+</div>
+
+<button type="submit" class="w-full bg-teal hover:bg-teal/90 text-navy py-4 rounded-xl font-bold text-lg transition-all duration-200 hover:shadow-[0_0_20px_rgba(0,212,255,0.3)] transform hover:-translate-y-1 mt-6">
+Subscribe for Free
+</button>
+
+<p class="text-center text-xs text-gray-500 mt-4">
+🔒 Unsubscribe at any time. No spam guarantee.
+</p>
+</form>
+</div>
+</div>
+</div>
+</section>
+
+<!-- Why Subscribe Section -->
+<section class="py-20 section-reveal bg-black/20">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="text-center mb-16">
+<h2 class="text-3xl md:text-4xl font-poppins font-bold gradient-text mb-4">Why NCR Launch Watch?</h2>
+<p class="text-xl text-muted-gray">Trusted by 250+ smart investors</p>
+</div>
+
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Benefit 1 -->
+<div class="glassmorphism rounded-xl p-8 hover-lift border-t-4 border-teal">
+<div class="text-4xl mb-6">🎯</div>
+<h3 class="text-xl font-poppins font-semibold mb-4 text-light-gray">Verified Intelligence</h3>
+<p class="text-muted-gray font-inter leading-relaxed">
+"The only newsletter that cuts through the broker hype. I saved ₹12L on my last booking thanks to their pre-launch analysis."
+</p>
+<div class="flex items-center mt-6">
+<div class="w-10 h-10 bg-gray-700 rounded-full flex items-center justify-center font-bold text-teal">R</div>
+<div class="ml-3">
+<p class="text-sm font-bold text-white">Rajesh K.</p>
+<p class="text-xs text-muted-gray">Real Estate Investor</p>
+</div>
+</div>
+</div>
+
+<!-- Benefit 2 -->
+<div class="glassmorphism rounded-xl p-8 hover-lift border-t-4 border-gold">
+<div class="text-4xl mb-6">⚡</div>
+<h3 class="text-xl font-poppins font-semibold mb-4 text-light-gray">Speed Advantage</h3>
+<p class="text-muted-gray font-inter leading-relaxed">
+"I get project details 3-4 days before they hit the market. That early mover advantage is worth its weight in gold."
+</p>
+<div class="flex items-center mt-6">
+<div class="w-10 h-10 bg-gray-700 rounded-full flex items-center justify-center font-bold text-gold">A</div>
+<div class="ml-3">
+<p class="text-sm font-bold text-white">Ananya S.</p>
+<p class="text-xs text-muted-gray">Homebuyer</p>
+</div>
+</div>
+</div>
+
+<!-- Benefit 3 -->
+<div class="glassmorphism rounded-xl p-8 hover-lift border-t-4 border-teal">
+<div class="text-4xl mb-6">📊</div>
+<h3 class="text-xl font-poppins font-semibold mb-4 text-light-gray">Data-Driven</h3>
+<p class="text-muted-gray font-inter leading-relaxed">
+"No fluff, just hard numbers. The comparison charts and rental yield analysis help me make logical decisions."
+</p>
+<div class="flex items-center mt-6">
+<div class="w-10 h-10 bg-gray-700 rounded-full flex items-center justify-center font-bold text-teal">V</div>
+<div class="ml-3">
+<p class="text-sm font-bold text-white">Vikram M.</p>
+<p class="text-xs text-muted-gray">Portfolio Manager</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- Share Section -->
+<section class="py-8 border-t border-gray-800">
+<div class="max-w-7xl mx-auto px-4 text-center">
+<button id="share-button" type="button" class="text-muted-gray mb-4 text-sm inline-flex items-center gap-2 hover:text-teal transition-colors">
+<span>Share this edition with your network</span>
+</button>
+<div class="flex justify-center gap-4">
+<span class="text-light-gray"><svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg></span>
+<span class="text-light-gray"><svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/></svg></span>
+<span class="text-light-gray"><svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg></span>
+</div>
+</div>
+</section>
+
+<!-- Footer -->
+<footer class="bg-navy border-t border-gray-800 py-12">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+<div>
+<h3 class="text-xl font-poppins font-bold gradient-text mb-4">NCR Launch Watch</h3>
+<p class="text-muted-gray font-inter leading-relaxed">Premium real estate intelligence for Delhi NCR. Track launches, analyze markets, make informed decisions.</p>
+</div>
+<div>
+<h4 class="font-poppins font-semibold text-light-gray mb-4">Connect</h4>
+<ul class="space-y-2">
+<li><a href="https://www.linkedin.com/in/bhavik-aggarwal-5b87571a8/" class="text-muted-gray hover:text-teal transition-colors duration-200">LinkedIn</a></li>
+<li><a href="https://www.instagram.com/realestatewithbhavik" class="text-muted-gray hover:text-teal transition-colors duration-200">Instagram</a></li>
+<li><a href="mailto:realestatewithbhavik@gmail.com" class="text-muted-gray hover:text-teal transition-colors duration-200">Email</a></li>
+</ul>
+</div>
+</div>
+<div class="border-t border-gray-800 mt-8 pt-8 text-center">
+<p class="text-muted-gray font-inter">© 2025 NCR Launch Watch. All Rights Reserved.</p>
+</div>
+</div>
+</footer>
+
+<!-- Subscribe Modal -->
+<div id="subscribe-modal" class="fixed inset-0 bg-black bg-opacity-50 backdrop-blur-sm z-50 hidden flex items-center justify-center">
+<div class="glassmorphism rounded-xl p-8 max-w-md w-full mx-4 relative">
+<button id="close-subscribe-modal" class="absolute top-4 right-4 text-muted-gray hover:text-light-gray transition-colors">
+<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+</svg>
+</button>
+<div class="text-center mb-6">
+<h3 class="text-2xl font-poppins font-bold gradient-text mb-2">Get the Latest Edition</h3>
+<p class="text-muted-gray font-inter">Delivered instantly. New issue every Monday.</p>
+</div>
+<!-- MODAL FORM: kept EXACTLY as existing -->
+<form id="modal-newsletter-form" method="POST" action="">
+<div class="space-y-4">
+<input type="text" name="fullName" placeholder="Full Name" class="w-full px-4 py-3 bg-charcoal border border-gray-700 rounded-lg text-light-gray focus:outline-none focus:border-teal" required>
+<input type="email" name="email" placeholder="Email Address" class="w-full px-4 py-3 bg-charcoal border border-gray-700 rounded-lg text-light-gray focus:outline-none focus:border-teal" required>
+<input type="tel" name="phone" placeholder="Phone Number" class="w-full px-4 py-3 bg-charcoal border border-gray-700 rounded-lg text-light-gray focus:outline-none focus:border-teal">
+<select name="role" class="w-full px-4 py-3 bg-charcoal border border-gray-700 rounded-lg text-light-gray focus:outline-none focus:border-teal">
+<option value="">Select your role</option>
+<option value="investor">Real Estate Investor</option>
+<option value="end-user">End-user Buyer</option>
+<option value="professional">Industry Professional</option>
+</select>
+<button type="submit" class="w-full bg-teal hover:bg-opacity-80 text-navy py-4 rounded-lg font-semibold text-lg transition-all duration-200 hover:glow-effect">
+Get the Latest Edition
+</button>
+</div>
+</form>
+</div>
+</div>
+
+<script>
+// Mobile menu toggle
+const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+const mobileMenu = document.getElementById('mobile-menu');
+
+if (mobileMenuBtn && mobileMenu) {
+mobileMenuBtn.addEventListener('click', () => {
+mobileMenu.classList.toggle('hidden');
+});
+}
+
+// City card collapse/expand functionality
+const cityCardHeaders = document.querySelectorAll('.city-card-header');
+cityCardHeaders.forEach(header => {
+header.addEventListener('click', () => {
+const cityCard = header.closest('.city-card');
+cityCard.classList.toggle('expanded');
+});
+});
+
+// Subscribe modal handlers
+const openModalBtn = document.getElementById('open-subscribe-modal');
+const closeModalBtn = document.getElementById('close-subscribe-modal');
+const subscribeModal = document.getElementById('subscribe-modal');
+
+if (openModalBtn && subscribeModal) {
+openModalBtn.addEventListener('click', () => {
+subscribeModal.classList.remove('hidden');
+subscribeModal.classList.add('flex');
+document.body.style.overflow = 'hidden';
+});
+}
+
+if (closeModalBtn && subscribeModal) {
+closeModalBtn.addEventListener('click', () => {
+subscribeModal.classList.add('hidden');
+subscribeModal.classList.remove('flex');
+document.body.style.overflow = '';
+});
+}
+
+// Close modal when clicking outside
+if (subscribeModal) {
+subscribeModal.addEventListener('click', (e) => {
+if (e.target === subscribeModal) {
+subscribeModal.classList.add('hidden');
+subscribeModal.classList.remove('flex');
+document.body.style.overflow = '';
+}
+});
+}
+
+// Form submission handlers (UNCHANGED)
+const modalNewsletterForm = document.getElementById('modal-newsletter-form');
+if (modalNewsletterForm) {
+modalNewsletterForm.addEventListener('submit', function(e) {
+e.preventDefault();
+// Form submission will be handled by Google Apps Script
+alert('Thank you for subscribing! You will receive the latest edition shortly.');
+subscribeModal.classList.add('hidden');
+subscribeModal.classList.remove('flex');
+document.body.style.overflow = '';
+});
+}
+
+const newsletterForm = document.getElementById('newsletter-form');
+if (newsletterForm) {
+newsletterForm.addEventListener('submit', function(e) {
+e.preventDefault();
+// Form submission will be handled by Google Apps Script
+alert('Thank you for subscribing! You will receive the latest edition shortly.');
+});
+}
+
+// Scroll reveal animation
+const observerOptions = {
+threshold: 0.1,
+rootMargin: '0px 0px -50px 0px'
+};
+
+const observer = new IntersectionObserver((entries) => {
+entries.forEach(entry => {
+if (entry.isIntersecting) {
+entry.target.classList.add('revealed');
+}
+});
+}, observerOptions);
+
+document.querySelectorAll('.section-reveal').forEach(section => {
+observer.observe(section);
+});
+
+function scrollToNewsletter() {
+const target = document.getElementById('newsletter-content');
+if (!target) return;
+const top = target.offsetTop - 80;
+window.scrollTo({ top, behavior: 'smooth' });
+}
+
+// Share this edition
+const shareButton = document.getElementById('share-button');
+if (shareButton) {
+const shareText = 'Check out this NCR Launch Watch newsletter: NCR Weekly Brief — Nov 24, 2025';
+const shareUrl = window.location.href;
+
+const handleShare = () => {
+if (navigator.share) {
+navigator.share({
+title: 'NCR Weekly Brief — Nov 24, 2025',
+text: shareText,
+url: shareUrl
+}).catch(() => {});
+} else {
+const linkedInUrl = 'https://www.linkedin.com/sharing/share-offsite/?url=' + encodeURIComponent(shareUrl);
+window.open(linkedInUrl, '_blank', 'noopener');
+}
+};
+
+shareButton.addEventListener('click', handleShare);
+}
+
+// Projects Data and Logic (unchanged structure, includes new projects)
+const projectsData = {
+'gurgaon': [
+{
+id: 'g1',
+name: "Max Estates 361",
+location: "Sector 36A",
+description: "Ultra-luxury residences in the heart of new Gurgaon.",
+usp: "70% green coverage with a forest-themed living experience.",
+price: "₹5.5 Cr - ₹9.2 Cr",
+type: "luxury",
+amenities: ["Forest Living", "Concierge", "Heated Pool"]
+},
+{
+id: 'g2',
+name: "Aashiana Aaroham",
+location: "Gurgaon",
+description: "Premium low-rise development offering spacious homes.",
+usp: "Exclusive community living with resort-style amenities.",
+price: "₹2.8 Cr - ₹4.5 Cr",
+type: "premium",
+amenities: ["Low Density", "Clubhouse", "Sports Arena"]
+},
+{
+id: 'g3',
+name: "Conscient Elaira Phase 2",
+location: "Sector 80",
+description: "Contemporary homes in a prime Sector 80 location.",
+usp: "Uninterrupted views of the Aravalli skyline.",
+price: "₹3.2 Cr - ₹5.0 Cr",
+type: "premium",
+amenities: ["Sky Deck", "Infinity Pool", "Smart Homes"]
+},
+{
+id: 'g4',
+name: "Trehan Iris Sector 80",
+location: "Gurgaon",
+description: "Wellness-focused residential project in partnership with Knox.",
+usp: "Integrated health and wellness amenities for modern living.",
+price: "₹2.5 Cr - ₹3.8 Cr",
+type: "mid-segment",
+amenities: ["Wellness Center", "Organic Cafe", "Yoga Studio"]
+},
+{
+id: 'g5',
+name: "Emaar Serenity Hills",
+location: "Sector 86, New Gurgaon",
+description: "Residential development in Sector 86, New Gurgaon.",
+usp: "25+ acre project with premium amenities and modern infrastructure.",
+price: "₹3.0 Cr - ₹4.5 Cr",
+type: "premium",
+amenities: ["Clubhouse", "Landscaped Greens", "Retail Plaza"]
+}
+],
+'noida': [
+{
+id: 'n1',
+name: "Experion Sector 151",
+location: "Noida",
+description: "Premium apartments near the TCS campus.",
+usp: "Proximity to a major corporate hub ensures high rental demand.",
+price: "₹2.1 Cr - ₹3.5 Cr",
+type: "premium",
+amenities: ["Co-working Space", "Library", "Gym"]
+},
+{
+id: 'n2',
+name: "County 151",
+location: "Noida",
+description: "Luxury development creating a new premium micro-market.",
+usp: "Strategically located to form a high-end cluster with Experion.",
+price: "₹2.8 Cr - ₹4.2 Cr",
+type: "luxury",
+amenities: ["Private Elevator", "Concierge", "Spa"]
+},
+{
+id: 'n3',
+name: "Trump Towers Noida",
+location: "Noida",
+description: "Iconic branded residences offering a global lifestyle.",
+usp: "Unmatched brand prestige and exclusive resident services.",
+price: "₹6.5 Cr - ₹12.0 Cr",
+type: "luxury",
+amenities: ["White Glove Service", "Trump Card", "Private Jet Service"]
+},
+{
+id: 'n4',
+name: "Jacob & Co Residences",
+location: "Noida",
+description: "Ultra-luxury homes inspired by haute horlogerie.",
+usp: "Bespoke interiors and finishes reflecting the Jacob & Co legacy.",
+price: "₹8.0 Cr - ₹15.0 Cr",
+type: "luxury",
+amenities: ["Designer Interiors", "Private Pool", "Helipad"]
+},
+{
+id: 'n5',
+name: "Elisaab Residencies",
+location: "Prime Sector, Noida",
+description: "A new residential development in a prime sector of Noida.",
+usp: "Strategic location with excellent connectivity to major hubs.",
+price: "₹2.5 Cr - ₹4.0 Cr",
+type: "premium",
+amenities: ["Clubhouse", "Retail Promenade", "Modern Lobby"]
+}
+],
+'greater-noida': [
+{
+id: 'gn1',
+name: "Ashtech Presidential Towers",
+location: "Greater Noida West",
+description: "Spacious towers designed for comfortable family living.",
+usp: "Excellent connectivity to Noida and Ghaziabad at competitive pricing.",
+price: "₹1.2 Cr - ₹2.0 Cr",
+type: "mid-segment",
+amenities: ["Kids Play Area", "Clubhouse", "Shopping Complex"]
+},
+{
+id: 'gn2',
+name: "AU Aspire Leisure Valley",
+location: "Greater Noida West",
+description: "Modern homes adjacent to a proposed green belt.",
+usp: "Future-proof investment in a rapidly developing corridor.",
+price: "₹1.5 Cr - ₹2.2 Cr",
+type: "mid-segment",
+amenities: ["Green Park", "Jogging Track", "Community Hall"]
+},
+{
+id: 'gn3',
+name: "Godrej Arden",
+location: "Greater Noida",
+description: "A project focused on green living and open spaces.",
+usp: "Spacious homes designed for comfortable family living.",
+price: "₹1.8 Cr - ₹2.5 Cr",
+type: "mid-segment",
+amenities: ["Central Greens", "Clubhouse", "Walking Trails"]
+}
+],
+'yamuna-expressway': [
+{
+id: 'ye1',
+name: "Gaur Chrysalis",
+location: "Sector 22D",
+description: "Premium residential project near the upcoming Noida Airport.",
+usp: "Best connectivity to the international airport and F1 track.",
+price: "₹1.8 Cr - ₹2.5 Cr",
+type: "premium",
+amenities: ["Airport Shuttle", "Business Center", "Golf View"]
+},
+{
+id: 'ye2',
+name: "Eldeco WOW",
+location: "Yamuna Expressway",
+description: "Affordable luxury with a focus on lifestyle amenities.",
+usp: "High-specification features at an attractive price point.",
+price: "₹90 L - ₹1.5 Cr",
+type: "mid-segment",
+amenities: ["Sports Complex", "Swimming Pool", "Cafeteria"]
+},
+{
+id: 'ye3',
+name: "Greenbay The Monarque",
+location: "Yamuna Expressway",
+description: "Luxury residential project near the upcoming international airport.",
+usp: "High potential for appreciation due to infrastructural development.",
+price: "₹2.5 Cr - ₹4.0 Cr",
+type: "luxury",
+amenities: ["Golf Views", "Clubhouse", "Retail Plaza"]
+}
+]
+};
+
+let currentCityId = 'gurgaon';
+
+function switchCity(cityId) {
+currentCityId = cityId;
+
+// Update Buttons
+document.querySelectorAll('.city-nav-btn').forEach(btn => {
+if (btn.dataset.city === cityId) {
+btn.classList.add('active');
+} else {
+btn.classList.remove('active');
+}
+});
+
+renderProjects(projectsData[currentCityId]);
+}
+
+function renderProjects(projects) {
+const grid = document.getElementById('projects-grid');
+grid.style.opacity = '0';
+
+setTimeout(() => {
+if (!projects || projects.length === 0) {
+grid.innerHTML = '<div class="col-span-2 text-center text-muted-gray py-12">No projects found for this city.</div>';
+} else {
+grid.innerHTML = projects.map(project => `
+<div class="h-full">
+<div class="h-full bg-charcoal/80 border border-gray-800 hover:border-teal/60 rounded-2xl px-6 py-5 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
+<h3 class="text-lg font-poppins font-semibold text-light-gray mb-1">
+${project.name}
+</h3>
+<p class="text-sm text-muted-gray mb-2">
+${project.location ? project.location + ' • ' : ''}${project.description}
+</p>
+<p class="text-sm text-teal mb-4 font-medium">
+${project.usp}
+</p>
+<div class="flex gap-3 pt-2">
+<button onclick="document.getElementById('open-subscribe-modal').click()" class="flex-1 bg-teal text-navy text-xs font-semibold py-2 rounded-full hover:bg-opacity-90 transition-colors">
+View Details
+</button>
+<a
+href="https://wa.me/7011733205?text=I'm interested in ${encodeURIComponent(project.name)}"
+target="_blank"
+class="flex-1 inline-flex items-center justify-center gap-2 text-xs font-semibold text-[#25D366] border border-[#25D366] px-3 py-2 rounded-full hover:bg-[#25D366] hover:text-navy transition-colors"
+>
+<span>Schedule Visit</span>
+</a>
+</div>
+</div>
+</div>
+`).join('');
+}
+
+// Fade In
+grid.style.opacity = '1';
+grid.style.transition = 'opacity 0.5s ease';
+
+// Animate children
+const cards = grid.children;
+Array.from(cards).forEach((card, i) => {
+card.style.opacity = '0';
+card.style.transform = 'translateY(20px)';
+setTimeout(() => {
+card.style.transition = 'all 0.5s ease';
+card.style.opacity = '1';
+card.style.transform = 'translateY(0)';
+}, i * 100);
+});
+
+}, 300);
+}
+
+// Initialize with Gurgaon and bind floating CTA / exit-intent / preview modal
+document.addEventListener('DOMContentLoaded', () => {
+switchCity('gurgaon');
+
+// Scroll Handler for Floating CTA
+window.addEventListener('scroll', () => {
+const floatingCta = document.getElementById('floating-cta');
+if (window.scrollY > 600) {
+floatingCta.classList.remove('translate-y-32', 'opacity-0');
+} else {
+floatingCta.classList.add('translate-y-32', 'opacity-0');
+}
+});
+
+// Exit Intent
+let exitIntentTriggered = false;
+document.addEventListener('mouseleave', (e) => {
+if (e.clientY < 0 && !exitIntentTriggered) {
+// Only show if modal isn't already open
+const modal = document.getElementById('subscribe-modal');
+if (modal.classList.contains('hidden')) {
+document.getElementById('open-subscribe-modal').click();
+exitIntentTriggered = true;
+}
+}
+});
+
+// Newsletter preview modal
+const previewBtn = document.getElementById('preview-issue-btn');
+const issueModal = document.getElementById('issue-preview-modal');
+const closeIssueBtn = document.getElementById('close-issue-preview');
+
+if (previewBtn && issueModal) {
+previewBtn.addEventListener('click', () => {
+issueModal.classList.remove('hidden');
+issueModal.classList.add('flex');
+});
+}
+
+if (closeIssueBtn && issueModal) {
+closeIssueBtn.addEventListener('click', () => {
+issueModal.classList.add('hidden');
+issueModal.classList.remove('flex');
+});
+}
+
+if (issueModal) {
+issueModal.addEventListener('click', (e) => {
+if (e.target === issueModal) {
+issueModal.classList.add('hidden');
+issueModal.classList.remove('flex');
+}
+});
+}
+});
+</script>
+<!-- Floating Subscribe Button -->
+<div id="floating-cta" class="fixed bottom-8 right-8 z-40 transform translate-y-32 opacity-0 transition-all duration-500">
+<button onclick="document.getElementById('open-subscribe-modal').click()" class="bg-teal text-navy font-bold py-3 px-6 rounded-full shadow-[0_0_20px_rgba(0,212,255,0.5)] hover:scale-105 transition-transform flex items-center gap-2 animate-pulse">
+<span class="text-xl">📩</span>
+<span>Subscribe Free</span>
+</button>
+</div>
+</body>
+</html>

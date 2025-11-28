@@ -23,8 +23,16 @@
       "destination": "/public/newsletter/2025/11/17/index.html"
     },
     {
+      "source": "/2025/11/24",
+      "destination": "/public/newsletter/2025/11/24/index.html"
+    },
+    {
+      "source": "/2025/11/24/",
+      "destination": "/public/newsletter/2025/11/24/index.html"
+    },
+    {
       "source": "/newsletter",
-      "destination": "/public/newsletter/2025/11/10/index.html"
+      "destination": "/public/newsletter/2025/11/24/index.html"
     },
     {
       "source": "/newsletter/latest",
