@@ -45,6 +45,14 @@
     {
       "source": "/newsletter/:year/:month/:day",
       "destination": "/public/newsletter/:year/:month/:day/index.html"
+    },
+    {
+      "source": "/2025/12/01",
+      "destination": "/public/newsletter/2025/12/1/index.html"
+    },
+    {
+      "source": "/2025/12/01/",
+      "destination": "/public/newsletter/2025/12/1/index.html"
     }
   ],
   "headers": [
