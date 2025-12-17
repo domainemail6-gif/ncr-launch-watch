@@ -61,6 +61,14 @@
     {
       "source": "/2025/12/8/",
       "destination": "/public/newsletter/2025/12/8/index.html"
+    },
+    {
+      "source": "/2025/12/15",
+      "destination": "/public/newsletter/2025/12/15/index.html"
+    },
+    {
+      "source": "/2025/12/15/",
+      "destination": "/public/newsletter/2025/12/15/index.html"
     }
   ],
   "headers": [
