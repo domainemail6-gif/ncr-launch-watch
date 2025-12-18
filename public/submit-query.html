@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Query Access</title>
+    <meta name="description"
+        content="Early access to verified insights on new projects and infrastructure updates across Delhi NCR.">
+
+    <!-- Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Inter:wght@300;400;500&display=swap"
+        rel="stylesheet">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'navy': '#0a0a1f',
+                        'charcoal': '#1a1a2e',
+                        'light-gray': '#f5f7fa',
+                        'muted-gray': '#8892b0',
+                        'teal': '#00d4ff',
+                        'gold': '#d4af37'
+                    },
+                    fontFamily: {
+                        'poppins': ['Poppins', 'sans-serif'],
+                        'inter': ['Inter', 'sans-serif']
+                    },
+                    animation: {
+                        'fade-in': 'fadeIn 0.5s ease-out forwards',
+                        'slide-up': 'slideUp 0.5s ease-out forwards',
+                    },
+                    keyframes: {
+                        fadeIn: {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' }
+                        },
+                        slideUp: {
+                            '0%': { opacity: '0', transform: 'translateY(20px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' }
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            background: linear-gradient(135deg, #0a0a1f 0%, #1a1a2e 100%);
+            color: #f5f7fa;
+            min-height: 100vh;
+        }
+
+        .gradient-text {
+            background: linear-gradient(135deg, #00d4ff 0%, #d4af37 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .glass-panel {
+            background: rgba(26, 26, 46, 0.6);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .custom-input {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .custom-input:focus {
+            outline: none;
+            border-color: #00d4ff;
+            background: rgba(255, 255, 255, 0.08);
+        }
+
+        .custom-option {
+            background: rgba(255, 255, 255, 0.03);
+            transition: all 0.3s ease;
+        }
+
+        .custom-option:hover {
+            background: rgba(0, 212, 255, 0.1);
+            border-color: #00d4ff !important;
+            transform: translateX(4px);
+        }
+
+        .custom-option.selected {
+            background: rgba(0, 212, 255, 0.15);
+            border-color: #00d4ff !important;
+        }
+
+        .custom-option.selected .check-indicator {
+            opacity: 1;
+        }
+    </style>
+</head>
+
+<body class="font-inter">
+    <!-- NAVBAR (minimal, only for navigation) -->
+    <nav class="w-full z-50 glassmorphism transition-transform duration-300" style="position: fixed; top: 0;">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <a href="/" class="text-xl font-poppins font-bold gradient-text">NCR Launch Watch</a>
+                </div>
+                <div class="flex items-center space-x-8">
+                    <a href="/newsletter/archive" class="text-light-gray hover:text-teal transition-colors duration-200 font-medium">Newsletter</a>
+                    <a href="/submit-query" class="text-light-gray hover:text-teal transition-colors duration-200 font-medium border-b-2 border-teal">Submit Query</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <div style="height: 4rem; width: 100%;"></div> <!-- Spacer to offset fixed nav -->
+    
+<!-- BEGIN QUERY PAGE CODE (DO NOT EDIT ANYTHING INSIDE) -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NCR Launch Watch - Early Access</title>
+    <meta name="description"
+        content="Early access to verified insights on new projects and infrastructure updates across Delhi NCR.">
+
+    <!-- Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Inter:wght@300;400;500&display=swap"
+        rel="stylesheet">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'navy': '#0a0a1f',
+                        'charcoal': '#1a1a2e',
+                        'light-gray': '#f5f7fa',
+                        'muted-gray': '#8892b0',
+                        'teal': '#00d4ff',
+                        'gold': '#d4af37'
+                    },
+                    fontFamily: {
+                        'poppins': ['Poppins', 'sans-serif'],
+                        'inter': ['Inter', 'sans-serif']
+                    },
+                    animation: {
+                        'fade-in': 'fadeIn 0.5s ease-out forwards',
+                        'slide-up': 'slideUp 0.5s ease-out forwards',
+                    },
+                    keyframes: {
+                        fadeIn: {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' }
+                        },
+                        slideUp: {
+                            '0%': { opacity: '0', transform: 'translateY(20px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' }
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            background: linear-gradient(135deg, #0a0a1f 0%, #1a1a2e 100%);
+            color: #f5f7fa;
+            min-height: 100vh;
+        }
+
+        .gradient-text {
+            background: linear-gradient(135deg, #00d4ff 0%, #d4af37 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .glass-panel {
+            background: rgba(26, 26, 46, 0.6);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .custom-input {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .custom-input:focus {
+            outline: none;
+            border-color: #00d4ff;
+            background: rgba(255, 255, 255, 0.08);
+        }
+
+        .custom-option {
+            background: rgba(255, 255, 255, 0.03);
+            transition: all 0.3s ease;
+        }
+
+        .custom-option:hover {
+            background: rgba(0, 212, 255, 0.1);
+            border-color: #00d4ff !important;
+            transform: translateX(4px);
+        }
+
+        .custom-option.selected {
+            background: rgba(0, 212, 255, 0.15);
+            border-color: #00d4ff !important;
+        }
+
+        .custom-option.selected .check-indicator {
+            opacity: 1;
+        }
+    </style>
+</head>
+
+<body class="font-inter">
+    <main class="min-h-screen flex items-center justify-center px-4 py-12 relative overflow-hidden">
+  ...existing code block truncated for brevity...
+<!-- END QUERY PAGE CODE -->
+
+</body>
+</html>
