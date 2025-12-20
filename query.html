@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NCR Launch Watch - Early Access</title>
+    <meta name="description"
+        content="Early access to verified insights on new projects and infrastructure updates across Delhi NCR.">
+
+    <!-- Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Inter:wght@300;400;500&display=swap"
+        rel="stylesheet">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'navy': '#0a0a1f',
+                        'charcoal': '#1a1a2e',
+                        'light-gray': '#f5f7fa',
+                        'muted-gray': '#8892b0',
+                        'teal': '#00d4ff',
+                        'gold': '#d4af37'
+                    },
+                    fontFamily: {
+                        'poppins': ['Poppins', 'sans-serif'],
+                        'inter': ['Inter', 'sans-serif']
+                    },
+                    animation: {
+                        'fade-in': 'fadeIn 0.5s ease-out forwards',
+                        'slide-up': 'slideUp 0.5s ease-out forwards',
+                    },
+                    keyframes: {
+                        fadeIn: {
+                            '0%': { opacity: '0' },
+                            '100%': { opacity: '1' }
+                        },
+                        slideUp: {
+                            '0%': { opacity: '0', transform: 'translateY(20px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' }
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            background: linear-gradient(135deg, #0a0a1f 0%, #1a1a2e 100%);
+            color: #f5f7fa;
+            min-height: 100vh;
+        }
+
+        .gradient-text {
+            background: linear-gradient(135deg, #00d4ff 0%, #d4af37 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .glass-panel {
+            background: rgba(26, 26, 46, 0.6);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .custom-input {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .custom-input:focus {
+            outline: none;
+            border-color: #00d4ff;
+            background: rgba(255, 255, 255, 0.08);
+        }
+
+        .custom-option {
+            background: rgba(255, 255, 255, 0.03);
+            transition: all 0.3s ease;
+        }
+
+        .custom-option:hover {
+            background: rgba(0, 212, 255, 0.1);
+            border-color: #00d4ff !important;
+            transform: translateX(4px);
+        }
+
+        .custom-option.selected {
+            background: rgba(0, 212, 255, 0.15);
+            border-color: #00d4ff !important;
+        }
+
+        .custom-option.selected .check-indicator {
+            opacity: 1;
+        }
+    </style>
+</head>
+
+<body class="font-inter">
+    <main class="min-h-screen flex items-center justify-center px-4 py-12 relative overflow-hidden">
+
+        <!-- Background Elements -->
+        <div class="absolute top-0 left-0 w-[500px] h-[500px] bg-teal/10 rounded-full blur-[120px] pointer-events-none">
+        </div>
+        <div
+            class="absolute bottom-0 right-0 w-[600px] h-[600px] bg-gold/5 rounded-full blur-[100px] pointer-events-none">
+        </div>
+
+        <!-- Content Wrapper -->
+        <div class="w-full max-w-2xl relative z-10">
+
+            <!-- Header / Hero -->
+            <div id="hero-section" class="text-center mb-12 animate-slide-up">
+                <div
+                    class="inline-block px-3 py-1 rounded-full border border-teal/20 bg-teal/5 text-teal text-xs font-semibold tracking-wider mb-6 uppercase">
+                    Private Beta Access
+                </div>
+                <h1 class="text-4xl md:text-5xl font-poppins font-bold mb-6 leading-tight">
+                    Early Access to <br>
+                    <span class="gradient-text">NCR Real Estate Intelligence</span>
+                </h1>
+                <p class="text-muted-gray text-lg md:text-xl font-light leading-relaxed max-w-xl mx-auto mb-8">
+                    We are not a typical real estate group. We work with a limited number of serious buyers and
+                    investors to provide verified, noise-free insights.
+                </p>
+                <button onclick="startQuestionnaire()"
+                    class="group relative px-8 py-4 bg-teal text-navy font-bold rounded-xl text-lg transition-all duration-300 hover:shadow-[0_0_25px_rgba(0,212,255,0.4)] hover:-translate-y-1">
+                    <span class="relative z-10 flex items-center gap-2">
+                        Request Early Access
+                        <svg class="w-5 h-5 transition-transform group-hover:translate-x-1" fill="none"
+                            stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                        </svg>
+                    </span>
+                </button>
+            </div>
+
+            <!-- Questionnaire Container (Hidden Initially) -->
+            <div id="questionnaire-container" class="hidden opacity-0 transition-opacity duration-500">
+                <div class="glass-panel rounded-2xl p-6 md:p-10 relative overflow-hidden">
+
+                    <!-- Progress Bar -->
+                    <div class="absolute top-0 left-0 w-full h-1 bg-white/5">
+                        <div id="progress-bar"
+                            class="h-full bg-gradient-to-r from-teal to-gold w-0 transition-all duration-300"></div>
+                    </div>
+
+                    <!-- Step 1: User Type -->
+                    <div id="step-1" class="form-step">
+                        <h3 class="text-2xl font-poppins font-semibold mb-2">What brings you here?</h3>
+                        <p class="text-muted-gray text-sm mb-6">Help us understand your primary goal.</p>
+
+                        <div class="space-y-3">
+                            <button onclick="selectOption(1, 'house-hunting')"
+                                class="custom-option w-full text-left p-4 rounded-xl border border-white/10 flex items-center justify-between group">
+                                <span class="font-medium text-light-gray">I'm house hunting</span>
+                                <span
+                                    class="w-5 h-5 rounded-full border border-gray-600 group-hover:border-teal flex items-center justify-center">
+                                    <div
+                                        class="w-2.5 h-2.5 rounded-full bg-teal opacity-0 transition-opacity check-indicator">
+                                    </div>
+                                </span>
+                            </button>
+                            <button onclick="selectOption(1, 'selling')"
+                                class="custom-option w-full text-left p-4 rounded-xl border border-white/10 flex items-center justify-between group">
+                                <span class="font-medium text-light-gray">I want to sell my property</span>
+                                <span
+                                    class="w-5 h-5 rounded-full border border-gray-600 group-hover:border-teal flex items-center justify-center">
+                                    <div
+                                        class="w-2.5 h-2.5 rounded-full bg-teal opacity-0 transition-opacity check-indicator">
+                                    </div>
+                                </span>
+                            </button>
+                            <button onclick="selectOption(1, 'investing')"
+                                class="custom-option w-full text-left p-4 rounded-xl border border-white/10 flex items-center justify-between group">
+                                <span class="font-medium text-light-gray">I'm investing & looking for advice</span>
+                                <span
+                                    class="w-5 h-5 rounded-full border border-gray-600 group-hover:border-teal flex items-center justify-center">
+                                    <div
+                                        class="w-2.5 h-2.5 rounded-full bg-teal opacity-0 transition-opacity check-indicator">
+                                    </div>
+                                </span>
+                            </button>
+                            <button onclick="selectOption(1, 'browsing')"
+                                class="custom-option w-full text-left p-4 rounded-xl border border-white/10 flex items-center justify-between group">
+                                <span class="font-medium text-light-gray">Just browsing / exploring</span>
+                                <span
+                                    class="w-5 h-5 rounded-full border border-gray-600 group-hover:border-teal flex items-center justify-center">
+                                    <div
+                                        class="w-2.5 h-2.5 rounded-full bg-teal opacity-0 transition-opacity check-indicator">
+                                    </div>
+                                </span>
+                            </button>
+                            <button onclick="selectOption(1, 'other')"
+                                class="custom-option w-full text-left p-4 rounded-xl border border-white/10 flex items-center justify-between group">
+                                <span class="font-medium text-light-gray">Something else</span>
+                                <span
+                                    class="w-5 h-5 rounded-full border border-gray-600 group-hover:border-teal flex items-center justify-center">
+                                    <div
+                                        class="w-2.5 h-2.5 rounded-full bg-teal opacity-0 transition-opacity check-indicator">
+                                    </div>
+                                </span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Step 2: Location (Buy/Invest/Browse) -->
+                    <div id="step-2-buy" class="form-step hidden">
+                        <h3 class="text-2xl font-poppins font-semibold mb-2">Where are you looking?</h3>
+                        <p class="text-muted-gray text-sm mb-6">Specific locations help us tailor our insights.</p>
+
+                        <div class="space-y-4">
+                            <div>
+                                <input type="text" id="input-location"
+                                    placeholder="e.g. Golf Course Extn, SPR, Noida Sec 150..."
+                                    class="custom-input w-full p-4 rounded-xl text-light-gray placeholder-gray-500">
+                            </div>
+                            <div class="flex justify-end pt-4">
+                                <button onclick="nextStep('buy-location')"
+                                    class="bg-teal text-navy font-bold px-6 py-3 rounded-lg hover:bg-teal/90 transition-colors">Next</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Step 2: Sell Details (Sell) -->
+                    <div id="step-2-sell" class="form-step hidden">
+                        <h3 class="text-2xl font-poppins font-semibold mb-2">Tell us about your property</h3>
+                        <p class="text-muted-gray text-sm mb-6">Location, project name, size, expected price...</p>
+
+                        <div class="space-y-4">
+                            <div>
+                                <textarea id="input-sell-details" rows="4" placeholder="I have a 3BHK in..."
+                                    class="custom-input w-full p-4 rounded-xl text-light-gray placeholder-gray-500 resize-none"></textarea>
+                            </div>
+                            <div class="flex justify-end pt-4">
+                                <button onclick="nextStep('sell-details')"
+                                    class="bg-teal text-navy font-bold px-6 py-3 rounded-lg hover:bg-teal/90 transition-colors">Next</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Step 2: Other Details (Other) -->
+                    <div id="step-2-other" class="form-step hidden">
+                        <h3 class="text-2xl font-poppins font-semibold mb-2">What are you looking for?</h3>
+                        <p class="text-muted-gray text-sm mb-6">Briefly describe your requirements.</p>
+
+                        <div class="space-y-4">
+                            <div>
+                                <textarea id="input-other-details" rows="4" placeholder="I'm looking for..."
+                                    class="custom-input w-full p-4 rounded-xl text-light-gray placeholder-gray-500 resize-none"></textarea>
+                            </div>
+                            <div class="flex justify-end pt-4">
+                                <button onclick="nextStep('other-details')"
+                                    class="bg-teal text-navy font-bold px-6 py-3 rounded-lg hover:bg-teal/90 transition-colors">Next</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Step 3: Property Type (Buy/Invest) -->
+                    <div id="step-3-buy" class="form-step hidden">
+                        <h3 class="text-2xl font-poppins font-semibold mb-2">Property Type</h3>
+                        <p class="text-muted-gray text-sm mb-6">Select all that apply.</p>
+
+                        <div class="space-y-3 mb-6">
+                            <button onclick="toggleMultiSelect(this)"
+                                class="custom-option w-full text-left p-4 rounded-xl border border-white/10 flex items-center justify-between group"
+                                data-value="high-rise">
+                                <span class="font-medium text-light-gray">High-rise Apartments</span>
+                                <div class="w-5 h-5 rounded border border-gray-600 flex items-center justify-center">
+                                    <svg class="w-3 h-3 text-navy hidden check-icon" fill="currentColor"
+                                        viewBox="0 0 20 20">
+                                        <path
+                                            d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" />
+                                    </svg>
+                                </div>
+                            </button>
+                            <button onclick="toggleMultiSelect(this)"
+                                class="custom-option w-full text-left p-4 rounded-xl border border-white/10 flex items-center justify-between group"
+                                data-value="low-rise">
+                                <span class="font-medium text-light-gray">Low-rise / Independent Floors</span>
+                                <div class="w-5 h-5 rounded border border-gray-600 flex items-center justify-center">
+                                    <svg class="w-3 h-3 text-navy hidden check-icon" fill="currentColor"
+                                        viewBox="0 0 20 20">
+                                        <path
+                                            d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" />
+                                    </svg>
+                                </div>
+                            </button>
+                            <button onclick="toggleMultiSelect(this)"
+                                class="custom-option w-full text-left p-4 rounded-xl border border-white/10 flex items-center justify-between group"
+                                data-value="plots">
+                                <span class="font-medium text-light-gray">Plots</span>
+                                <div class="w-5 h-5 rounded border border-gray-600 flex items-center justify-center">
+                                    <svg class="w-3 h-3 text-navy hidden check-icon" fill="currentColor"
+                                        viewBox="0 0 20 20">
+                                        <path
+                                            d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" />
+                                    </svg>
+                                </div>
+                            </button>
+                        </div>
+                        <div class="flex justify-end">
+                            <button onclick="nextStep('buy-type')"
+                                class="bg-teal text-navy font-bold px-6 py-3 rounded-lg hover:bg-teal/90 transition-colors">Next</button>
+                        </div>
+                    </div>
+
+                    <!-- Step 4: Budget (Buy/Invest) -->
+                    <div id="step-4-buy" class="form-step hidden">
+                        <h3 class="text-2xl font-poppins font-semibold mb-2">Budget Range</h3>
+                        <p class="text-muted-gray text-sm mb-6">Rough estimate is fine.</p>
+
+                        <div class="space-y-3">
+                            <button onclick="selectSingleOption(this, 'budget', 'below-2cr')"
+                                class="custom-option w-full text-left p-4 rounded-xl border border-white/10 flex items-center justify-between group">
+                                <span class="font-medium text-light-gray">Below ₹2 Cr</span>
+                            </button>
+                            <button onclick="selectSingleOption(this, 'budget', '2-5cr')"
+                                class="custom-option w-full text-left p-4 rounded-xl border border-white/10 flex items-center justify-between group">
+                                <span class="font-medium text-light-gray">₹2 Cr – ₹5 Cr</span>
+                            </button>
+                            <button onclick="selectSingleOption(this, 'budget', '5-10cr')"
+                                class="custom-option w-full text-left p-4 rounded-xl border border-white/10 flex items-center justify-between group">
+                                <span class="font-medium text-light-gray">₹5 Cr – ₹10 Cr</span>
+                            </button>
+                            <button onclick="selectSingleOption(this, 'budget', '10cr+')"
+                                class="custom-option w-full text-left p-4 rounded-xl border border-white/10 flex items-center justify-between group">
+                                <span class="font-medium text-light-gray">₹10 Cr+</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Step 5: Timeline (All flows converge here roughly) -->
+                    <div id="step-timeline" class="form-step hidden">
+                        <h3 class="text-2xl font-poppins font-semibold mb-2">Timeline</h3>
+                        <p class="text-muted-gray text-sm mb-6">When are you planning to make a move?</p>
+
+                        <div class="space-y-3">
+                            <button onclick="selectSingleOption(this, 'timeline', 'asap')"
+                                class="custom-option w-full text-left p-4 rounded-xl border border-white/10 flex items-center justify-between group">
+                                <span class="font-medium text-light-gray">As soon as possible</span>
+                            </button>
+                            <button onclick="selectSingleOption(this, 'timeline', '3-months')"
+                                class="custom-option w-full text-left p-4 rounded-xl border border-white/10 flex items-center justify-between group">
+                                <span class="font-medium text-light-gray">Within 3 months</span>
+                            </button>
+                            <button onclick="selectSingleOption(this, 'timeline', '3-6-months')"
+                                class="custom-option w-full text-left p-4 rounded-xl border border-white/10 flex items-center justify-between group">
+                                <span class="font-medium text-light-gray">3–6 months</span>
+                            </button>
+                            <button onclick="selectSingleOption(this, 'timeline', 'exploring')"
+                                class="custom-option w-full text-left p-4 rounded-xl border border-white/10 flex items-center justify-between group">
+                                <span class="font-medium text-light-gray">Just exploring</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Final Step: Contact -->
+                    <div id="step-contact" class="form-step hidden">
+                        <h3 class="text-2xl font-poppins font-semibold mb-2">Final Step</h3>
+                        <p class="text-muted-gray text-sm mb-6">Where should we send the details?</p>
+
+                        <div class="space-y-4">
+                            <div>
+                                <label
+                                    class="block text-xs font-bold text-muted-gray uppercase tracking-wider mb-2 ml-1">Name</label>
+                                <input type="text" id="contact-name"
+                                    class="custom-input w-full p-4 rounded-xl text-light-gray">
+                            </div>
+                            <div>
+                                <label
+                                    class="block text-xs font-bold text-muted-gray uppercase tracking-wider mb-2 ml-1">Phone
+                                    <span class="text-teal">*</span></label>
+                                <input type="tel" id="contact-phone" required pattern="[0-9]{10}"
+                                    placeholder="10-digit mobile number"
+                                    class="custom-input w-full p-4 rounded-xl text-light-gray">
+                            </div>
+                            <div>
+                                <label
+                                    class="block text-xs font-bold text-muted-gray uppercase tracking-wider mb-2 ml-1">Email
+                                    <span class="text-muted-gray text-xs">(optional)</span></label>
+                                <input type="email" id="contact-email" placeholder="your@email.com"
+                                    class="custom-input w-full p-4 rounded-xl text-light-gray">
+                            </div>
+
+                            <div class="pt-4">
+                                <button onclick="submitForm()" id="submit-btn"
+                                    class="w-full bg-teal text-navy font-bold py-4 rounded-xl text-lg hover:shadow-[0_0_20px_rgba(0,212,255,0.3)] transition-all duration-300">
+                                    Request Early Access
+                                </button>
+                                <p class="text-center text-xs text-muted-gray mt-4">
+                                    We respect your privacy. No spam, ever.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- Confirmation Screen -->
+            <div id="confirmation-screen" class="hidden text-center animate-fade-in">
+                <div
+                    class="w-20 h-20 bg-teal/10 rounded-full flex items-center justify-center mx-auto mb-8 border border-teal/20">
+                    <svg class="w-10 h-10 text-teal" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+                    </svg>
+                </div>
+                <h2 class="text-3xl md:text-4xl font-poppins font-bold mb-6">Request Received</h2>
+                <p class="text-muted-gray text-lg leading-relaxed max-w-lg mx-auto mb-8">
+                    Thanks for sharing your details. We work with a limited number of clients to ensure quality. If your
+                    requirements match our current focus, a member of our team will reach out to you personally.
+                </p>
+                <a href="/"
+                    class="text-teal hover:text-white transition-colors text-sm font-medium border-b border-teal/30 hover:border-white pb-1">Return
+                    to Home</a>
+            </div>
+
+        </div>
+    </main>
+
+    <script>
+        // CONFIGURATION
+        // Replace this URL with your own Google Web App URL from the guide
+        const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbzjnKkazUkPKk-CCuC3KLowbD0JhxJ7gTEwtanN9Tm2eOisJLQDsOG9fcHT-xoqPsQSJQ/exec';
+
+        // State
+        const formData = {
+            userType: '',
+            location: '',
+            details: '',
+            propertyTypes: [],
+            budget: '',
+            timeline: '',
+            contact: { name: '', phone: '', email: '' }
+        };
+
+        let currentStep = 1;
+        const totalSteps = 5; // Approximate max steps
+
+        // Elements
+        const heroSection = document.getElementById('hero-section');
+        const questionnaireContainer = document.getElementById('questionnaire-container');
+        const progressBar = document.getElementById('progress-bar');
+        const confirmationScreen = document.getElementById('confirmation-screen');
+
+        function startQuestionnaire() {
+            heroSection.classList.add('hidden');
+            questionnaireContainer.classList.remove('hidden');
+            // Small timeout to allow display:block to apply before opacity transition
+            setTimeout(() => {
+                questionnaireContainer.classList.remove('opacity-0');
+            }, 50);
+            updateProgress(1);
+        }
+
+        function updateProgress(step) {
+            const percentage = (step / totalSteps) * 100;
+            progressBar.style.width = `${percentage}%`;
+        }
+
+        function showStep(stepId) {
+            // Hide all steps
+            document.querySelectorAll('.form-step').forEach(el => el.classList.add('hidden'));
+            // Show target step
+            const target = document.getElementById(stepId);
+            if (target) {
+                target.classList.remove('hidden');
+                target.classList.add('animate-fade-in');
+            }
+        }
+
+        // Step 1 Handler
+        function selectOption(step, value) {
+            formData.userType = value;
+
+            // Logic for next step
+            if (['house-hunting', 'investing', 'browsing'].includes(value)) {
+                showStep('step-2-buy');
+                updateProgress(2);
+            } else if (value === 'selling') {
+                showStep('step-2-sell');
+                updateProgress(2);
+            } else {
+                showStep('step-2-other');
+                updateProgress(2);
+            }
+        }
+
+        // Generic Next Step Handler
+        function nextStep(currentContext) {
+            if (currentContext === 'buy-location') {
+                formData.location = document.getElementById('input-location').value;
+                showStep('step-3-buy');
+                updateProgress(3);
+            }
+            else if (currentContext === 'sell-details') {
+                formData.details = document.getElementById('input-sell-details').value;
+                showStep('step-timeline');
+                updateProgress(3); // Jump to timeline
+            }
+            else if (currentContext === 'other-details') {
+                formData.details = document.getElementById('input-other-details').value;
+                showStep('step-contact'); // Jump to contact
+                updateProgress(4);
+            }
+            else if (currentContext === 'buy-type') {
+                // Property types collected via toggleMultiSelect
+                showStep('step-4-buy');
+                updateProgress(4);
+            }
+        }
+
+        // Multi-select Handler
+        function toggleMultiSelect(btn) {
+            const val = btn.dataset.value;
+            const checkIcon = btn.querySelector('.check-icon');
+            const box = btn.querySelector('div'); // the checkbox container
+
+            if (formData.propertyTypes.includes(val)) {
+                formData.propertyTypes = formData.propertyTypes.filter(t => t !== val);
+                btn.classList.remove('selected');
+                checkIcon.classList.add('hidden');
+                box.classList.remove('bg-teal', 'border-teal');
+                box.classList.add('border-gray-600');
+            } else {
+                formData.propertyTypes.push(val);
+                btn.classList.add('selected');
+                checkIcon.classList.remove('hidden');
+                box.classList.remove('border-gray-600');
+                box.classList.add('bg-teal', 'border-teal');
+            }
+        }
+
+        // Single Option Handler (Budget, Timeline)
+        function selectSingleOption(btn, field, value) {
+            formData[field] = value;
+
+            // Logic to move next
+            if (field === 'budget') {
+                showStep('step-timeline');
+                updateProgress(5);
+            } else if (field === 'timeline') {
+                showStep('step-contact');
+                updateProgress(5); // Max
+            }
+        }
+
+        function submitForm() {
+            const submitBtn = document.getElementById('submit-btn');
+
+            // Collect final details
+            formData.contact.name = document.getElementById('contact-name').value;
+            formData.contact.phone = document.getElementById('contact-phone').value;
+            formData.contact.email = document.getElementById('contact-email').value;
+
+            // Basic Validation
+            if (!formData.contact.name || !formData.contact.phone) {
+                alert('Please enter your name and phone number.');
+                return;
+            }
+
+            // Validate phone number (10 digits)
+            const phoneRegex = /^[0-9]{10}$/;
+            if (!phoneRegex.test(formData.contact.phone)) {
+                alert('Please enter a valid 10-digit phone number.');
+                submitBtn.disabled = false;
+                submitBtn.innerHTML = 'Request Early Access';
+                return;
+            }
+
+            // Validate email if provided
+            if (formData.contact.email) {
+                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                if (!emailRegex.test(formData.contact.email)) {
+                    alert('Please enter a valid email address.');
+                    submitBtn.disabled = false;
+                    submitBtn.innerHTML = 'Request Early Access';
+                    return;
+                }
+            }
+
+            // Loading State
+            submitBtn.disabled = true;
+            submitBtn.innerHTML = '<span class="animate-pulse">Submitting...</span>';
+
+            // Send to Google Sheets
+            if (GOOGLE_SCRIPT_URL && GOOGLE_SCRIPT_URL !== 'YOUR_GOOGLE_SCRIPT_URL_HERE') {
+                fetch(GOOGLE_SCRIPT_URL, {
+                    method: 'POST',
+                    mode: 'no-cors', // Important for Google Apps Script
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(formData)
+                })
+                    .then(() => {
+                        // Success
+                        questionnaireContainer.classList.add('hidden');
+                        confirmationScreen.classList.remove('hidden');
+                    })
+                    .catch(err => {
+                        console.error('Error:', err);
+                        alert('Something went wrong. Please try again.');
+                        submitBtn.disabled = false;
+                        submitBtn.innerText = 'Request Early Access';
+                    });
+            } else {
+                // Fallback for demo / if URL not set
+                console.log('Form Data (Demo):', formData);
+                setTimeout(() => {
+                    questionnaireContainer.classList.add('hidden');
+                    confirmationScreen.classList.remove('hidden');
+                }, 1000);
+            }
+        }
+
+    </script>
+</body>
+
+</html>

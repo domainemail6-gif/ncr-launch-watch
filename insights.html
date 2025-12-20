@@ -1,20 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Market Insights - NCR Launch Watch</title>
-    <meta name="description" content="Deep dive into NCR real estate market trends, price analysis, and investment opportunities with data-driven insights.">
-    
+    <meta name="description"
+        content="Deep dive into NCR real estate market trends, price analysis, and investment opportunities with data-driven insights.">
+
     <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&family=Inter:wght@300;400;500;600&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
-    
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&family=Inter:wght@300;400;500;600&family=DM+Sans:wght@300;400;500&display=swap"
+        rel="stylesheet">
+
     <!-- Core Libraries -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/echarts/5.4.3/echarts.min.js"></script>
     <link rel="stylesheet" href="https://unpkg.com/splitting@1.0.6/dist/splitting.css">
     <script src="https://unpkg.com/splitting@1.0.6/dist/splitting.min.js"></script>
-    
+
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -38,51 +42,52 @@
             }
         }
     </script>
-    
+
     <style>
         body {
             background: linear-gradient(135deg, #0a0a1f 0%, #1a1a2e 100%);
             font-family: 'Inter', sans-serif;
         }
-        
+
         .glassmorphism {
             background: rgba(26, 26, 46, 0.8);
             backdrop-filter: blur(10px);
             border: 1px solid rgba(255, 255, 255, 0.1);
         }
-        
+
         .gradient-text {
             background: linear-gradient(135deg, #00d4ff 0%, #d4af37 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
         }
-        
+
         .section-reveal {
             opacity: 0;
             transform: translateY(30px);
         }
-        
+
         .section-reveal.revealed {
             opacity: 1;
             transform: translateY(0);
             transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
         }
-        
+
         .chart-container {
             height: 400px;
         }
-        
+
         .metric-card {
             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
-        
+
         .metric-card:hover {
             transform: translateY(-4px);
             box-shadow: 0 20px 40px -12px rgba(0, 212, 255, 0.15);
         }
     </style>
 </head>
+
 <body class="text-light-gray overflow-x-hidden">
     <!-- Navigation -->
     <nav class="fixed top-0 w-full z-50 glassmorphism">
@@ -93,12 +98,19 @@
                 </div>
                 <div class="hidden md:block">
                     <div class="ml-10 flex items-baseline space-x-8">
-                        <a href="index.html" class="text-light-gray hover:text-teal transition-colors duration-200 font-medium">Home</a>
+                        <a href="index.html"
+                            class="text-light-gray hover:text-teal transition-colors duration-200 font-medium">Home</a>
                         <a href="insights.html" class="text-teal font-medium">Insights</a>
-                        <a href="projects.html" class="text-light-gray hover:text-teal transition-colors duration-200 font-medium">Projects</a>
-                        <a href="index.html#faq" class="text-light-gray hover:text-teal transition-colors duration-200 font-medium">FAQ</a>
-                        <a href="index.html#contact" class="text-light-gray hover:text-teal transition-colors duration-200 font-medium">Contact</a>
-                        <button class="bg-teal hover:bg-opacity-80 text-navy px-6 py-2 rounded-lg font-semibold transition-all duration-200">
+                        <a href="query.html"
+                            class="text-light-gray hover:text-teal transition-colors duration-200 font-medium">Enquire</a>
+                        <a href="projects.html"
+                            class="text-light-gray hover:text-teal transition-colors duration-200 font-medium">Projects</a>
+                        <a href="index.html#faq"
+                            class="text-light-gray hover:text-teal transition-colors duration-200 font-medium">FAQ</a>
+                        <a href="index.html#contact"
+                            class="text-light-gray hover:text-teal transition-colors duration-200 font-medium">Contact</a>
+                        <button
+                            class="bg-teal hover:bg-opacity-80 text-navy px-6 py-2 rounded-lg font-semibold transition-all duration-200">
                             Subscribe
                         </button>
                     </div>
@@ -115,7 +127,8 @@
                     Market Intelligence Hub
                 </h1>
                 <p class="text-xl text-muted-gray font-inter max-w-3xl mx-auto">
-                    Deep dive into NCR real estate trends with data-driven analysis, price movements, and investment opportunities across key micro-markets.
+                    Deep dive into NCR real estate trends with data-driven analysis, price movements, and investment
+                    opportunities across key micro-markets.
                 </p>
             </div>
         </div>
@@ -125,7 +138,7 @@
     <section class="py-12 section-reveal">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <h2 class="text-2xl md:text-3xl font-poppins font-bold gradient-text mb-8 text-center">Market Overview</h2>
-            
+
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
                 <div class="glassmorphism rounded-xl p-6 metric-card">
                     <div class="flex items-center justify-between mb-4">
@@ -135,7 +148,7 @@
                     <div class="text-3xl font-bold gradient-text mb-2">+13%</div>
                     <p class="text-muted-gray text-sm">YoY across luxury segment</p>
                 </div>
-                
+
                 <div class="glassmorphism rounded-xl p-6 metric-card">
                     <div class="flex items-center justify-between mb-4">
                         <h3 class="font-poppins font-semibold text-light-gray">New Launches</h3>
@@ -144,7 +157,7 @@
                     <div class="text-3xl font-bold gradient-text mb-2">91,807</div>
                     <p class="text-muted-gray text-sm">Units launched Q3 2025</p>
                 </div>
-                
+
                 <div class="glassmorphism rounded-xl p-6 metric-card">
                     <div class="flex items-center justify-between mb-4">
                         <h3 class="font-poppins font-semibold text-light-gray">Sales Volume</h3>
@@ -153,7 +166,7 @@
                     <div class="text-3xl font-bold gradient-text mb-2">₹1.52L Cr</div>
                     <p class="text-muted-gray text-sm">Total sales value Q3 2025</p>
                 </div>
-                
+
                 <div class="glassmorphism rounded-xl p-6 metric-card">
                     <div class="flex items-center justify-between mb-4">
                         <h3 class="font-poppins font-semibold text-light-gray">Market Confidence</h3>
@@ -174,7 +187,7 @@
                     <h3 class="text-xl font-poppins font-semibold gradient-text mb-4">Price Trends by Micro-Market</h3>
                     <div id="price-chart" class="chart-container"></div>
                 </div>
-                
+
                 <div class="glassmorphism rounded-xl p-6">
                     <h3 class="text-xl font-poppins font-semibold gradient-text mb-4">Sales Volume vs Supply</h3>
                     <div id="supply-chart" class="chart-container"></div>
@@ -186,36 +199,42 @@
     <!-- Infrastructure Impact -->
     <section class="py-12 section-reveal">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-2xl md:text-3xl font-poppins font-bold gradient-text mb-8 text-center">Infrastructure Development Impact</h2>
-            
+            <h2 class="text-2xl md:text-3xl font-poppins font-bold gradient-text mb-8 text-center">Infrastructure
+                Development Impact</h2>
+
             <div class="glassmorphism rounded-xl p-8 mb-8">
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                     <div class="text-center">
-                        <div class="w-16 h-16 bg-gradient-to-br from-teal to-gold rounded-full flex items-center justify-center mx-auto mb-4">
+                        <div
+                            class="w-16 h-16 bg-gradient-to-br from-teal to-gold rounded-full flex items-center justify-center mx-auto mb-4">
                             <svg class="w-8 h-8 text-navy" fill="currentColor" viewBox="0 0 20 20">
-                                <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                                <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                             </svg>
                         </div>
                         <h3 class="text-lg font-poppins font-semibold text-light-gray mb-2">Dwarka Expressway</h3>
                         <p class="text-muted-gray text-sm mb-2">Operational since early 2024</p>
                         <div class="text-teal font-bold">+6% Price Impact</div>
                     </div>
-                    
+
                     <div class="text-center">
-                        <div class="w-16 h-16 bg-gradient-to-br from-teal to-gold rounded-full flex items-center justify-center mx-auto mb-4">
+                        <div
+                            class="w-16 h-16 bg-gradient-to-br from-teal to-gold rounded-full flex items-center justify-center mx-auto mb-4">
                             <svg class="w-8 h-8 text-navy" fill="currentColor" viewBox="0 0 20 20">
-                                <path d="M13 6a3 3 0 11-6 0 3 3 0 016 0zM18 8a2 2 0 11-4 0 2 2 0 014 0zM14 15a4 4 0 00-8 0v3h8v-3z"/>
+                                <path
+                                    d="M13 6a3 3 0 11-6 0 3 3 0 016 0zM18 8a2 2 0 11-4 0 2 2 0 014 0zM14 15a4 4 0 00-8 0v3h8v-3z" />
                             </svg>
                         </div>
                         <h3 class="text-lg font-poppins font-semibold text-light-gray mb-2">Delhi-Meerut RRTS</h3>
                         <p class="text-muted-gray text-sm mb-2">Under construction</p>
                         <div class="text-teal font-bold">High Potential</div>
                     </div>
-                    
+
                     <div class="text-center">
-                        <div class="w-16 h-16 bg-gradient-to-br from-teal to-gold rounded-full flex items-center justify-center mx-auto mb-4">
+                        <div
+                            class="w-16 h-16 bg-gradient-to-br from-teal to-gold rounded-full flex items-center justify-center mx-auto mb-4">
                             <svg class="w-8 h-8 text-navy" fill="currentColor" viewBox="0 0 20 20">
-                                <path d="M3 4a1 1 0 011-1h12a1 1 0 011 1v2a1 1 0 01-1 1H4a1 1 0 01-1-1V4zM3 10a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H4a1 1 0 01-1-1v-6zM14 9a1 1 0 00-1 1v6a1 1 0 001 1h2a1 1 0 001-1v-6a1 1 0 00-1-1h-2z"/>
+                                <path
+                                    d="M3 4a1 1 0 011-1h12a1 1 0 011 1v2a1 1 0 01-1 1H4a1 1 0 01-1-1V4zM3 10a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H4a1 1 0 01-1-1v-6zM14 9a1 1 0 00-1 1v6a1 1 0 001 1h2a1 1 0 001-1v-6a1 1 0 00-1-1h-2z" />
                             </svg>
                         </div>
                         <h3 class="text-lg font-poppins font-semibold text-light-gray mb-2">Metro Expansions</h3>
@@ -230,8 +249,9 @@
     <!-- Investment Opportunities -->
     <section class="py-12 section-reveal">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-2xl md:text-3xl font-poppins font-bold gradient-text mb-8 text-center">Investment Opportunities</h2>
-            
+            <h2 class="text-2xl md:text-3xl font-poppins font-bold gradient-text mb-8 text-center">Investment
+                Opportunities</h2>
+
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 <div class="glassmorphism rounded-xl p-6">
                     <div class="flex items-center justify-between mb-4">
@@ -252,9 +272,10 @@
                             <span class="text-gold font-semibold">Low</span>
                         </div>
                     </div>
-                    <p class="text-muted-gray text-sm mt-4 leading-relaxed">Ultra-luxury segment with strong NRI and HNI demand. Limited supply driving premium pricing.</p>
+                    <p class="text-muted-gray text-sm mt-4 leading-relaxed">Ultra-luxury segment with strong NRI and HNI
+                        demand. Limited supply driving premium pricing.</p>
                 </div>
-                
+
                 <div class="glassmorphism rounded-xl p-6">
                     <div class="flex items-center justify-between mb-4">
                         <h3 class="font-poppins font-semibold text-light-gray">Dwarka Expressway</h3>
@@ -274,9 +295,10 @@
                             <span class="text-gold font-semibold">Medium</span>
                         </div>
                     </div>
-                    <p class="text-muted-gray text-sm mt-4 leading-relaxed">Improved connectivity driving demand. Good for both end-users and investors.</p>
+                    <p class="text-muted-gray text-sm mt-4 leading-relaxed">Improved connectivity driving demand. Good
+                        for both end-users and investors.</p>
                 </div>
-                
+
                 <div class="glassmorphism rounded-xl p-6">
                     <div class="flex items-center justify-between mb-4">
                         <h3 class="font-poppins font-semibold text-light-gray">New Gurugram</h3>
@@ -296,7 +318,8 @@
                             <span class="text-gold font-semibold">Medium</span>
                         </div>
                     </div>
-                    <p class="text-muted-gray text-sm mt-4 leading-relaxed">Affordable luxury segment with strong infrastructure development. High appreciation potential.</p>
+                    <p class="text-muted-gray text-sm mt-4 leading-relaxed">Affordable luxury segment with strong
+                        infrastructure development. High appreciation potential.</p>
                 </div>
             </div>
         </div>
@@ -307,14 +330,15 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="glassmorphism rounded-xl p-8">
                 <h2 class="text-2xl font-poppins font-bold gradient-text mb-6">Expert Analysis</h2>
-                
+
                 <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
                     <div>
                         <h3 class="text-lg font-poppins font-semibold text-light-gray mb-4">Key Market Drivers</h3>
                         <ul class="space-y-3">
                             <li class="flex items-start">
                                 <span class="text-teal mr-2">•</span>
-                                <span class="text-muted-gray font-inter">Infrastructure completion driving premium pricing</span>
+                                <span class="text-muted-gray font-inter">Infrastructure completion driving premium
+                                    pricing</span>
                             </li>
                             <li class="flex items-start">
                                 <span class="text-teal mr-2">•</span>
@@ -330,25 +354,30 @@
                             </li>
                         </ul>
                     </div>
-                    
+
                     <div>
-                        <h3 class="text-lg font-poppins font-semibold text-light-gray mb-4">Investment Recommendations</h3>
+                        <h3 class="text-lg font-poppins font-semibold text-light-gray mb-4">Investment Recommendations
+                        </h3>
                         <ul class="space-y-3">
                             <li class="flex items-start">
                                 <span class="text-gold mr-2">•</span>
-                                <span class="text-muted-gray font-inter">Focus on completed infrastructure corridors</span>
+                                <span class="text-muted-gray font-inter">Focus on completed infrastructure
+                                    corridors</span>
                             </li>
                             <li class="flex items-start">
                                 <span class="text-gold mr-2">•</span>
-                                <span class="text-muted-gray font-inter">Consider emerging micro-markets for higher returns</span>
+                                <span class="text-muted-gray font-inter">Consider emerging micro-markets for higher
+                                    returns</span>
                             </li>
                             <li class="flex items-start">
                                 <span class="text-gold mr-2">•</span>
-                                <span class="text-muted-gray font-inter">Diversify across residential and commercial</span>
+                                <span class="text-muted-gray font-inter">Diversify across residential and
+                                    commercial</span>
                             </li>
                             <li class="flex items-start">
                                 <span class="text-gold mr-2">•</span>
-                                <span class="text-muted-gray font-inter">Monitor RERA compliance and developer track record</span>
+                                <span class="text-muted-gray font-inter">Monitor RERA compliance and developer track
+                                    record</span>
                             </li>
                         </ul>
                     </div>
@@ -364,20 +393,24 @@
             <p class="text-xl text-muted-gray font-inter mb-8">
                 Access comprehensive market analysis and investment guides
             </p>
-            
+
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div class="glassmorphism rounded-xl p-6 text-left">
                     <h3 class="text-lg font-poppins font-semibold text-light-gray mb-3">Q3 2025 Market Report</h3>
-                    <p class="text-muted-gray font-inter text-sm mb-4">Complete analysis of price trends, new launches, and investment opportunities across NCR.</p>
-                    <button class="bg-teal hover:bg-opacity-80 text-navy px-6 py-2 rounded-lg font-semibold transition-all duration-200">
+                    <p class="text-muted-gray font-inter text-sm mb-4">Complete analysis of price trends, new launches,
+                        and investment opportunities across NCR.</p>
+                    <button
+                        class="bg-teal hover:bg-opacity-80 text-navy px-6 py-2 rounded-lg font-semibold transition-all duration-200">
                         Download PDF
                     </button>
                 </div>
-                
+
                 <div class="glassmorphism rounded-xl p-6 text-left">
                     <h3 class="text-lg font-poppins font-semibold text-light-gray mb-3">Investment Guide 2025</h3>
-                    <p class="text-muted-gray font-inter text-sm mb-4">Strategic insights for real estate investment in NCR's top-performing micro-markets.</p>
-                    <button class="bg-teal hover:bg-opacity-80 text-navy px-6 py-2 rounded-lg font-semibold transition-all duration-200">
+                    <p class="text-muted-gray font-inter text-sm mb-4">Strategic insights for real estate investment in
+                        NCR's top-performing micro-markets.</p>
+                    <button
+                        class="bg-teal hover:bg-opacity-80 text-navy px-6 py-2 rounded-lg font-semibold transition-all duration-200">
                         Download PDF
                     </button>
                 </div>
@@ -391,30 +424,40 @@
             <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
                 <div>
                     <h3 class="text-xl font-poppins font-bold gradient-text mb-4">NCR Launch Watch</h3>
-                    <p class="text-muted-gray font-inter leading-relaxed">Premium real estate intelligence for Delhi NCR. Track launches, analyze markets, make informed decisions.</p>
+                    <p class="text-muted-gray font-inter leading-relaxed">Premium real estate intelligence for Delhi
+                        NCR. Track launches, analyze markets, make informed decisions.</p>
                 </div>
                 <div>
                     <h4 class="font-poppins font-semibold text-light-gray mb-4">Company</h4>
                     <ul class="space-y-2">
-                        <li><a href="#" class="text-muted-gray hover:text-teal transition-colors duration-200">About</a></li>
-                        <li><a href="#" class="text-muted-gray hover:text-teal transition-colors duration-200">Team</a></li>
-                        <li><a href="index.html#contact" class="text-muted-gray hover:text-teal transition-colors duration-200">Contact</a></li>
+                        <li><a href="#" class="text-muted-gray hover:text-teal transition-colors duration-200">About</a>
+                        </li>
+                        <li><a href="#" class="text-muted-gray hover:text-teal transition-colors duration-200">Team</a>
+                        </li>
+                        <li><a href="index.html#contact"
+                                class="text-muted-gray hover:text-teal transition-colors duration-200">Contact</a></li>
                     </ul>
                 </div>
                 <div>
                     <h4 class="font-poppins font-semibold text-light-gray mb-4">Resources</h4>
                     <ul class="space-y-2">
                         <li><a href="insights.html" class="text-teal">Insights</a></li>
-                        <li><a href="projects.html" class="text-muted-gray hover:text-teal transition-colors duration-200">Projects</a></li>
-                        <li><a href="index.html#faq" class="text-muted-gray hover:text-teal transition-colors duration-200">FAQ</a></li>
+                        <li><a href="projects.html"
+                                class="text-muted-gray hover:text-teal transition-colors duration-200">Projects</a></li>
+                        <li><a href="index.html#faq"
+                                class="text-muted-gray hover:text-teal transition-colors duration-200">FAQ</a></li>
                     </ul>
                 </div>
                 <div>
                     <h4 class="font-poppins font-semibold text-light-gray mb-4">Connect</h4>
                     <ul class="space-y-2">
-                        <li><a href="#" class="text-muted-gray hover:text-teal transition-colors duration-200">LinkedIn</a></li>
-                        <li><a href="#" class="text-muted-gray hover:text-teal transition-colors duration-200">Twitter</a></li>
-                        <li><a href="#" class="text-muted-gray hover:text-teal transition-colors duration-200">Instagram</a></li>
+                        <li><a href="#"
+                                class="text-muted-gray hover:text-teal transition-colors duration-200">LinkedIn</a></li>
+                        <li><a href="#"
+                                class="text-muted-gray hover:text-teal transition-colors duration-200">Twitter</a></li>
+                        <li><a href="#"
+                                class="text-muted-gray hover:text-teal transition-colors duration-200">Instagram</a>
+                        </li>
                     </ul>
                 </div>
             </div>
@@ -426,7 +469,7 @@
 
     <script>
         // Initialize charts when page loads
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function () {
             initializeCharts();
             initializeAnimations();
         });
@@ -542,7 +585,7 @@
             supplyChart.setOption(supplyOption);
 
             // Make charts responsive
-            window.addEventListener('resize', function() {
+            window.addEventListener('resize', function () {
                 priceChart.resize();
                 supplyChart.resize();
             });
@@ -555,7 +598,7 @@
                 rootMargin: '0px 0px -50px 0px'
             };
 
-            const observer = new IntersectionObserver(function(entries) {
+            const observer = new IntersectionObserver(function (entries) {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
                         entry.target.classList.add('revealed');
@@ -569,4 +612,5 @@
         }
     </script>
 </body>
+
 </html>
