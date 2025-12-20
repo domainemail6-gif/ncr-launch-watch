@@ -1,23 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-W04CLN4BZM"></script>
     <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      
-      gtag('config', 'G-W04CLN4BZM');
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-W04CLN4BZM');
     </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NCR Launch Watch Newsletter - Weekly Real Estate Intelligence</title>
-    <meta name="description" content="Get verified insights on new projects, infrastructure updates, and developer movements across Delhi NCR. Weekly newsletter delivered every Monday.">
-    
+    <meta name="description"
+        content="Get verified insights on new projects, infrastructure updates, and developer movements across Delhi NCR. Weekly newsletter delivered every Monday.">
+
     <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&family=Inter:wght@300;400;500;600&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
-    
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&family=Inter:wght@300;400;500;600&family=DM+Sans:wght@300;400;500&display=swap"
+        rel="stylesheet">
+
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -41,43 +45,43 @@
             }
         }
     </script>
-    
+
     <style>
         body {
             background: linear-gradient(135deg, #0a0a1f 0%, #1a1a2e 100%);
             font-family: 'Inter', sans-serif;
         }
-        
+
         .glassmorphism {
             background: rgba(26, 26, 46, 0.8);
             backdrop-filter: blur(10px);
             border: 1px solid rgba(255, 255, 255, 0.1);
         }
-        
+
         .gradient-text {
             background: linear-gradient(135deg, #00d4ff 0%, #d4af37 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
         }
-        
+
         .hover-lift {
             transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
-        
+
         .hover-lift:hover {
             transform: translateY(-8px);
             box-shadow: 0 25px 50px -12px rgba(0, 212, 255, 0.25);
         }
-        
+
         .glow-effect {
             box-shadow: 0 0 20px rgba(0, 212, 255, 0.3);
         }
-        
+
         .preview-blur {
             position: relative;
         }
-        
+
         .preview-blur::after {
             content: '';
             position: absolute;
@@ -88,23 +92,24 @@
             background: linear-gradient(to top, rgba(10, 10, 31, 0.95) 0%, rgba(10, 10, 31, 0.5) 50%, transparent 100%);
             pointer-events: none;
         }
-        
+
         .blurred-content {
             filter: blur(12px);
             pointer-events: none;
             user-select: none;
             opacity: 0.4;
         }
-        
+
         #subscribe-modal {
             display: none;
         }
-        
+
         #subscribe-modal.flex {
             display: flex !important;
         }
     </style>
 </head>
+
 <body class="text-light-gray overflow-x-hidden">
     <!-- Navigation -->
     <nav id="navbar" class="fixed top-0 w-full z-50 glassmorphism transition-transform duration-300">
@@ -115,29 +120,38 @@
                 </div>
                 <div class="hidden md:block">
                     <div class="ml-10 flex items-baseline space-x-8">
-                        <a href="/" class="text-light-gray hover:text-teal transition-colors duration-200 font-medium">Home</a>
-                        <a href="/newsletter/archive" class="text-light-gray hover:text-teal transition-colors duration-200 font-medium">Newsletter</a>
-                        <a href="/#faq" class="text-light-gray hover:text-teal transition-colors duration-200 font-medium">FAQ</a>
-                        <a href="mailto:realestatewithbhavik@gmail.com" class="text-light-gray hover:text-teal transition-colors duration-200 font-medium">Contact</a>
+                        <a href="/"
+                            class="text-light-gray hover:text-teal transition-colors duration-200 font-medium">Home</a>
+                        <a href="/newsletter/archive"
+                            class="text-light-gray hover:text-teal transition-colors duration-200 font-medium">Newsletter</a>
+                        <a href="/query.html"
+                            class="text-light-gray hover:text-teal transition-colors duration-200 font-medium">Enquire</a>
+                        <a href="/#faq"
+                            class="text-light-gray hover:text-teal transition-colors duration-200 font-medium">FAQ</a>
+                        <a href="mailto:realestatewithbhavik@gmail.com"
+                            class="text-light-gray hover:text-teal transition-colors duration-200 font-medium">Contact</a>
                     </div>
                 </div>
                 <div class="md:hidden">
                     <button id="mobile-menu-btn" class="text-light-gray hover:text-teal">
                         <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4 6h16M4 12h16M4 18h16" />
                         </svg>
                     </button>
                 </div>
             </div>
         </div>
-        
+
         <!-- Mobile Menu -->
         <div id="mobile-menu" class="md:hidden hidden glassmorphism border-t border-gray-700">
             <div class="px-2 pt-2 pb-3 space-y-1">
                 <a href="/" class="block px-3 py-2 text-light-gray hover:text-teal">Home</a>
                 <a href="/newsletter/archive" class="block px-3 py-2 text-light-gray hover:text-teal">Newsletter</a>
+                <a href="/query.html" class="block px-3 py-2 text-light-gray hover:text-teal">Enquire</a>
                 <a href="/#faq" class="block px-3 py-2 text-light-gray hover:text-teal">FAQ</a>
-                <a href="mailto:realestatewithbhavik@gmail.com" class="block px-3 py-2 text-light-gray hover:text-teal">Contact</a>
+                <a href="mailto:realestatewithbhavik@gmail.com"
+                    class="block px-3 py-2 text-light-gray hover:text-teal">Contact</a>
             </div>
         </div>
     </nav>
@@ -153,7 +167,8 @@
                     Delhi NCR's weekly real estate intelligence brief.
                 </p>
                 <div class="flex justify-center items-center mb-8">
-                    <button id="open-subscribe-modal" class="bg-teal hover:bg-opacity-80 text-navy px-12 py-4 rounded-lg font-semibold text-xl transition-all duration-200 hover:glow-effect hover-lift">
+                    <button id="open-subscribe-modal"
+                        class="bg-teal hover:bg-opacity-80 text-navy px-12 py-4 rounded-lg font-semibold text-xl transition-all duration-200 hover:glow-effect hover-lift">
                         Subscribe to read the latest edition
                     </button>
                 </div>
@@ -169,325 +184,564 @@
                     <h2 class="text-3xl md:text-4xl font-poppins font-bold gradient-text mb-4">Latest Edition</h2>
                     <p class="text-xl text-muted-gray font-inter">17 November 2025 • Weekly Briefing</p>
                 </div>
-                
+
                 <div class="max-w-4xl mx-auto">
                     <div class="intro mb-8 p-6 bg-charcoal rounded-lg border-l-4 border-teal">
-                        <p class="text-muted-gray font-inter leading-relaxed mb-4"><strong class="text-light-gray">Dear Reader,</strong></p>
-                        <p class="text-muted-gray font-inter leading-relaxed mb-4">This week's edition covers major developments across Delhi NCR's real estate landscape, from regulatory actions to infrastructure breakthroughs that are reshaping the region's property market.</p>
-                        <p class="text-muted-gray font-inter leading-relaxed">A concise overview of fresh launches and key developments across Delhi NCR.</p>
+                        <p class="text-muted-gray font-inter leading-relaxed mb-4"><strong class="text-light-gray">Dear
+                                Reader,</strong></p>
+                        <p class="text-muted-gray font-inter leading-relaxed mb-4">This week's edition covers major
+                            developments across Delhi NCR's real estate landscape, from regulatory actions to
+                            infrastructure breakthroughs that are reshaping the region's property market.</p>
+                        <p class="text-muted-gray font-inter leading-relaxed">A concise overview of fresh launches and
+                            key developments across Delhi NCR.</p>
                     </div>
-                    
+
                     <section class="mb-8">
-                        <h2 class="text-2xl font-poppins font-bold text-light-gray mb-6 pb-3 border-b border-gray-700">GURGAON</h2>
-                        
+                        <h2 class="text-2xl font-poppins font-bold text-light-gray mb-6 pb-3 border-b border-gray-700">
+                            GURGAON</h2>
+
                         <article class="mb-6 pb-6 border-b border-gray-800">
-                            <h3 class="text-xl font-poppins font-semibold text-light-gray mb-3">GST Council drops anti-profiteering proceedings against Ireo projects</h3>
-                            <p class="text-muted-gray font-inter leading-relaxed">GST Council has dropped anti-profiteering proceedings against Ireo projects in Gurgaon Hills and Grand Hyatt Gurgaon Residences. The decision brings relief to the developer and homebuyers who were facing potential price adjustments under the anti-profiteering provisions.</p>
+                            <h3 class="text-xl font-poppins font-semibold text-light-gray mb-3">GST Council drops
+                                anti-profiteering proceedings against Ireo projects</h3>
+                            <p class="text-muted-gray font-inter leading-relaxed">GST Council has dropped
+                                anti-profiteering proceedings against Ireo projects in Gurgaon Hills and Grand Hyatt
+                                Gurgaon Residences. The decision brings relief to the developer and homebuyers who were
+                                facing potential price adjustments under the anti-profiteering provisions.</p>
                         </article>
-                        
+
                         <article class="mb-6 pb-6 border-b border-gray-800">
-                            <h3 class="text-xl font-poppins font-semibold text-light-gray mb-3">NHAI to organize special camps for Dwarka Expressway toll passes</h3>
-                            <p class="text-muted-gray font-inter leading-relaxed">NHAI will organize special camps for issuing monthly toll passes for Dwarka Expressway, addressing commuter concerns about access and payment methods. The initiative aims to streamline the toll collection process and provide better facilities for daily commuters using the expressway.</p>
+                            <h3 class="text-xl font-poppins font-semibold text-light-gray mb-3">NHAI to organize special
+                                camps for Dwarka Expressway toll passes</h3>
+                            <p class="text-muted-gray font-inter leading-relaxed">NHAI will organize special camps for
+                                issuing monthly toll passes for Dwarka Expressway, addressing commuter concerns about
+                                access and payment methods. The initiative aims to streamline the toll collection
+                                process and provide better facilities for daily commuters using the expressway.</p>
                         </article>
-                        
+
                         <article class="mb-6 pb-6 border-b border-gray-800">
-                            <h3 class="text-xl font-poppins font-semibold text-light-gray mb-3">Emaar launches luxury project in Gurugram</h3>
-                            <p class="text-muted-gray font-inter leading-relaxed">Emaar has launched a new luxury project in Gurugram offering homes priced from ₹3.5-7 crore, targeting the premium segment. The development features contemporary architecture and premium amenities, positioning itself as a landmark residential address in the city.</p>
+                            <h3 class="text-xl font-poppins font-semibold text-light-gray mb-3">Emaar launches luxury
+                                project in Gurugram</h3>
+                            <p class="text-muted-gray font-inter leading-relaxed">Emaar has launched a new luxury
+                                project in Gurugram offering homes priced from ₹3.5-7 crore, targeting the premium
+                                segment. The development features contemporary architecture and premium amenities,
+                                positioning itself as a landmark residential address in the city.</p>
                         </article>
-                        
+
                         <article class="mb-6 pb-6 border-b border-gray-800">
-                            <h3 class="text-xl font-poppins font-semibold text-light-gray mb-3">IKEA set to open first store in Gurgaon</h3>
-                            <p class="text-muted-gray font-inter leading-relaxed">IKEA is preparing to open its first store in Gurgaon, marking the Swedish furniture retailer's expansion in the NCR region. The new outlet will feature IKEA's signature range of home furnishings and is expected to strengthen the retail landscape of the area.</p>
+                            <h3 class="text-xl font-poppins font-semibold text-light-gray mb-3">IKEA set to open first
+                                store in Gurgaon</h3>
+                            <p class="text-muted-gray font-inter leading-relaxed">IKEA is preparing to open its first
+                                store in Gurgaon, marking the Swedish furniture retailer's expansion in the NCR region.
+                                The new outlet will feature IKEA's signature range of home furnishings and is expected
+                                to strengthen the retail landscape of the area.</p>
                         </article>
-                        
+
                         <article class="mb-6 pb-6 border-b border-gray-800">
-                            <h3 class="text-xl font-poppins font-semibold text-light-gray mb-3">Lodha Developers identifies Gurugram as NCR launchpad</h3>
-                            <p class="text-muted-gray font-inter leading-relaxed">Lodha Developers has identified Gurugram as its launchpad for entering the NCR real estate market. The Mumbai-based developer is planning to launch premium residential projects in the city, leveraging its expertise in luxury housing development.</p>
+                            <h3 class="text-xl font-poppins font-semibold text-light-gray mb-3">Lodha Developers
+                                identifies Gurugram as NCR launchpad</h3>
+                            <p class="text-muted-gray font-inter leading-relaxed">Lodha Developers has identified
+                                Gurugram as its launchpad for entering the NCR real estate market. The Mumbai-based
+                                developer is planning to launch premium residential projects in the city, leveraging its
+                                expertise in luxury housing development.</p>
                         </article>
-                        
+
                         <article class="mb-6 pb-6 border-b border-gray-800">
-                            <h3 class="text-xl font-poppins font-semibold text-light-gray mb-3">Shapoorji Pallonji partners with Bosch for in-residence car care</h3>
-                            <p class="text-muted-gray font-inter leading-relaxed">Shapoorji Pallonji Real Estate has partnered with Bosch Car Service to launch in-residence car care facilities at The Dualis Gurugram. The collaboration aims to provide premium car maintenance services within the residential complex, adding value to the luxury living experience.</p>
+                            <h3 class="text-xl font-poppins font-semibold text-light-gray mb-3">Shapoorji Pallonji
+                                partners with Bosch for in-residence car care</h3>
+                            <p class="text-muted-gray font-inter leading-relaxed">Shapoorji Pallonji Real Estate has
+                                partnered with Bosch Car Service to launch in-residence car care facilities at The
+                                Dualis Gurugram. The collaboration aims to provide premium car maintenance services
+                                within the residential complex, adding value to the luxury living experience.</p>
                         </article>
-                        
+
                         <article class="mb-6 pb-6 border-b border-gray-800">
-                            <h3 class="text-xl font-poppins font-semibold text-light-gray mb-3">Gurugram SPR to be constructed as elevated road</h3>
-                            <p class="text-muted-gray font-inter leading-relaxed">The Southern Peripheral Road (SPR) from Ghata to NH-48 will be constructed as an elevated road with an interchange at Vatika Chowk. The project aims to improve traffic flow and reduce congestion in the rapidly developing corridor of Gurugram.</p>
+                            <h3 class="text-xl font-poppins font-semibold text-light-gray mb-3">Gurugram SPR to be
+                                constructed as elevated road</h3>
+                            <p class="text-muted-gray font-inter leading-relaxed">The Southern Peripheral Road (SPR)
+                                from Ghata to NH-48 will be constructed as an elevated road with an interchange at
+                                Vatika Chowk. The project aims to improve traffic flow and reduce congestion in the
+                                rapidly developing corridor of Gurugram.</p>
                         </article>
-                        
+
                         <article class="mb-6 pb-6 border-b border-gray-800">
-                            <h3 class="text-xl font-poppins font-semibold text-light-gray mb-3">HSIIDC takes over maintenance of IMT sectors</h3>
-                            <p class="text-muted-gray font-inter leading-relaxed">HSIIDC has taken over the maintenance of public amenities in IMT sectors 1-8 in Gurgaon. The move is expected to improve infrastructure and civic facilities in these industrial areas, enhancing the working environment for businesses and employees.</p>
+                            <h3 class="text-xl font-poppins font-semibold text-light-gray mb-3">HSIIDC takes over
+                                maintenance of IMT sectors</h3>
+                            <p class="text-muted-gray font-inter leading-relaxed">HSIIDC has taken over the maintenance
+                                of public amenities in IMT sectors 1-8 in Gurgaon. The move is expected to improve
+                                infrastructure and civic facilities in these industrial areas, enhancing the working
+                                environment for businesses and employees.</p>
                         </article>
-                        
+
                         <article class="mb-6 pb-6 border-b border-gray-800">
-                            <h3 class="text-xl font-poppins font-semibold text-light-gray mb-3">SRS Group promoters face charges in money laundering case</h3>
-                            <p class="text-muted-gray font-inter leading-relaxed">Charges have been framed against SRS Group promoters in a ₹2,200 crore money laundering case. The development highlights the ongoing regulatory scrutiny in the real estate sector and the authorities' efforts to address financial irregularities.</p>
+                            <h3 class="text-xl font-poppins font-semibold text-light-gray mb-3">SRS Group promoters face
+                                charges in money laundering case</h3>
+                            <p class="text-muted-gray font-inter leading-relaxed">Charges have been framed against SRS
+                                Group promoters in a ₹2,200 crore money laundering case. The development highlights the
+                                ongoing regulatory scrutiny in the real estate sector and the authorities' efforts to
+                                address financial irregularities.</p>
                         </article>
-                        
+
                         <article class="mb-6 pb-6 border-b border-gray-800">
-                            <h3 class="text-xl font-poppins font-semibold text-light-gray mb-3">Roots Development announces new Gurugram project</h3>
-                            <p class="text-muted-gray font-inter leading-relaxed">Roots Development has announced a new residential project in Gurugram, focusing on modern community living with improved urban design and amenities. The project aims to strengthen the developer's presence in the NCR market.</p>
+                            <h3 class="text-xl font-poppins font-semibold text-light-gray mb-3">Roots Development
+                                announces new Gurugram project</h3>
+                            <p class="text-muted-gray font-inter leading-relaxed">Roots Development has announced a new
+                                residential project in Gurugram, focusing on modern community living with improved urban
+                                design and amenities. The project aims to strengthen the developer's presence in the NCR
+                                market.</p>
                         </article>
-                        
+
                         <article class="mb-6 pb-6 border-b border-gray-800">
-                            <h3 class="text-xl font-poppins font-semibold text-light-gray mb-3">Gurgaon Metro expansion proposal advances</h3>
-                            <p class="text-muted-gray font-inter leading-relaxed">A new proposal for expanding the Gurgaon Metro network has progressed, with plans aimed at improving connectivity between key residential and commercial corridors. The project is expected to ease congestion and support future urban growth.</p>
+                            <h3 class="text-xl font-poppins font-semibold text-light-gray mb-3">Gurgaon Metro expansion
+                                proposal advances</h3>
+                            <p class="text-muted-gray font-inter leading-relaxed">A new proposal for expanding the
+                                Gurgaon Metro network has progressed, with plans aimed at improving connectivity between
+                                key residential and commercial corridors. The project is expected to ease congestion and
+                                support future urban growth.</p>
                         </article>
                     </section>
-                    
+
                     <section class="mb-8">
-                        <h2 class="text-2xl font-poppins font-bold text-light-gray mb-6 pb-3 border-b border-gray-700">NOIDA</h2>
-                        
+                        <h2 class="text-2xl font-poppins font-bold text-light-gray mb-6 pb-3 border-b border-gray-700">
+                            NOIDA</h2>
+
                         <article class="mb-6 pb-6 border-b border-gray-800">
-                            <h3 class="text-xl font-poppins font-semibold text-light-gray mb-3">Great Value Realty launches ₹600 crore luxury project</h3>
-                            <p class="text-muted-gray font-inter leading-relaxed">Great Value Realty has launched a ₹600 crore luxury residential project in Noida, targeting the premium segment. The development features high-end amenities and contemporary design, catering to the growing demand for luxury housing in the region.</p>
+                            <h3 class="text-xl font-poppins font-semibold text-light-gray mb-3">Great Value Realty
+                                launches ₹600 crore luxury project</h3>
+                            <p class="text-muted-gray font-inter leading-relaxed">Great Value Realty has launched a ₹600
+                                crore luxury residential project in Noida, targeting the premium segment. The
+                                development features high-end amenities and contemporary design, catering to the growing
+                                demand for luxury housing in the region.</p>
                         </article>
-                        
+
                         <article class="mb-6 pb-6 border-b border-gray-800">
-                            <h3 class="text-xl font-poppins font-semibold text-light-gray mb-3">UP RERA approves 6 projects worth ₹864 crore</h3>
-                            <p class="text-muted-gray font-inter leading-relaxed">UP RERA has approved 6 projects worth ₹864 crore across 5 districts including Noida. The approval will enable construction of approximately 2,500 housing units, addressing the demand-supply gap in the region's real estate market.</p>
+                            <h3 class="text-xl font-poppins font-semibold text-light-gray mb-3">UP RERA approves 6
+                                projects worth ₹864 crore</h3>
+                            <p class="text-muted-gray font-inter leading-relaxed">UP RERA has approved 6 projects worth
+                                ₹864 crore across 5 districts including Noida. The approval will enable construction of
+                                approximately 2,500 housing units, addressing the demand-supply gap in the region's real
+                                estate market.</p>
                         </article>
-                        
+
                         <article class="mb-6 pb-6 border-b border-gray-800">
-                            <h3 class="text-xl font-poppins font-semibold text-light-gray mb-3">Noida Authority seals part of Lotus Panache project</h3>
-                            <p class="text-muted-gray font-inter leading-relaxed">Noida Authority has sealed part of the Lotus Panache project in Sector 11 over regulatory violations. The action highlights the authority's strict stance on compliance with building norms and regulations in the city.</p>
+                            <h3 class="text-xl font-poppins font-semibold text-light-gray mb-3">Noida Authority seals
+                                part of Lotus Panache project</h3>
+                            <p class="text-muted-gray font-inter leading-relaxed">Noida Authority has sealed part of the
+                                Lotus Panache project in Sector 11 over regulatory violations. The action highlights the
+                                authority's strict stance on compliance with building norms and regulations in the city.
+                            </p>
                         </article>
-                        
+
                         <article class="mb-6 pb-6 border-b border-gray-800">
-                            <h3 class="text-xl font-poppins font-semibold text-light-gray mb-3">Noida Authority issues notice to 22 AT projects for delays</h3>
-                            <p class="text-muted-gray font-inter leading-relaxed">Noida Authority has issued notices to 22 AT projects for missing the Sports City development deadline. The notices serve as a warning to developers to expedite construction work and fulfill their commitments to homebuyers.</p>
+                            <h3 class="text-xl font-poppins font-semibold text-light-gray mb-3">Noida Authority issues
+                                notice to 22 AT projects for delays</h3>
+                            <p class="text-muted-gray font-inter leading-relaxed">Noida Authority has issued notices to
+                                22 AT projects for missing the Sports City development deadline. The notices serve as a
+                                warning to developers to expedite construction work and fulfill their commitments to
+                                homebuyers.</p>
                         </article>
-                        
+
                         <article class="mb-6 pb-6 border-b border-gray-800">
-                            <h3 class="text-xl font-poppins font-semibold text-light-gray mb-3">Sikka Karnam Greens project receives approval</h3>
-                            <p class="text-muted-gray font-inter leading-relaxed">Sikka Karnam Greens project has received Noida Authority approval, bringing relief to homebuyers who were facing delays. The development is expected to resume construction activities shortly, with completion timeline to be announced soon.</p>
+                            <h3 class="text-xl font-poppins font-semibold text-light-gray mb-3">Sikka Karnam Greens
+                                project receives approval</h3>
+                            <p class="text-muted-gray font-inter leading-relaxed">Sikka Karnam Greens project has
+                                received Noida Authority approval, bringing relief to homebuyers who were facing delays.
+                                The development is expected to resume construction activities shortly, with completion
+                                timeline to be announced soon.</p>
                         </article>
-                        
+
                         <article class="mb-6 pb-6 border-b border-gray-800">
-                            <h3 class="text-xl font-poppins font-semibold text-light-gray mb-3">Branded homes outperform regular projects in Noida</h3>
-                            <p class="text-muted-gray font-inter leading-relaxed">Branded homes in Noida are outperforming regular projects, showing higher appreciation rates and better rental yields. The trend reflects the growing preference for branded residential developments among homebuyers seeking quality assurance and premium amenities.</p>
+                            <h3 class="text-xl font-poppins font-semibold text-light-gray mb-3">Branded homes outperform
+                                regular projects in Noida</h3>
+                            <p class="text-muted-gray font-inter leading-relaxed">Branded homes in Noida are
+                                outperforming regular projects, showing higher appreciation rates and better rental
+                                yields. The trend reflects the growing preference for branded residential developments
+                                among homebuyers seeking quality assurance and premium amenities.</p>
                         </article>
-                        
+
                         <article class="mb-6 pb-6 border-b border-gray-800">
-                            <h3 class="text-xl font-poppins font-semibold text-light-gray mb-3">Notice issued to ATS for Sports city delay</h3>
-                            <p class="text-muted-gray font-inter leading-relaxed">Noida Authority has issued a notice to ATS over delays in the Sports City development. The developer has been asked to furnish an updated timeline, reflecting the authority's push for faster progress on long-pending projects.</p>
+                            <h3 class="text-xl font-poppins font-semibold text-light-gray mb-3">Notice issued to ATS for
+                                Sports city delay</h3>
+                            <p class="text-muted-gray font-inter leading-relaxed">Noida Authority has issued a notice to
+                                ATS over delays in the Sports City development. The developer has been asked to furnish
+                                an updated timeline, reflecting the authority's push for faster progress on long-pending
+                                projects.</p>
                         </article>
                     </section>
-                    
+
                     <section class="mb-8">
-                        <h2 class="text-2xl font-poppins font-bold text-light-gray mb-6 pb-3 border-b border-gray-700">YAMUNA EXPRESSWAY</h2>
-                        
+                        <h2 class="text-2xl font-poppins font-bold text-light-gray mb-6 pb-3 border-b border-gray-700">
+                            YAMUNA EXPRESSWAY</h2>
+
                         <article class="mb-6 pb-6 border-b border-gray-800">
-                            <h3 class="text-xl font-poppins font-semibold text-light-gray mb-3">Gaur's Group launches ₹20 billion project</h3>
-                            <p class="text-muted-gray font-inter leading-relaxed">Gaur's Group has launched a ₹20 billion project on Yamuna Expressway, expanding development along the corridor. The mixed-use development will include residential, commercial, and retail components, catering to the growing population in the region.</p>
+                            <h3 class="text-xl font-poppins font-semibold text-light-gray mb-3">Gaur's Group launches
+                                ₹20 billion project</h3>
+                            <p class="text-muted-gray font-inter leading-relaxed">Gaur's Group has launched a ₹20
+                                billion project on Yamuna Expressway, expanding development along the corridor. The
+                                mixed-use development will include residential, commercial, and retail components,
+                                catering to the growing population in the region.</p>
                         </article>
                     </section>
-                    
+
                     <section class="mb-8">
-                        <h2 class="text-2xl font-poppins font-bold text-light-gray mb-6 pb-3 border-b border-gray-700">GREATER NOIDA</h2>
-                        
+                        <h2 class="text-2xl font-poppins font-bold text-light-gray mb-6 pb-3 border-b border-gray-700">
+                            GREATER NOIDA</h2>
+
                         <article class="mb-6 pb-6 border-b border-gray-800">
-                            <h3 class="text-xl font-poppins font-semibold text-light-gray mb-3">Ashtech Group enters real estate with ₹1,800 crore project</h3>
-                            <p class="text-muted-gray font-inter leading-relaxed">Ashtech Group has entered the real estate sector with a ₹1,800 crore investment in its first Greater Noida project. The development will feature premium residential units with modern amenities, targeting the mid to high-end segment.</p>
+                            <h3 class="text-xl font-poppins font-semibold text-light-gray mb-3">Ashtech Group enters
+                                real estate with ₹1,800 crore project</h3>
+                            <p class="text-muted-gray font-inter leading-relaxed">Ashtech Group has entered the real
+                                estate sector with a ₹1,800 crore investment in its first Greater Noida project. The
+                                development will feature premium residential units with modern amenities, targeting the
+                                mid to high-end segment.</p>
                         </article>
-                        
+
                         <article class="mb-6 pb-6 border-b border-gray-800">
-                            <h3 class="text-xl font-poppins font-semibold text-light-gray mb-3">NCLT approves resolution plan for Ansal Properties</h3>
-                            <p class="text-muted-gray font-inter leading-relaxed">NCLT has approved the resolution plan for Ansal Properties' Serene Residency project in Greater Noida. The approval will enable the completion of the stalled project, providing relief to homebuyers who have been waiting for possession for several years.</p>
+                            <h3 class="text-xl font-poppins font-semibold text-light-gray mb-3">NCLT approves resolution
+                                plan for Ansal Properties</h3>
+                            <p class="text-muted-gray font-inter leading-relaxed">NCLT has approved the resolution plan
+                                for Ansal Properties' Serene Residency project in Greater Noida. The approval will
+                                enable the completion of the stalled project, providing relief to homebuyers who have
+                                been waiting for possession for several years.</p>
                         </article>
                     </section>
-                    
+
                     <section class="mb-8">
-                        <h2 class="text-2xl font-poppins font-bold text-light-gray mb-6 pb-3 border-b border-gray-700">DELHI</h2>
-                        
+                        <h2 class="text-2xl font-poppins font-bold text-light-gray mb-6 pb-3 border-b border-gray-700">
+                            DELHI</h2>
+
                         <article class="mb-6 pb-6 border-b border-gray-800">
-                            <h3 class="text-xl font-poppins font-semibold text-light-gray mb-3">GRAP III imposed as pollution curbs tightened</h3>
-                            <p class="text-muted-gray font-inter leading-relaxed">GRAP III has been imposed as pollution curbs are tightened in Delhi with AQI breaching the 400 mark. The measures include restrictions on construction activities and vehicle movement, impacting real estate development and sales in the capital.</p>
+                            <h3 class="text-xl font-poppins font-semibold text-light-gray mb-3">GRAP III imposed as
+                                pollution curbs tightened</h3>
+                            <p class="text-muted-gray font-inter leading-relaxed">GRAP III has been imposed as pollution
+                                curbs are tightened in Delhi with AQI breaching the 400 mark. The measures include
+                                restrictions on construction activities and vehicle movement, impacting real estate
+                                development and sales in the capital.</p>
                         </article>
-                        
+
                         <article class="mb-6 pb-6 border-b border-gray-800">
-                            <h3 class="text-xl font-poppins font-semibold text-light-gray mb-3">South Delhi independent floor prices jump 17%</h3>
-                            <p class="text-muted-gray font-inter leading-relaxed">South Delhi independent floor prices have jumped 17% in Q3 2025, indicating strong market performance in the luxury segment. The price appreciation reflects the limited supply and high demand for independent floors in prime locations.</p>
+                            <h3 class="text-xl font-poppins font-semibold text-light-gray mb-3">South Delhi independent
+                                floor prices jump 17%</h3>
+                            <p class="text-muted-gray font-inter leading-relaxed">South Delhi independent floor prices
+                                have jumped 17% in Q3 2025, indicating strong market performance in the luxury segment.
+                                The price appreciation reflects the limited supply and high demand for independent
+                                floors in prime locations.</p>
                         </article>
-                        
+
                         <article class="mb-6 pb-6 border-b border-gray-800">
-                            <h3 class="text-xl font-poppins font-semibold text-light-gray mb-3">JLN Stadium redevelopment to reinforce premium market</h3>
-                            <p class="text-muted-gray font-inter leading-relaxed">JLN Stadium redevelopment may reinforce Delhi's ultra-premium property market appeal, though it may not drive major price shifts. The project is expected to enhance the infrastructure and aesthetic appeal of the surrounding area, potentially increasing property values in the vicinity.</p>
+                            <h3 class="text-xl font-poppins font-semibold text-light-gray mb-3">JLN Stadium
+                                redevelopment to reinforce premium market</h3>
+                            <p class="text-muted-gray font-inter leading-relaxed">JLN Stadium redevelopment may
+                                reinforce Delhi's ultra-premium property market appeal, though it may not drive major
+                                price shifts. The project is expected to enhance the infrastructure and aesthetic appeal
+                                of the surrounding area, potentially increasing property values in the vicinity.</p>
                         </article>
-                        
+
                         <article class="mb-6 pb-6 border-b border-gray-800">
-                            <h3 class="text-xl font-poppins font-semibold text-light-gray mb-3">OpenAI selects Delhi for first India office</h3>
-                            <p class="text-muted-gray font-inter leading-relaxed">OpenAI has selected Delhi for its first India office, leasing a 50-seater space in the capital. The move by the artificial intelligence giant signals growing international interest in India's tech ecosystem and could boost commercial real estate demand in prime locations.</p>
+                            <h3 class="text-xl font-poppins font-semibold text-light-gray mb-3">OpenAI selects Delhi for
+                                first India office</h3>
+                            <p class="text-muted-gray font-inter leading-relaxed">OpenAI has selected Delhi for its
+                                first India office, leasing a 50-seater space in the capital. The move by the artificial
+                                intelligence giant signals growing international interest in India's tech ecosystem and
+                                could boost commercial real estate demand in prime locations.</p>
                         </article>
-                        
+
                         <article class="mb-6 pb-6 border-b border-gray-800">
-                            <h3 class="text-xl font-poppins font-semibold text-light-gray mb-3">Delhi Metro Phase IV finally approved</h3>
-                            <p class="text-muted-gray font-inter leading-relaxed">Delhi Metro Phase IV has finally been approved by the government, enhancing connectivity across the capital and NCR. The project will improve transportation infrastructure and potentially increase property values along the new metro corridors.</p>
+                            <h3 class="text-xl font-poppins font-semibold text-light-gray mb-3">Delhi Metro Phase IV
+                                finally approved</h3>
+                            <p class="text-muted-gray font-inter leading-relaxed">Delhi Metro Phase IV has finally been
+                                approved by the government, enhancing connectivity across the capital and NCR. The
+                                project will improve transportation infrastructure and potentially increase property
+                                values along the new metro corridors.</p>
                         </article>
                     </section>
-                    
+
                     <section class="mb-8">
-                        <h2 class="text-2xl font-poppins font-bold text-light-gray mb-6 pb-3 border-b border-gray-700">NCR</h2>
-                        
+                        <h2 class="text-2xl font-poppins font-bold text-light-gray mb-6 pb-3 border-b border-gray-700">
+                            NCR</h2>
+
                         <article class="mb-6 pb-6 border-b border-gray-800">
-                            <h3 class="text-xl font-poppins font-semibold text-light-gray mb-3">Noida's retail boom driven by infrastructure projects</h3>
-                            <p class="text-muted-gray font-inter leading-relaxed">Noida's retail boom is being driven by two mega infrastructure projects: Noida International Airport and Yamuna Expressway development. These projects are attracting major retail brands and developers to the region, creating new commercial opportunities.</p>
+                            <h3 class="text-xl font-poppins font-semibold text-light-gray mb-3">Noida's retail boom
+                                driven by infrastructure projects</h3>
+                            <p class="text-muted-gray font-inter leading-relaxed">Noida's retail boom is being driven by
+                                two mega infrastructure projects: Noida International Airport and Yamuna Expressway
+                                development. These projects are attracting major retail brands and developers to the
+                                region, creating new commercial opportunities.</p>
                         </article>
-                        
+
                         <article class="mb-6 pb-6 border-b border-gray-800">
-                            <h3 class="text-xl font-poppins font-semibold text-light-gray mb-3">Delhi NCR commercial real estate set for supply boost</h3>
-                            <p class="text-muted-gray font-inter leading-relaxed">Delhi NCR commercial real estate is set for a major supply boost with 5 million sqft of new Grade A space expected in the coming months. The addition will address the growing demand for quality office space from domestic and international companies.</p>
+                            <h3 class="text-xl font-poppins font-semibold text-light-gray mb-3">Delhi NCR commercial
+                                real estate set for supply boost</h3>
+                            <p class="text-muted-gray font-inter leading-relaxed">Delhi NCR commercial real estate is
+                                set for a major supply boost with 5 million sqft of new Grade A space expected in the
+                                coming months. The addition will address the growing demand for quality office space
+                                from domestic and international companies.</p>
                         </article>
-                        
+
                         <article class="mb-6 pb-6 border-b border-gray-800">
-                            <h3 class="text-xl font-poppins font-semibold text-light-gray mb-3">Noida International Airport nearing operations</h3>
-                            <p class="text-muted-gray font-inter leading-relaxed">Noida International Airport is nearing operations as Tata Projects awaits final approvals. The airport is expected to transform the region's connectivity and boost real estate development in the surrounding areas, particularly along the Yamuna Expressway.</p>
+                            <h3 class="text-xl font-poppins font-semibold text-light-gray mb-3">Noida International
+                                Airport nearing operations</h3>
+                            <p class="text-muted-gray font-inter leading-relaxed">Noida International Airport is nearing
+                                operations as Tata Projects awaits final approvals. The airport is expected to transform
+                                the region's connectivity and boost real estate development in the surrounding areas,
+                                particularly along the Yamuna Expressway.</p>
                         </article>
-                        
+
                         <article class="mb-6 pb-6 border-b border-gray-800">
-                            <h3 class="text-xl font-poppins font-semibold text-light-gray mb-3">Metro and rapid rail connectivity push Kundli-Sonipat growth</h3>
-                            <p class="text-muted-gray font-inter leading-relaxed">Metro and rapid rail connectivity are pushing Kundli-Sonipat toward major NCR growth. The improved transportation infrastructure is attracting real estate developers and homebuyers to the region, creating new residential and commercial opportunities.</p>
+                            <h3 class="text-xl font-poppins font-semibold text-light-gray mb-3">Metro and rapid rail
+                                connectivity push Kundli-Sonipat growth</h3>
+                            <p class="text-muted-gray font-inter leading-relaxed">Metro and rapid rail connectivity are
+                                pushing Kundli-Sonipat toward major NCR growth. The improved transportation
+                                infrastructure is attracting real estate developers and homebuyers to the region,
+                                creating new residential and commercial opportunities.</p>
                         </article>
-                        
+
                         <article class="mb-6 pb-6 border-b border-gray-800">
-                            <h3 class="text-xl font-poppins font-semibold text-light-gray mb-3">Godrej Properties to launch ₹22,000 crore housing units</h3>
-                            <p class="text-muted-gray font-inter leading-relaxed">Godrej Properties will launch ₹22,000 crore worth of housing units to capitalize on strong consumer demand. The company's aggressive expansion strategy reflects confidence in the residential real estate market's recovery and growth potential.</p>
+                            <h3 class="text-xl font-poppins font-semibold text-light-gray mb-3">Godrej Properties to
+                                launch ₹22,000 crore housing units</h3>
+                            <p class="text-muted-gray font-inter leading-relaxed">Godrej Properties will launch ₹22,000
+                                crore worth of housing units to capitalize on strong consumer demand. The company's
+                                aggressive expansion strategy reflects confidence in the residential real estate
+                                market's recovery and growth potential.</p>
                         </article>
-                        
+
                         <article class="mb-6 pb-6 border-b border-gray-800">
-                            <h3 class="text-xl font-poppins font-semibold text-light-gray mb-3">Construction activities restricted due to air quality</h3>
-                            <p class="text-muted-gray font-inter leading-relaxed">Construction activities in NCR have been restricted due to deteriorating air quality under GRAP III measures. The restrictions are impacting project timelines and costs, creating challenges for developers already facing supply chain disruptions and labor shortages.</p>
+                            <h3 class="text-xl font-poppins font-semibold text-light-gray mb-3">Construction activities
+                                restricted due to air quality</h3>
+                            <p class="text-muted-gray font-inter leading-relaxed">Construction activities in NCR have
+                                been restricted due to deteriorating air quality under GRAP III measures. The
+                                restrictions are impacting project timelines and costs, creating challenges for
+                                developers already facing supply chain disruptions and labor shortages.</p>
                         </article>
-                        
+
                         <article class="mb-6 pb-6 border-b border-gray-800">
-                            <h3 class="text-xl font-poppins font-semibold text-light-gray mb-3">Alpha Corp targets ₹1,000 crore revenue by FY27</h3>
-                            <p class="text-muted-gray font-inter leading-relaxed">Alpha Corp is targeting ₹1,000 crore revenue and market debut by FY27. The real estate developer's ambitious growth plan includes launching new projects across NCR and expanding its presence in the mid to premium segment.</p>
+                            <h3 class="text-xl font-poppins font-semibold text-light-gray mb-3">Alpha Corp targets
+                                ₹1,000 crore revenue by FY27</h3>
+                            <p class="text-muted-gray font-inter leading-relaxed">Alpha Corp is targeting ₹1,000 crore
+                                revenue and market debut by FY27. The real estate developer's ambitious growth plan
+                                includes launching new projects across NCR and expanding its presence in the mid to
+                                premium segment.</p>
                         </article>
-                        
+
                         <article class="mb-6 pb-6 border-b border-gray-800">
-                            <h3 class="text-xl font-poppins font-semibold text-light-gray mb-3">Wonderla eyes expansion to Delhi NCR and Mumbai</h3>
-                            <p class="text-muted-gray font-inter leading-relaxed">Wonderla is eyeing expansion to Delhi NCR and Mumbai markets, planning to establish new amusement parks in these regions. The entertainment company's expansion strategy reflects growing demand for leisure and recreational facilities in metropolitan areas.</p>
+                            <h3 class="text-xl font-poppins font-semibold text-light-gray mb-3">Wonderla eyes expansion
+                                to Delhi NCR and Mumbai</h3>
+                            <p class="text-muted-gray font-inter leading-relaxed">Wonderla is eyeing expansion to Delhi
+                                NCR and Mumbai markets, planning to establish new amusement parks in these regions. The
+                                entertainment company's expansion strategy reflects growing demand for leisure and
+                                recreational facilities in metropolitan areas.</p>
                         </article>
-                        
+
                         <article class="mb-6 pb-6 border-b border-gray-800">
-                            <h3 class="text-xl font-poppins font-semibold text-light-gray mb-3">BPTP Ltd prepares for IPO with ₹10,000 crore target</h3>
-                            <p class="text-muted-gray font-inter leading-relaxed">BPTP Ltd is preparing for IPO with a target of ₹10,000 crore annual revenue. The NCR-based real estate developer's listing plans indicate confidence in the capital markets and the company's growth prospects in the residential and commercial segments.</p>
+                            <h3 class="text-xl font-poppins font-semibold text-light-gray mb-3">BPTP Ltd prepares for
+                                IPO with ₹10,000 crore target</h3>
+                            <p class="text-muted-gray font-inter leading-relaxed">BPTP Ltd is preparing for IPO with a
+                                target of ₹10,000 crore annual revenue. The NCR-based real estate developer's listing
+                                plans indicate confidence in the capital markets and the company's growth prospects in
+                                the residential and commercial segments.</p>
                         </article>
-                        
+
                         <article class="mb-6 pb-6 border-b border-gray-800">
-                            <h3 class="text-xl font-poppins font-semibold text-light-gray mb-3">Two RRTS corridors move to final approval</h3>
-                            <p class="text-muted-gray font-inter leading-relaxed">Two RRTS corridors in NCR have moved to final approval after PIB clearance. The rapid rail connectivity will significantly reduce travel time between Delhi and neighboring cities, potentially boosting real estate development along the corridors.</p>
+                            <h3 class="text-xl font-poppins font-semibold text-light-gray mb-3">Two RRTS corridors move
+                                to final approval</h3>
+                            <p class="text-muted-gray font-inter leading-relaxed">Two RRTS corridors in NCR have moved
+                                to final approval after PIB clearance. The rapid rail connectivity will significantly
+                                reduce travel time between Delhi and neighboring cities, potentially boosting real
+                                estate development along the corridors.</p>
                         </article>
-                        
+
                         <article class="mb-6 pb-6 border-b border-gray-800">
-                            <h3 class="text-xl font-poppins font-semibold text-light-gray mb-3">NCR highlighted in India's ₹10 trillion real estate growth story</h3>
-                            <p class="text-muted-gray font-inter leading-relaxed">A national real estate report notes NCR's contribution to India's ₹10-trillion sector growth. Key drivers include corporate leasing in Gurugram, residential launches in Noida, and rapid development along the Yamuna Expressway.</p>
+                            <h3 class="text-xl font-poppins font-semibold text-light-gray mb-3">NCR highlighted in
+                                India's ₹10 trillion real estate growth story</h3>
+                            <p class="text-muted-gray font-inter leading-relaxed">A national real estate report notes
+                                NCR's contribution to India's ₹10-trillion sector growth. Key drivers include corporate
+                                leasing in Gurugram, residential launches in Noida, and rapid development along the
+                                Yamuna Expressway.</p>
                         </article>
-                        
+
                         <article class="mb-6 pb-6 border-b border-gray-800">
-                            <h3 class="text-xl font-poppins font-semibold text-light-gray mb-3">Saya Group repays ₹1,500 crore debt</h3>
-                            <p class="text-muted-gray font-inter leading-relaxed">Saya Group has repaid ₹1,500 crore of outstanding debt to strengthen its financial position and focus on future growth. The developer aims to accelerate ongoing projects and plan new launches across NCR.</p>
+                            <h3 class="text-xl font-poppins font-semibold text-light-gray mb-3">Saya Group repays ₹1,500
+                                crore debt</h3>
+                            <p class="text-muted-gray font-inter leading-relaxed">Saya Group has repaid ₹1,500 crore of
+                                outstanding debt to strengthen its financial position and focus on future growth. The
+                                developer aims to accelerate ongoing projects and plan new launches across NCR.</p>
                         </article>
                     </section>
-                    
+
                     <section class="mb-8">
-                        <h2 class="text-2xl font-poppins font-bold text-light-gray mb-6 pb-3 border-b border-gray-700">PROJECTS TO WATCH</h2>
-                        
+                        <h2 class="text-2xl font-poppins font-bold text-light-gray mb-6 pb-3 border-b border-gray-700">
+                            PROJECTS TO WATCH</h2>
+
                         <div class="mb-6 pb-6 border-b border-gray-800 bg-charcoal rounded-lg p-6">
-                            <h3 class="text-xl font-poppins font-semibold text-teal mb-3">Birla Pravaah — Sector 71, Gurgaon</h3>
-                            <p class="text-muted-gray font-inter leading-relaxed mb-4">A premium high-rise residential development near SPR with good connectivity and modern amenities.</p>
-                            <a href="https://wa.me/7011733205?text=Birla%20Pravaah%20%E2%80%94%20Sector%2071,%20Gurgaon" target="_blank" class="text-teal hover:text-gold transition-colors duration-200 font-medium">Connect on WhatsApp →</a>
+                            <h3 class="text-xl font-poppins font-semibold text-teal mb-3">Birla Pravaah — Sector 71,
+                                Gurgaon</h3>
+                            <p class="text-muted-gray font-inter leading-relaxed mb-4">A premium high-rise residential
+                                development near SPR with good connectivity and modern amenities.</p>
+                            <a href="https://wa.me/7011733205?text=Birla%20Pravaah%20%E2%80%94%20Sector%2071,%20Gurgaon"
+                                target="_blank"
+                                class="text-teal hover:text-gold transition-colors duration-200 font-medium">Connect on
+                                WhatsApp →</a>
                         </div>
-                        
+
                         <div class="mb-6 pb-6 border-b border-gray-800 bg-charcoal rounded-lg p-6">
-                            <h3 class="text-xl font-poppins font-semibold text-teal mb-3">Emaar Serenity Hills — New Gurgaon</h3>
-                            <p class="text-muted-gray font-inter leading-relaxed mb-4">A low-density residential project planned across a large land parcel, offering multiple towers and green-focused living.</p>
-                            <a href="https://wa.me/7011733205?text=Emaar%20Serenity%20Hills%20%E2%80%94%20New%20Gurgaon" target="_blank" class="text-teal hover:text-gold transition-colors duration-200 font-medium">Connect on WhatsApp →</a>
+                            <h3 class="text-xl font-poppins font-semibold text-teal mb-3">Emaar Serenity Hills — New
+                                Gurgaon</h3>
+                            <p class="text-muted-gray font-inter leading-relaxed mb-4">A low-density residential project
+                                planned across a large land parcel, offering multiple towers and green-focused living.
+                            </p>
+                            <a href="https://wa.me/7011733205?text=Emaar%20Serenity%20Hills%20%E2%80%94%20New%20Gurgaon"
+                                target="_blank"
+                                class="text-teal hover:text-gold transition-colors duration-200 font-medium">Connect on
+                                WhatsApp →</a>
                         </div>
-                        
+
                         <div class="mb-6 pb-6 border-b border-gray-800 bg-charcoal rounded-lg p-6">
-                            <h3 class="text-xl font-poppins font-semibold text-teal mb-3">Aashiana Aaroham — Gurgaon</h3>
-                            <p class="text-muted-gray font-inter leading-relaxed mb-4">A family-oriented project with child-friendly planning and community-focused amenities.</p>
-                            <a href="https://wa.me/7011733205?text=Aashiana%20Aaroham%20%E2%80%94%20Gurgaon" target="_blank" class="text-teal hover:text-gold transition-colors duration-200 font-medium">Connect on WhatsApp →</a>
+                            <h3 class="text-xl font-poppins font-semibold text-teal mb-3">Aashiana Aaroham — Gurgaon
+                            </h3>
+                            <p class="text-muted-gray font-inter leading-relaxed mb-4">A family-oriented project with
+                                child-friendly planning and community-focused amenities.</p>
+                            <a href="https://wa.me/7011733205?text=Aashiana%20Aaroham%20%E2%80%94%20Gurgaon"
+                                target="_blank"
+                                class="text-teal hover:text-gold transition-colors duration-200 font-medium">Connect on
+                                WhatsApp →</a>
                         </div>
-                        
+
                         <div class="mb-6 pb-6 border-b border-gray-800 bg-charcoal rounded-lg p-6">
-                            <h3 class="text-xl font-poppins font-semibold text-teal mb-3">Ashtech Presidential Towers — Greater Noida</h3>
-                            <p class="text-muted-gray font-inter leading-relaxed mb-4">Premium high-rise apartments with larger layouts and upgraded clubhouse facilities.</p>
-                            <a href="https://wa.me/7011733205?text=Ashtech%20Presidential%20Towers%20%E2%80%94%20Greater%20Noida" target="_blank" class="text-teal hover:text-gold transition-colors duration-200 font-medium">Connect on WhatsApp →</a>
+                            <h3 class="text-xl font-poppins font-semibold text-teal mb-3">Ashtech Presidential Towers —
+                                Greater Noida</h3>
+                            <p class="text-muted-gray font-inter leading-relaxed mb-4">Premium high-rise apartments with
+                                larger layouts and upgraded clubhouse facilities.</p>
+                            <a href="https://wa.me/7011733205?text=Ashtech%20Presidential%20Towers%20%E2%80%94%20Greater%20Noida"
+                                target="_blank"
+                                class="text-teal hover:text-gold transition-colors duration-200 font-medium">Connect on
+                                WhatsApp →</a>
                         </div>
-                        
+
                         <div class="mb-6 pb-6 border-b border-gray-800 bg-charcoal rounded-lg p-6">
                             <h3 class="text-xl font-poppins font-semibold text-teal mb-3">Great Value Eknam — Noida</h3>
-                            <p class="text-muted-gray font-inter leading-relaxed mb-4">A new residential launch along the Noida Expressway corridor targeting mid-to-premium homebuyers.</p>
-                            <a href="https://wa.me/7011733205?text=Great%20Value%20Eknam%20%E2%80%94%20Noida" target="_blank" class="text-teal hover:text-gold transition-colors duration-200 font-medium">Connect on WhatsApp →</a>
+                            <p class="text-muted-gray font-inter leading-relaxed mb-4">A new residential launch along
+                                the Noida Expressway corridor targeting mid-to-premium homebuyers.</p>
+                            <a href="https://wa.me/7011733205?text=Great%20Value%20Eknam%20%E2%80%94%20Noida"
+                                target="_blank"
+                                class="text-teal hover:text-gold transition-colors duration-200 font-medium">Connect on
+                                WhatsApp →</a>
                         </div>
-                        
+
                         <div class="mb-6 pb-6 border-b border-gray-800 bg-charcoal rounded-lg p-6">
-                            <h3 class="text-xl font-poppins font-semibold text-teal mb-3">M3M Jacob & Co Residences — Noida</h3>
-                            <p class="text-muted-gray font-inter leading-relaxed mb-4">An ultra-luxury branded residential project in collaboration with Jacob & Co, offering designer-led homes.</p>
-                            <a href="https://wa.me/7011733205?text=M3M%20Jacob%20%26%20Co%20Residences%20%E2%80%94%20Noida" target="_blank" class="text-teal hover:text-gold transition-colors duration-200 font-medium">Connect on WhatsApp →</a>
+                            <h3 class="text-xl font-poppins font-semibold text-teal mb-3">M3M Jacob & Co Residences —
+                                Noida</h3>
+                            <p class="text-muted-gray font-inter leading-relaxed mb-4">An ultra-luxury branded
+                                residential project in collaboration with Jacob & Co, offering designer-led homes.</p>
+                            <a href="https://wa.me/7011733205?text=M3M%20Jacob%20%26%20Co%20Residences%20%E2%80%94%20Noida"
+                                target="_blank"
+                                class="text-teal hover:text-gold transition-colors duration-200 font-medium">Connect on
+                                WhatsApp →</a>
                         </div>
-                        
+
                         <div class="mb-6 pb-6 border-b border-gray-800 bg-charcoal rounded-lg p-6">
-                            <h3 class="text-xl font-poppins font-semibold text-teal mb-3">SG DXP Estate — Dwarka Expressway, Gurgaon</h3>
-                            <p class="text-muted-gray font-inter leading-relaxed mb-4">A residential project located along Dwarka Expressway with contemporary layouts and improving connectivity.</p>
-                            <a href="https://wa.me/7011733205?text=SG%20DXP%20Estate%20%E2%80%94%20Dwarka%20Expressway,%20Gurgaon" target="_blank" class="text-teal hover:text-gold transition-colors duration-200 font-medium">Connect on WhatsApp →</a>
+                            <h3 class="text-xl font-poppins font-semibold text-teal mb-3">SG DXP Estate — Dwarka
+                                Expressway, Gurgaon</h3>
+                            <p class="text-muted-gray font-inter leading-relaxed mb-4">A residential project located
+                                along Dwarka Expressway with contemporary layouts and improving connectivity.</p>
+                            <a href="https://wa.me/7011733205?text=SG%20DXP%20Estate%20%E2%80%94%20Dwarka%20Expressway,%20Gurgaon"
+                                target="_blank"
+                                class="text-teal hover:text-gold transition-colors duration-200 font-medium">Connect on
+                                WhatsApp →</a>
                         </div>
-                        
+
                         <div class="mb-6 pb-6 border-b border-gray-800 bg-charcoal rounded-lg p-6">
                             <h3 class="text-xl font-poppins font-semibold text-teal mb-3">M3M GIC — Manesar</h3>
-                            <p class="text-muted-gray font-inter leading-relaxed mb-4">A 150-acre integrated township with plotted housing, commercial areas, and community infrastructure.</p>
-                            <a href="https://wa.me/7011733205?text=M3M%20GIC%20%E2%80%94%20Manesar" target="_blank" class="text-teal hover:text-gold transition-colors duration-200 font-medium">Connect on WhatsApp →</a>
+                            <p class="text-muted-gray font-inter leading-relaxed mb-4">A 150-acre integrated township
+                                with plotted housing, commercial areas, and community infrastructure.</p>
+                            <a href="https://wa.me/7011733205?text=M3M%20GIC%20%E2%80%94%20Manesar" target="_blank"
+                                class="text-teal hover:text-gold transition-colors duration-200 font-medium">Connect on
+                                WhatsApp →</a>
                         </div>
-                        
+
                         <div class="mb-6 pb-6 border-b border-gray-800 bg-charcoal rounded-lg p-6">
-                            <h3 class="text-xl font-poppins font-semibold text-teal mb-3">Conscient Elaira Phase 2 — Gurgaon</h3>
-                            <p class="text-muted-gray font-inter leading-relaxed mb-4">An expansion of the existing Elaira development, offering premium high-rise homes with improved amenities.</p>
-                            <a href="https://wa.me/7011733205?text=Conscient%20Elaira%20Phase%202%20%E2%80%94%20Gurgaon" target="_blank" class="text-teal hover:text-gold transition-colors duration-200 font-medium">Connect on WhatsApp →</a>
+                            <h3 class="text-xl font-poppins font-semibold text-teal mb-3">Conscient Elaira Phase 2 —
+                                Gurgaon</h3>
+                            <p class="text-muted-gray font-inter leading-relaxed mb-4">An expansion of the existing
+                                Elaira development, offering premium high-rise homes with improved amenities.</p>
+                            <a href="https://wa.me/7011733205?text=Conscient%20Elaira%20Phase%202%20%E2%80%94%20Gurgaon"
+                                target="_blank"
+                                class="text-teal hover:text-gold transition-colors duration-200 font-medium">Connect on
+                                WhatsApp →</a>
                         </div>
-                        
+
                         <div class="mb-6 pb-6 border-b border-gray-800 bg-charcoal rounded-lg p-6">
-                            <h3 class="text-xl font-poppins font-semibold text-teal mb-3">Gaur Chrysalis — Sector 22D, Yamuna Expressway</h3>
-                            <p class="text-muted-gray font-inter leading-relaxed mb-4">A high-rise residential development located near the Noida International Airport corridor.</p>
-                            <a href="https://wa.me/7011733205?text=Gaur%20Chrysalis%20%E2%80%94%20Sector%2022D,%20Yamuna%20Expressway" target="_blank" class="text-teal hover:text-gold transition-colors duration-200 font-medium">Connect on WhatsApp →</a>
+                            <h3 class="text-xl font-poppins font-semibold text-teal mb-3">Gaur Chrysalis — Sector 22D,
+                                Yamuna Expressway</h3>
+                            <p class="text-muted-gray font-inter leading-relaxed mb-4">A high-rise residential
+                                development located near the Noida International Airport corridor.</p>
+                            <a href="https://wa.me/7011733205?text=Gaur%20Chrysalis%20%E2%80%94%20Sector%2022D,%20Yamuna%20Expressway"
+                                target="_blank"
+                                class="text-teal hover:text-gold transition-colors duration-200 font-medium">Connect on
+                                WhatsApp →</a>
                         </div>
-                        
+
                         <div class="mb-6 pb-6 border-b border-gray-800 bg-charcoal rounded-lg p-6">
-                            <h3 class="text-xl font-poppins font-semibold text-teal mb-3">Godrej Arden — Sigma 3, Greater Noida</h3>
-                            <p class="text-muted-gray font-inter leading-relaxed mb-4">A low-density boutique residential project focused on green landscapes and quiet community living.</p>
-                            <a href="https://wa.me/7011733205?text=Godrej%20Arden%20%E2%80%94%20Sigma%203,%20Greater%20Noida" target="_blank" class="text-teal hover:text-gold transition-colors duration-200 font-medium">Connect on WhatsApp →</a>
+                            <h3 class="text-xl font-poppins font-semibold text-teal mb-3">Godrej Arden — Sigma 3,
+                                Greater Noida</h3>
+                            <p class="text-muted-gray font-inter leading-relaxed mb-4">A low-density boutique
+                                residential project focused on green landscapes and quiet community living.</p>
+                            <a href="https://wa.me/7011733205?text=Godrej%20Arden%20%E2%80%94%20Sigma%203,%20Greater%20Noida"
+                                target="_blank"
+                                class="text-teal hover:text-gold transition-colors duration-200 font-medium">Connect on
+                                WhatsApp →</a>
                         </div>
-                        
+
                         <div class="mb-6 pb-6 border-b border-gray-800 bg-charcoal rounded-lg p-6">
-                            <h3 class="text-xl font-poppins font-semibold text-teal mb-3">Max Estates 361 — Sector 36A, Gurgaon</h3>
-                            <p class="text-muted-gray font-inter leading-relaxed mb-4">A ultra-luxury residential project near Dwarka Expressway offering low-density layouts and strong connectivity.</p>
-                            <a href="https://wa.me/7011733205?text=Max%20Estates%20361%20%E2%80%94%20Sector%2036A,%20Gurgaon" target="_blank" class="text-teal hover:text-gold transition-colors duration-200 font-medium">Connect on WhatsApp →</a>
+                            <h3 class="text-xl font-poppins font-semibold text-teal mb-3">Max Estates 361 — Sector 36A,
+                                Gurgaon</h3>
+                            <p class="text-muted-gray font-inter leading-relaxed mb-4">A ultra-luxury residential
+                                project near Dwarka Expressway offering low-density layouts and strong connectivity.</p>
+                            <a href="https://wa.me/7011733205?text=Max%20Estates%20361%20%E2%80%94%20Sector%2036A,%20Gurgaon"
+                                target="_blank"
+                                class="text-teal hover:text-gold transition-colors duration-200 font-medium">Connect on
+                                WhatsApp →</a>
                         </div>
-                        
+
                         <div class="mb-6 pb-6 border-b border-gray-800 bg-charcoal rounded-lg p-6">
-                            <h3 class="text-xl font-poppins font-semibold text-teal mb-3">Suncity 78 — Sector 78, Gurgaon</h3>
-                            <p class="text-muted-gray font-inter leading-relaxed mb-4">A high-rise residential development close to NH-48 and SPR, aimed at mid-to-premium homebuyers.</p>
-                            <a href="https://wa.me/7011733205?text=Suncity%2078%20%E2%80%94%20Sector%2078,%20Gurgaon" target="_blank" class="text-teal hover:text-gold transition-colors duration-200 font-medium">Connect on WhatsApp →</a>
+                            <h3 class="text-xl font-poppins font-semibold text-teal mb-3">Suncity 78 — Sector 78,
+                                Gurgaon</h3>
+                            <p class="text-muted-gray font-inter leading-relaxed mb-4">A high-rise residential
+                                development close to NH-48 and SPR, aimed at mid-to-premium homebuyers.</p>
+                            <a href="https://wa.me/7011733205?text=Suncity%2078%20%E2%80%94%20Sector%2078,%20Gurgaon"
+                                target="_blank"
+                                class="text-teal hover:text-gold transition-colors duration-200 font-medium">Connect on
+                                WhatsApp →</a>
                         </div>
-                        
+
                         <div class="mb-6 pb-6 border-b border-gray-800 bg-charcoal rounded-lg p-6">
-                            <h3 class="text-xl font-poppins font-semibold text-teal mb-3">Experion Sector 151 — Noida</h3>
-                            <p class="text-muted-gray font-inter leading-relaxed mb-4">A premium residential project with large open spaces and expressway connectivity.</p>
-                            <a href="https://wa.me/7011733205?text=Experion%20Sector%20151%20%E2%80%94%20Noida" target="_blank" class="text-teal hover:text-gold transition-colors duration-200 font-medium">Connect on WhatsApp →</a>
+                            <h3 class="text-xl font-poppins font-semibold text-teal mb-3">Experion Sector 151 — Noida
+                            </h3>
+                            <p class="text-muted-gray font-inter leading-relaxed mb-4">A premium residential project
+                                with large open spaces and expressway connectivity.</p>
+                            <a href="https://wa.me/7011733205?text=Experion%20Sector%20151%20%E2%80%94%20Noida"
+                                target="_blank"
+                                class="text-teal hover:text-gold transition-colors duration-200 font-medium">Connect on
+                                WhatsApp →</a>
                         </div>
-                        
+
                         <div class="mb-6 pb-6 border-b border-gray-800 bg-charcoal rounded-lg p-6">
-                            <h3 class="text-xl font-poppins font-semibold text-teal mb-3">Sobha — Sector 1, Greater Noida West</h3>
-                            <p class="text-muted-gray font-inter leading-relaxed mb-4">Sobha's first project in Greater Noida West, offering premium construction quality and planned community living.</p>
-                            <a href="https://wa.me/7011733205?text=Sobha%20%E2%80%94%20Sector%201,%20Greater%20Noida%20West" target="_blank" class="text-teal hover:text-gold transition-colors duration-200 font-medium">Connect on WhatsApp →</a>
+                            <h3 class="text-xl font-poppins font-semibold text-teal mb-3">Sobha — Sector 1, Greater
+                                Noida West</h3>
+                            <p class="text-muted-gray font-inter leading-relaxed mb-4">Sobha's first project in Greater
+                                Noida West, offering premium construction quality and planned community living.</p>
+                            <a href="https://wa.me/7011733205?text=Sobha%20%E2%80%94%20Sector%201,%20Greater%20Noida%20West"
+                                target="_blank"
+                                class="text-teal hover:text-gold transition-colors duration-200 font-medium">Connect on
+                                WhatsApp →</a>
                         </div>
-                        
+
                         <div class="mb-6 pb-6 border-b border-gray-800 bg-charcoal rounded-lg p-6">
                             <h3 class="text-xl font-poppins font-semibold text-teal mb-3">Northwind Sanctuary — NCR</h3>
-                            <p class="text-muted-gray font-inter leading-relaxed mb-4">A nature-led residential community planned around open green spaces and wellness-focused living.</p>
-                            <a href="https://wa.me/7011733205?text=Northwind%20Sanctuary%20%E2%80%94%20NCR" target="_blank" class="text-teal hover:text-gold transition-colors duration-200 font-medium">Connect on WhatsApp →</a>
+                            <p class="text-muted-gray font-inter leading-relaxed mb-4">A nature-led residential
+                                community planned around open green spaces and wellness-focused living.</p>
+                            <a href="https://wa.me/7011733205?text=Northwind%20Sanctuary%20%E2%80%94%20NCR"
+                                target="_blank"
+                                class="text-teal hover:text-gold transition-colors duration-200 font-medium">Connect on
+                                WhatsApp →</a>
                         </div>
                     </section>
                 </div>
@@ -502,20 +756,27 @@
                 <h2 class="text-3xl md:text-4xl font-poppins font-bold gradient-text mb-4">Get the Latest Edition</h2>
                 <p class="text-lg text-muted-gray font-inter">Delivered instantly. New issue every Monday.</p>
             </div>
-            
+
             <div class="glassmorphism rounded-xl p-8 md:p-12">
                 <form id="newsletter-form" method="POST" action="">
                     <div class="space-y-4">
-                        <input type="text" name="fullName" placeholder="Full Name" class="w-full px-4 py-3 bg-charcoal border border-gray-700 rounded-lg text-light-gray focus:outline-none focus:border-teal" required>
-                        <input type="email" name="email" placeholder="Email Address" class="w-full px-4 py-3 bg-charcoal border border-gray-700 rounded-lg text-light-gray focus:outline-none focus:border-teal" required>
-                        <input type="tel" name="phone" placeholder="Phone Number" class="w-full px-4 py-3 bg-charcoal border border-gray-700 rounded-lg text-light-gray focus:outline-none focus:border-teal">
-                        <select name="role" class="w-full px-4 py-3 bg-charcoal border border-gray-700 rounded-lg text-light-gray focus:outline-none focus:border-teal">
+                        <input type="text" name="fullName" placeholder="Full Name"
+                            class="w-full px-4 py-3 bg-charcoal border border-gray-700 rounded-lg text-light-gray focus:outline-none focus:border-teal"
+                            required>
+                        <input type="email" name="email" placeholder="Email Address"
+                            class="w-full px-4 py-3 bg-charcoal border border-gray-700 rounded-lg text-light-gray focus:outline-none focus:border-teal"
+                            required>
+                        <input type="tel" name="phone" placeholder="Phone Number"
+                            class="w-full px-4 py-3 bg-charcoal border border-gray-700 rounded-lg text-light-gray focus:outline-none focus:border-teal">
+                        <select name="role"
+                            class="w-full px-4 py-3 bg-charcoal border border-gray-700 rounded-lg text-light-gray focus:outline-none focus:border-teal">
                             <option value="">Select your role</option>
                             <option value="investor">Real Estate Investor</option>
                             <option value="end-user">End-user Buyer</option>
                             <option value="professional">Industry Professional</option>
                         </select>
-                        <button type="submit" class="w-full bg-teal hover:bg-opacity-80 text-navy py-4 rounded-lg font-semibold text-lg transition-all duration-200 hover:glow-effect">
+                        <button type="submit"
+                            class="w-full bg-teal hover:bg-opacity-80 text-navy py-4 rounded-lg font-semibold text-lg transition-all duration-200 hover:glow-effect">
                             Get the Latest Edition
                         </button>
                     </div>
@@ -530,39 +791,55 @@
             <div class="text-center mb-16">
                 <h2 class="text-3xl md:text-4xl font-poppins font-bold gradient-text mb-4">Why Subscribe?</h2>
             </div>
-            
+
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <div class="glassmorphism rounded-xl p-8 hover-lift">
-                    <div class="w-16 h-16 bg-gradient-to-br from-teal to-gold rounded-lg flex items-center justify-center mb-6">
+                    <div
+                        class="w-16 h-16 bg-gradient-to-br from-teal to-gold rounded-lg flex items-center justify-center mb-6">
                         <svg class="w-8 h-8 text-navy" fill="currentColor" viewBox="0 0 20 20">
-                            <path d="M9 2a1 1 0 000 2h2a1 1 0 100-2H9z"/>
-                            <path fill-rule="evenodd" d="M4 5a2 2 0 012-2 3 3 0 003 3h2a3 3 0 003-3 2 2 0 012 2v11a2 2 0 01-2 2H6a2 2 0 01-2-2V5zm3 4a1 1 0 000 2h.01a1 1 0 100-2H7zm3 0a1 1 0 000 2h3a1 1 0 100-2h-3zm-3 4a1 1 0 100 2h.01a1 1 0 100-2H7zm3 0a1 1 0 100 2h3a1 1 0 100-2h-3z" clip-rule="evenodd"/>
+                            <path d="M9 2a1 1 0 000 2h2a1 1 0 100-2H9z" />
+                            <path fill-rule="evenodd"
+                                d="M4 5a2 2 0 012-2 3 3 0 003 3h2a3 3 0 003-3 2 2 0 012 2v11a2 2 0 01-2 2H6a2 2 0 01-2-2V5zm3 4a1 1 0 000 2h.01a1 1 0 100-2H7zm3 0a1 1 0 000 2h3a1 1 0 100-2h-3zm-3 4a1 1 0 100 2h.01a1 1 0 100-2H7zm3 0a1 1 0 100 2h3a1 1 0 100-2h-3z"
+                                clip-rule="evenodd" />
                         </svg>
                     </div>
                     <h3 class="text-xl font-poppins font-semibold mb-4 text-light-gray">Featured Projects</h3>
-                    <p class="text-muted-gray font-inter leading-relaxed mb-3">This week: <strong class="text-teal">Birla Pravaah</strong>, <strong class="text-teal">Emaar Serenity Hills</strong>, and <strong class="text-teal">Gaur Chrysalis</strong>.</p>
-                    <p class="text-muted-gray font-inter leading-relaxed text-sm">Handpicked projects with verified pricing, developer track records, and market positioning.</p>
+                    <p class="text-muted-gray font-inter leading-relaxed mb-3">This week: <strong
+                            class="text-teal">Birla Pravaah</strong>, <strong class="text-teal">Emaar Serenity
+                            Hills</strong>, and <strong class="text-teal">Gaur Chrysalis</strong>.</p>
+                    <p class="text-muted-gray font-inter leading-relaxed text-sm">Handpicked projects with verified
+                        pricing, developer track records, and market positioning.</p>
                 </div>
-                
+
                 <div class="glassmorphism rounded-xl p-8 hover-lift">
-                    <div class="w-16 h-16 bg-gradient-to-br from-teal to-gold rounded-lg flex items-center justify-center mb-6">
+                    <div
+                        class="w-16 h-16 bg-gradient-to-br from-teal to-gold rounded-lg flex items-center justify-center mb-6">
                         <svg class="w-8 h-8 text-navy" fill="currentColor" viewBox="0 0 20 20">
-                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clip-rule="evenodd"/>
+                            <path fill-rule="evenodd"
+                                d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z"
+                                clip-rule="evenodd" />
                         </svg>
                     </div>
-                    <h3 class="text-xl font-poppins font-semibold mb-4 text-light-gray">Market analysis in 60 seconds</h3>
-                    <p class="text-muted-gray font-inter leading-relaxed">Quick, actionable insights without the fluff. Get straight to what matters for your decisions.</p>
+                    <h3 class="text-xl font-poppins font-semibold mb-4 text-light-gray">Market analysis in 60 seconds
+                    </h3>
+                    <p class="text-muted-gray font-inter leading-relaxed">Quick, actionable insights without the fluff.
+                        Get straight to what matters for your decisions.</p>
                 </div>
-                
+
                 <div class="glassmorphism rounded-xl p-8 hover-lift">
-                    <div class="w-16 h-16 bg-gradient-to-br from-teal to-gold rounded-lg flex items-center justify-center mb-6">
+                    <div
+                        class="w-16 h-16 bg-gradient-to-br from-teal to-gold rounded-lg flex items-center justify-center mb-6">
                         <svg class="w-8 h-8 text-navy" fill="currentColor" viewBox="0 0 20 20">
-                            <path d="M9 2a1 1 0 000 2h2a1 1 0 100-2H9z"/>
-                            <path fill-rule="evenodd" d="M4 5a2 2 0 012-2 3 3 0 003 3h2a3 3 0 003-3 2 2 0 012 2v11a2 2 0 01-2 2H6a2 2 0 01-2-2V5zm9.707 5.707a1 1 0 00-1.414-1.414L9 12.586l-1.293-1.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                            <path d="M9 2a1 1 0 000 2h2a1 1 0 100-2H9z" />
+                            <path fill-rule="evenodd"
+                                d="M4 5a2 2 0 012-2 3 3 0 003 3h2a3 3 0 003-3 2 2 0 012 2v11a2 2 0 01-2 2H6a2 2 0 01-2-2V5zm9.707 5.707a1 1 0 00-1.414-1.414L9 12.586l-1.293-1.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z"
+                                clip-rule="evenodd" />
                         </svg>
                     </div>
-                    <h3 class="text-xl font-poppins font-semibold mb-4 text-light-gray">Actionable insights across NCR</h3>
-                    <p class="text-muted-gray font-inter leading-relaxed">Coverage of Gurgaon, Noida, Greater Noida, and all major micro-markets in Delhi NCR.</p>
+                    <h3 class="text-xl font-poppins font-semibold mb-4 text-light-gray">Actionable insights across NCR
+                    </h3>
+                    <p class="text-muted-gray font-inter leading-relaxed">Coverage of Gurgaon, Noida, Greater Noida, and
+                        all major micro-markets in Delhi NCR.</p>
                 </div>
             </div>
         </div>
@@ -574,14 +851,19 @@
             <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
                 <div>
                     <h3 class="text-xl font-poppins font-bold gradient-text mb-4">NCR Launch Watch</h3>
-                    <p class="text-muted-gray font-inter leading-relaxed">Premium real estate intelligence for Delhi NCR. Track launches, analyze markets, make informed decisions.</p>
+                    <p class="text-muted-gray font-inter leading-relaxed">Premium real estate intelligence for Delhi
+                        NCR. Track launches, analyze markets, make informed decisions.</p>
                 </div>
                 <div>
                     <h4 class="font-poppins font-semibold text-light-gray mb-4">Connect</h4>
                     <ul class="space-y-2">
-                        <li><a href="https://www.linkedin.com/in/bhavik-aggarwal-5b87571a8/" class="text-muted-gray hover:text-teal transition-colors duration-200">LinkedIn</a></li>
-                        <li><a href="https://www.instagram.com/realestatewithbhavik" class="text-muted-gray hover:text-teal transition-colors duration-200">Instagram</a></li>
-                        <li><a href="mailto:realestatewithbhavik@gmail.com" class="text-muted-gray hover:text-teal transition-colors duration-200">Email</a></li>
+                        <li><a href="https://www.linkedin.com/in/bhavik-aggarwal-5b87571a8/"
+                                class="text-muted-gray hover:text-teal transition-colors duration-200">LinkedIn</a></li>
+                        <li><a href="https://www.instagram.com/realestatewithbhavik"
+                                class="text-muted-gray hover:text-teal transition-colors duration-200">Instagram</a>
+                        </li>
+                        <li><a href="mailto:realestatewithbhavik@gmail.com"
+                                class="text-muted-gray hover:text-teal transition-colors duration-200">Email</a></li>
                     </ul>
                 </div>
             </div>
@@ -592,11 +874,13 @@
     </footer>
 
     <!-- Subscribe Modal -->
-    <div id="subscribe-modal" class="fixed inset-0 bg-black bg-opacity-50 backdrop-blur-sm z-50 hidden flex items-center justify-center">
+    <div id="subscribe-modal"
+        class="fixed inset-0 bg-black bg-opacity-50 backdrop-blur-sm z-50 hidden flex items-center justify-center">
         <div class="glassmorphism rounded-xl p-8 max-w-md w-full mx-4 relative">
-            <button id="close-subscribe-modal" class="absolute top-4 right-4 text-muted-gray hover:text-light-gray transition-colors">
+            <button id="close-subscribe-modal"
+                class="absolute top-4 right-4 text-muted-gray hover:text-light-gray transition-colors">
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
                 </svg>
             </button>
             <div class="text-center mb-6">
@@ -605,16 +889,23 @@
             </div>
             <form id="modal-newsletter-form" method="POST" action="">
                 <div class="space-y-4">
-                    <input type="text" name="fullName" placeholder="Full Name" class="w-full px-4 py-3 bg-charcoal border border-gray-700 rounded-lg text-light-gray focus:outline-none focus:border-teal" required>
-                    <input type="email" name="email" placeholder="Email Address" class="w-full px-4 py-3 bg-charcoal border border-gray-700 rounded-lg text-light-gray focus:outline-none focus:border-teal" required>
-                    <input type="tel" name="phone" placeholder="Phone Number" class="w-full px-4 py-3 bg-charcoal border border-gray-700 rounded-lg text-light-gray focus:outline-none focus:border-teal">
-                    <select name="role" class="w-full px-4 py-3 bg-charcoal border border-gray-700 rounded-lg text-light-gray focus:outline-none focus:border-teal">
+                    <input type="text" name="fullName" placeholder="Full Name"
+                        class="w-full px-4 py-3 bg-charcoal border border-gray-700 rounded-lg text-light-gray focus:outline-none focus:border-teal"
+                        required>
+                    <input type="email" name="email" placeholder="Email Address"
+                        class="w-full px-4 py-3 bg-charcoal border border-gray-700 rounded-lg text-light-gray focus:outline-none focus:border-teal"
+                        required>
+                    <input type="tel" name="phone" placeholder="Phone Number"
+                        class="w-full px-4 py-3 bg-charcoal border border-gray-700 rounded-lg text-light-gray focus:outline-none focus:border-teal">
+                    <select name="role"
+                        class="w-full px-4 py-3 bg-charcoal border border-gray-700 rounded-lg text-light-gray focus:outline-none focus:border-teal">
                         <option value="">Select your role</option>
                         <option value="investor">Real Estate Investor</option>
                         <option value="end-user">End-user Buyer</option>
                         <option value="professional">Industry Professional</option>
                     </select>
-                    <button type="submit" class="w-full bg-teal hover:bg-opacity-80 text-navy py-4 rounded-lg font-semibold text-lg transition-all duration-200 hover:glow-effect">
+                    <button type="submit"
+                        class="w-full bg-teal hover:bg-opacity-80 text-navy py-4 rounded-lg font-semibold text-lg transition-all duration-200 hover:glow-effect">
                         Get the Latest Edition
                     </button>
                 </div>
@@ -626,18 +917,18 @@
         // Mobile menu toggle
         const mobileMenuBtn = document.getElementById('mobile-menu-btn');
         const mobileMenu = document.getElementById('mobile-menu');
-        
+
         if (mobileMenuBtn && mobileMenu) {
             mobileMenuBtn.addEventListener('click', () => {
                 mobileMenu.classList.toggle('hidden');
             });
         }
-        
+
         // Subscribe modal handlers
         const openModalBtn = document.getElementById('open-subscribe-modal');
         const closeModalBtn = document.getElementById('close-subscribe-modal');
         const subscribeModal = document.getElementById('subscribe-modal');
-        
+
         if (openModalBtn && subscribeModal) {
             openModalBtn.addEventListener('click', () => {
                 subscribeModal.classList.remove('hidden');
@@ -645,7 +936,7 @@
                 document.body.style.overflow = 'hidden';
             });
         }
-        
+
         if (closeModalBtn && subscribeModal) {
             closeModalBtn.addEventListener('click', () => {
                 subscribeModal.classList.add('hidden');
@@ -653,7 +944,7 @@
                 document.body.style.overflow = '';
             });
         }
-        
+
         // Close modal when clicking outside
         if (subscribeModal) {
             subscribeModal.addEventListener('click', (e) => {
@@ -664,11 +955,11 @@
                 }
             });
         }
-        
+
         // Form submission handler for modal form
         const modalNewsletterForm = document.getElementById('modal-newsletter-form');
         if (modalNewsletterForm) {
-            modalNewsletterForm.addEventListener('submit', function(e) {
+            modalNewsletterForm.addEventListener('submit', function (e) {
                 e.preventDefault();
                 // Form submission will be handled by Google Apps Script
                 // User will add the action URL later
@@ -678,11 +969,11 @@
                 document.body.style.overflow = '';
             });
         }
-        
+
         // Form submission handler for page form
         const newsletterForm = document.getElementById('newsletter-form');
         if (newsletterForm) {
-            newsletterForm.addEventListener('submit', function(e) {
+            newsletterForm.addEventListener('submit', function (e) {
                 e.preventDefault();
                 // Form submission will be handled by Google Apps Script
                 // User will add the action URL later
@@ -691,5 +982,5 @@
         }
     </script>
 </body>
-</html>
 
+</html>

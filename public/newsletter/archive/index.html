@@ -1,11 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NCR Launch Watch — Newsletter Archive</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&family=Inter:wght@300;400;500;600&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
-    
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&family=Inter:wght@300;400;500;600&family=DM+Sans:wght@300;400;500&display=swap"
+        rel="stylesheet">
+
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
@@ -35,45 +38,45 @@
             padding: 0;
             box-sizing: border-box;
         }
-        
+
         body {
             background: linear-gradient(135deg, #0a0a1f 0%, #1a1a2e 100%);
             font-family: 'Inter', sans-serif;
             color: #f5f7fa;
             min-height: 100vh;
         }
-        
+
         .glassmorphism {
             background: rgba(26, 26, 46, 0.8);
             backdrop-filter: blur(10px);
             border: 1px solid rgba(255, 255, 255, 0.1);
         }
-        
+
         .gradient-text {
             background: linear-gradient(135deg, #00d4ff 0%, #d4af37 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
         }
-        
+
         nav {
             position: fixed;
             top: 0;
             width: 100%;
             z-index: 50;
         }
-        
+
         main {
             max-width: 1280px;
             margin: 0 auto;
             padding: 5rem 1rem 3rem;
         }
-        
+
         .archive-header {
             text-align: center;
             margin-bottom: 3rem;
         }
-        
+
         .archive-header h1 {
             font-family: 'Poppins', sans-serif;
             font-size: 2.5rem;
@@ -84,17 +87,17 @@
             -webkit-text-fill-color: transparent;
             background-clip: text;
         }
-        
+
         .archive-header p {
             color: #8892b0;
             font-size: 1.125rem;
             margin-top: 0.5rem;
         }
-        
+
         .year-group {
             margin-bottom: 3rem;
         }
-        
+
         .year-title {
             font-family: 'Poppins', sans-serif;
             font-size: 1.75rem;
@@ -104,12 +107,12 @@
             padding-bottom: 0.75rem;
             border-bottom: 2px solid rgba(0, 212, 255, 0.3);
         }
-        
+
         .month-group {
             margin-bottom: 2rem;
             margin-left: 1.5rem;
         }
-        
+
         .month-title {
             font-family: 'Poppins', sans-serif;
             font-size: 1.5rem;
@@ -117,14 +120,14 @@
             color: #d4af37;
             margin-bottom: 1rem;
         }
-        
+
         .issues-list {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
             gap: 1.5rem;
             margin-left: 1.5rem;
         }
-        
+
         .issue-card {
             background: rgba(26, 26, 46, 0.8);
             backdrop-filter: blur(10px);
@@ -134,19 +137,19 @@
             transition: all 0.3s;
             cursor: pointer;
         }
-        
+
         .issue-card:hover {
             transform: translateY(-4px);
             border-color: rgba(0, 212, 255, 0.5);
             box-shadow: 0 8px 24px rgba(0, 212, 255, 0.2);
         }
-        
+
         .issue-card a {
             color: #f5f7fa;
             text-decoration: none;
             display: block;
         }
-        
+
         .issue-card h3 {
             font-family: 'Poppins', sans-serif;
             font-size: 1.125rem;
@@ -154,19 +157,19 @@
             margin-bottom: 0.5rem;
             color: #00d4ff;
         }
-        
+
         .issue-card .date {
             color: #8892b0;
             font-size: 0.875rem;
             margin-bottom: 0.75rem;
         }
-        
+
         .issue-card .preview {
             color: #8892b0;
             font-size: 0.9rem;
             line-height: 1.6;
         }
-        
+
         .back-link {
             color: #8892b0;
             text-decoration: none;
@@ -175,31 +178,32 @@
             display: inline-block;
             margin-top: 1rem;
         }
-        
+
         .back-link:hover {
             color: #00d4ff;
         }
-        
+
         @media (max-width: 768px) {
             main {
                 padding: 5rem 1rem 2rem;
             }
-            
+
             .archive-header h1 {
                 font-size: 2rem;
             }
-            
+
             .issues-list {
                 grid-template-columns: 1fr;
                 margin-left: 0;
             }
-            
+
             .month-group {
                 margin-left: 0;
             }
         }
     </style>
 </head>
+
 <body>
     <nav id="navbar" class="fixed top-0 w-full z-50 glassmorphism transition-transform duration-300">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -209,12 +213,18 @@
                 </div>
                 <div class="hidden md:block">
                     <div class="ml-10 flex items-baseline space-x-8">
-    <a href="/submit-query" class="text-light-gray hover:text-teal transition-colors duration-200 font-medium">Submit Query</a>
-                        <a href="/" class="text-light-gray hover:text-teal transition-colors duration-200 font-medium">Home</a>
-                        <a href="/newsletter/archive" class="text-light-gray hover:text-teal transition-colors duration-200 font-medium">Newsletter</a>
-                        <a href="/#faq" class="text-light-gray hover:text-teal transition-colors duration-200 font-medium">FAQ</a>
-                        <a href="mailto:realestatewithbhavik@gmail.com" class="text-light-gray hover:text-teal transition-colors duration-200 font-medium">Contact</a>
-                        <button id="subscribe-btn" class="bg-teal hover:bg-opacity-80 text-navy px-6 py-2 rounded-lg font-semibold transition-all duration-200 hover:glow-effect">
+                        <a href="/"
+                            class="text-light-gray hover:text-teal transition-colors duration-200 font-medium">Home</a>
+                        <a href="/newsletter/archive"
+                            class="text-light-gray hover:text-teal transition-colors duration-200 font-medium">Newsletter</a>
+                        <a href="/query.html"
+                            class="text-light-gray hover:text-teal transition-colors duration-200 font-medium">Enquire</a>
+                        <a href="/#faq"
+                            class="text-light-gray hover:text-teal transition-colors duration-200 font-medium">FAQ</a>
+                        <a href="mailto:realestatewithbhavik@gmail.com"
+                            class="text-light-gray hover:text-teal transition-colors duration-200 font-medium">Contact</a>
+                        <button id="subscribe-btn"
+                            class="bg-teal hover:bg-opacity-80 text-navy px-6 py-2 rounded-lg font-semibold transition-all duration-200 hover:glow-effect">
                             Subscribe
                         </button>
                     </div>
@@ -222,32 +232,36 @@
                 <div class="md:hidden">
                     <button id="mobile-menu-btn" class="text-light-gray hover:text-teal">
                         <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4 6h16M4 12h16M4 18h16" />
                         </svg>
                     </button>
                 </div>
             </div>
         </div>
-        
+
         <!-- Mobile Menu -->
         <div id="mobile-menu" class="md:hidden hidden glassmorphism border-t border-gray-700">
             <div class="px-2 pt-2 pb-3 space-y-1">
                 <a href="/" class="block px-3 py-2 text-light-gray hover:text-teal">Home</a>
                 <a href="/newsletter/archive" class="block px-3 py-2 text-light-gray hover:text-teal">Newsletter</a>
+                <a href="/query.html" class="block px-3 py-2 text-light-gray hover:text-teal">Enquire</a>
                 <a href="/#faq" class="block px-3 py-2 text-light-gray hover:text-teal">FAQ</a>
-                <a href="mailto:realestatewithbhavik@gmail.com" class="block px-3 py-2 text-light-gray hover:text-teal">Contact</a>
-                 <button id="subscribe-mobile" class="w-full text-left px-3 py-2 text-teal font-semibold">Subscribe</button>
+                <a href="mailto:realestatewithbhavik@gmail.com"
+                    class="block px-3 py-2 text-light-gray hover:text-teal">Contact</a>
+                <button id="subscribe-mobile"
+                    class="w-full text-left px-3 py-2 text-teal font-semibold">Subscribe</button>
             </div>
         </div>
     </nav>
-    
+
     <main>
         <div class="archive-header">
             <h1>Newsletter Archive</h1>
             <p>Browse all past issues of NCR Launch Watch</p>
             <a href="../2025/11/10/" class="back-link">← Back to Newsletter</a>
         </div>
-        
+
         <div class="year-group">
             <div class="year-title">2025</div>
 
@@ -259,26 +273,32 @@
                         <a href="../2025/12/15/">
                             <h3>Issue 15 December 2025</h3>
                             <div class="date">December 15, 2025</div>
-                            <div class="preview">This week's edition covers major developments across Delhi NCR's real estate landscape, from luxury launches to infrastructure breakthroughs that are reshaping the region's property market.</div>
+                            <div class="preview">This week's edition covers major developments across Delhi NCR's real
+                                estate landscape, from luxury launches to infrastructure breakthroughs that are
+                                reshaping the region's property market.</div>
                         </a>
                     </div>
                     <div class="issue-card">
                         <a href="../2025/12/8/">
                             <h3>Issue 08 December 2025</h3>
                             <div class="date">December 8, 2025</div>
-                            <div class="preview">This week witnessed significant infrastructure developments and policy shifts across Delhi NCR, with new metro lines and airport connectivity reshaping real estate dynamics.</div>
+                            <div class="preview">This week witnessed significant infrastructure developments and policy
+                                shifts across Delhi NCR, with new metro lines and airport connectivity reshaping real
+                                estate dynamics.</div>
                         </a>
                     </div>
                     <div class="issue-card">
                         <a href="../2025/12/01/">
                             <h3>Issue 01 December 2025</h3>
                             <div class="date">December 1, 2025</div>
-                            <div class="preview">We analyze how Gurgaon's value plays, Noida's bifurcating market, and Delhi's enduring premium are creating distinct investment opportunities across NCR.</div>
+                            <div class="preview">We analyze how Gurgaon's value plays, Noida's bifurcating market, and
+                                Delhi's enduring premium are creating distinct investment opportunities across NCR.
+                            </div>
                         </a>
                     </div>
                 </div>
             </div>
-            
+
             <!-- November 2025 -->
             <div class="month-group">
                 <div class="month-title">November</div>
@@ -287,49 +307,53 @@
                         <a href="../2025/11/24/">
                             <h3>Issue 24 November 2025</h3>
                             <div class="date">November 24, 2025</div>
-                            <div class="preview">This week witnessed significant regulatory actions and market movements across Delhi NCR, with land acquisitions indicating developer confidence and infrastructure developments reshaping micro-markets.</div>
+                            <div class="preview">This week witnessed significant regulatory actions and market movements
+                                across Delhi NCR, with land acquisitions indicating developer confidence and
+                                infrastructure developments reshaping micro-markets.</div>
                         </a>
                     </div>
                     <div class="issue-card">
                         <a href="../2025/11/17/">
                             <h3>Issue 17 November 2025</h3>
                             <div class="date">November 17, 2025</div>
-                            <div class="preview">Major developments across Delhi NCR's real estate landscape, from regulatory actions to infrastructure breakthroughs.</div>
+                            <div class="preview">Major developments across Delhi NCR's real estate landscape, from
+                                regulatory actions to infrastructure breakthroughs.</div>
                         </a>
                     </div>
                     <div class="issue-card">
                         <a href="../2025/11/10/">
                             <h3>Issue 10 November 2025</h3>
                             <div class="date">November 10, 2025</div>
-                            <div class="preview">Major developments across Delhi NCR's real estate landscape, from luxury launches to infrastructure breakthroughs.</div>
+                            <div class="preview">Major developments across Delhi NCR's real estate landscape, from
+                                luxury launches to infrastructure breakthroughs.</div>
                         </a>
                     </div>
                 </div>
             </div>
         </div>
     </main>
-    
+
     <script>
         // Mobile menu toggle
         const mobileMenuBtn = document.getElementById('mobile-menu-btn');
         const mobileMenu = document.getElementById('mobile-menu');
-        
+
         if (mobileMenuBtn && mobileMenu) {
             mobileMenuBtn.addEventListener('click', () => {
                 mobileMenu.classList.toggle('hidden');
             });
         }
-        
+
         // Subscribe button handlers (matching homepage)
         const subscribeBtn = document.getElementById('subscribe-btn');
         const subscribeMobile = document.getElementById('subscribe-mobile');
-        
+
         if (subscribeBtn) {
             subscribeBtn.addEventListener('click', () => {
                 window.location.href = '/#subscribe';
             });
         }
-        
+
         if (subscribeMobile) {
             subscribeMobile.addEventListener('click', () => {
                 window.location.href = '/#subscribe';
@@ -337,5 +361,5 @@
         }
     </script>
 </body>
-</html>
 
+</html>
