@@ -121,7 +121,7 @@
             <div id="hero-section" class="text-center mb-12 animate-slide-up">
                 <div
                     class="inline-block px-3 py-1 rounded-full border border-teal/20 bg-teal/5 text-teal text-xs font-semibold tracking-wider mb-6 uppercase">
-                    Private Beta Access
+                    Exclusive Advisory
                 </div>
                 <h1 class="text-4xl md:text-5xl font-poppins font-bold mb-6 leading-tight">
                     Early Access to <br>
@@ -134,7 +134,7 @@
                 <button onclick="startQuestionnaire()"
                     class="group relative px-8 py-4 bg-teal text-navy font-bold rounded-xl text-lg transition-all duration-300 hover:shadow-[0_0_25px_rgba(0,212,255,0.4)] hover:-translate-y-1">
                     <span class="relative z-10 flex items-center gap-2">
-                        Request Early Access
+                        Request Advisory
                         <svg class="w-5 h-5 transition-transform group-hover:translate-x-1" fill="none"
                             stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
@@ -395,7 +395,7 @@
                             <div class="pt-4">
                                 <button onclick="submitForm()" id="submit-btn"
                                     class="w-full bg-teal text-navy font-bold py-4 rounded-xl text-lg hover:shadow-[0_0_20px_rgba(0,212,255,0.3)] transition-all duration-300">
-                                    Request Early Access
+                                    Request Advisory
                                 </button>
                                 <p class="text-center text-xs text-muted-gray mt-4">
                                     We respect your privacy. No spam, ever.
@@ -574,7 +574,7 @@
             if (!phoneRegex.test(formData.contact.phone)) {
                 alert('Please enter a valid 10-digit phone number.');
                 submitBtn.disabled = false;
-                submitBtn.innerHTML = 'Request Early Access';
+                submitBtn.innerHTML = 'Request Advisory';
                 return;
             }
 
@@ -612,7 +612,7 @@
                         console.error('Error:', err);
                         alert('Something went wrong. Please try again.');
                         submitBtn.disabled = false;
-                        submitBtn.innerText = 'Request Early Access';
+                        submitBtn.innerText = 'Request Advisory';
                     });
             } else {
                 // Fallback for demo / if URL not set
