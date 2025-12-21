@@ -123,24 +123,56 @@
 
 <body class="overflow-x-hidden">
     <!-- Navigation -->
-    <nav id="navbar" class="fixed top-0 w-full z-50 glassmorphism">
+    <nav id="navbar" class="fixed top-0 w-full z-50 glassmorphism transition-transform duration-300">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-16">
                 <div class="flex items-center">
-                    <h1 class="text-xl font-poppins font-bold gradient-text">NCR Launch Watch</h1>
+                    <a href="/" class="text-xl font-poppins font-bold gradient-text">NCR Launch Watch</a>
                 </div>
                 <div class="hidden md:block">
                     <div class="ml-10 flex items-baseline space-x-8">
-                        <a href="/" class="text-light-gray hover:text-teal transition-colors duration-200">Home</a>
-                        <a href="/newsletter"
-                            class="text-light-gray hover:text-teal transition-colors duration-200">Newsletter</a>
-                        <a href="/emi-calculator" class="text-teal font-semibold">Calculator</a>
+                        <a href="/"
+                            class="text-light-gray hover:text-teal transition-colors duration-200 font-medium">Home</a>
+                        <a href="/newsletter/archive"
+                            class="text-light-gray hover:text-teal transition-colors duration-200 font-medium">Newsletter</a>
+                        <a href="/query.html"
+                            class="text-light-gray hover:text-teal transition-colors duration-200 font-medium">Enquire</a>
+                        <a href="/EMI-calculator.html"
+                            class="text-teal transition-colors duration-200 font-semibold underline underline-offset-8 decoration-2">EMI
+                            Calculator</a>
+                        <a href="/#faq"
+                            class="text-light-gray hover:text-teal transition-colors duration-200 font-medium">FAQ</a>
+                        <a href="mailto:realestatewithbhavik@gmail.com"
+                            class="text-light-gray hover:text-teal transition-colors duration-200 font-medium">Contact</a>
                         <button id="subscribe-nav"
-                            class="bg-teal hover:bg-opacity-80 text-navy px-6 py-2 rounded-lg font-semibold transition-all duration-200">
+                            class="bg-teal hover:bg-opacity-80 text-navy px-6 py-2 rounded-lg font-semibold transition-all duration-200 hover:glow-effect">
                             Subscribe
                         </button>
                     </div>
                 </div>
+                <div class="md:hidden">
+                    <button id="mobile-menu-btn" class="text-light-gray hover:text-teal">
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="md:hidden hidden glassmorphism border-t border-gray-700">
+            <div class="px-2 pt-2 pb-3 space-y-1">
+                <a href="/" class="block px-3 py-2 text-light-gray hover:text-teal">Home</a>
+                <a href="/newsletter/archive" class="block px-3 py-2 text-light-gray hover:text-teal">Newsletter</a>
+                <a href="/query.html" class="block px-3 py-2 text-light-gray hover:text-teal">Enquire</a>
+                <a href="/EMI-calculator.html" class="block px-3 py-2 text-teal font-semibold">EMI Calculator</a>
+                <a href="/#faq" class="block px-3 py-2 text-light-gray hover:text-teal">FAQ</a>
+                <a href="mailto:realestatewithbhavik@gmail.com"
+                    class="block px-3 py-2 text-light-gray hover:text-teal">Contact</a>
+                <button id="subscribe-mobile"
+                    class="w-full text-left px-3 py-2 text-teal font-semibold">Subscribe</button>
             </div>
         </div>
     </nav>
@@ -492,6 +524,39 @@
 
         // Initial calc
         calculate();
+
+        // -- Mobile Menu & Nav Interactions --
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        if (mobileMenuBtn && mobileMenu) {
+            mobileMenuBtn.onclick = () => mobileMenu.classList.toggle('hidden');
+        }
+
+        // Close mobile menu when clicking a link
+        const mobileLinks = mobileMenu?.querySelectorAll('a');
+        mobileLinks?.forEach(link => {
+            link.onclick = () => mobileMenu.classList.add('hidden');
+        });
+
+        // Subscribe buttons
+        document.getElementById('subscribe-nav').onclick = showModal;
+        document.getElementById('subscribe-mobile').onclick = showModal;
+
+        // Sticky Navbar Logic
+        let lastScrollY = window.scrollY;
+        window.addEventListener('scroll', () => {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 100) {
+                if (window.scrollY > lastScrollY) {
+                    navbar.style.transform = 'translateY(-100%)';
+                } else {
+                    navbar.style.transform = 'translateY(0)';
+                }
+            } else {
+                navbar.style.transform = 'translateY(0)';
+            }
+            lastScrollY = window.scrollY;
+        });
     </script>
 </body>
 
