@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-W04CLN4BZM"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-W04CLN4BZM');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NCR Launch Watch - Apartment Purchase Cost & EMI Calculator</title>
+    <meta name="description"
+        content="Calculate total property cost in Delhi NCR including Home Loan EMI, Registration, Stamp Duty, and Interior costs. Specific for Noida, Gurgaon, and Delhi projects.">
+
+    <!-- Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&family=Inter:wght@300;400;500;600&family=DM+Sans:wght@300;400;500&display=swap"
+        rel="stylesheet">
+
+    <!-- Core Libraries -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'navy': '#0a0a1f',
+                        'charcoal': '#1a1a2e',
+                        'light-gray': '#f5f7fa',
+                        'muted-gray': '#8892b0',
+                        'teal': '#00d4ff',
+                        'gold': '#d4af37'
+                    },
+                    fontFamily: {
+                        'poppins': ['Poppins', 'sans-serif'],
+                        'inter': ['Inter', 'sans-serif'],
+                        'dm-sans': ['DM Sans', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            background: linear-gradient(135deg, #0a0a1f 0%, #1a1a2e 100%);
+            font-family: 'Inter', sans-serif;
+            color: #f5f7fa;
+        }
+
+        .glassmorphism {
+            background: rgba(26, 26, 46, 0.8);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .gradient-text {
+            background: linear-gradient(135deg, #00d4ff 0%, #d4af37 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hover-lift {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .hover-lift:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 25px 50px -12px rgba(0, 212, 255, 0.25);
+        }
+
+        .glow-effect {
+            box-shadow: 0 0 20px rgba(0, 212, 255, 0.3);
+        }
+
+        .input-blur {
+            filter: blur(5px);
+            pointer-events: none;
+            user-select: none;
+        }
+
+        input[type="range"] {
+            accent-color: #00d4ff;
+        }
+
+        input[type="text"],
+        input[type="number"],
+        input[type="email"],
+        input[type="tel"],
+        select {
+            background: rgba(10, 10, 31, 0.8);
+            border: 1px solid rgba(0, 212, 255, 0.2);
+            color: #00d4ff;
+            padding: 0.75rem;
+            border-radius: 0.5rem;
+            width: 100%;
+        }
+
+        ::placeholder {
+            color: rgba(136, 146, 176, 0.6);
+        }
+
+        input:focus {
+            outline: none;
+            border-color: #00d4ff;
+            box-shadow: 0 0 0 2px rgba(0, 212, 255, 0.2);
+        }
+
+        .no-spinners::-webkit-outer-spin-button,
+        .no-spinners::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+    </style>
+</head>
+
+<body class="overflow-x-hidden">
+    <!-- Navigation -->
+    <nav id="navbar" class="fixed top-0 w-full z-50 glassmorphism">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center">
+                    <h1 class="text-xl font-poppins font-bold gradient-text">NCR Launch Watch</h1>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-8">
+                        <a href="/" class="text-light-gray hover:text-teal transition-colors duration-200">Home</a>
+                        <a href="/newsletter"
+                            class="text-light-gray hover:text-teal transition-colors duration-200">Newsletter</a>
+                        <a href="/emi-calculator" class="text-teal font-semibold">Calculator</a>
+                        <button id="subscribe-nav"
+                            class="bg-teal hover:bg-opacity-80 text-navy px-6 py-2 rounded-lg font-semibold transition-all duration-200">
+                            Subscribe
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Content -->
+    <main class="pt-24 pb-12 px-4 max-w-7xl mx-auto">
+        <header class="text-center mb-12">
+            <h1 class="text-4xl md:text-5xl font-poppins font-bold gradient-text mb-4">Apartment Purchase Calculator
+            </h1>
+            <p class="text-xl text-muted-gray">Verified insights for NCR real estate investments</p>
+        </header>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+            <!-- Inputs Section -->
+            <div class="lg:col-span-7 space-y-6 glassmorphism p-8 rounded-2xl">
+                <h2 class="text-2xl font-poppins font-semibold mb-6 text-light-gray">Project Details</h2>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                        <label class="block text-sm font-medium text-muted-gray mb-2">Apartment Price (₹)</label>
+                        <input type="text" id="propertyPrice" value="1,50,00,000" placeholder="e.g. 15000000">
+                        <p id="priceInWords" class="text-xs text-teal mt-1 opacity-80">₹1 Crore 50 Lakh</p>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-muted-gray mb-2">Area (Sq. Ft.)</label>
+                        <input type="number" id="sqFt" class="no-spinners" value="2000">
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                        <label class="block text-sm font-medium text-muted-gray mb-2">Interior Finish</label>
+                        <select id="interiorType">
+                            <option value="0">None / Raw</option>
+                            <option value="1000" selected>Standard (₹1000/sqft)</option>
+                            <option value="2000">Premium (₹2000/sqft)</option>
+                            <option value="3500">Luxury (₹3500/sqft)</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-muted-gray mb-2">Location (for Taxes)</label>
+                        <select id="location">
+                            <option value="0.07">Gurgaon (7%)</option>
+                            <option value="0.05">Noida (5%)</option>
+                            <option value="0.06" selected>Delhi (6%)</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="pt-6 border-t border-gray-700">
+                    <div class="flex items-center gap-3 mb-6">
+                        <input type="checkbox" id="hasLoan" checked class="w-5 h-5 accent-teal">
+                        <label for="hasLoan" class="text-lg font-medium">I'm taking a home loan</label>
+                    </div>
+
+                    <div id="loanInputs" class="space-y-6">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <label class="block text-sm font-medium text-muted-gray mb-2">Down Payment (₹)</label>
+                                <input type="text" id="downPayment" value="30,00,000">
+                                <p id="downPaymentInWords" class="text-xs text-teal mt-1 opacity-80">₹30 Lakh</p>
+                            </div>
+                            <div>
+                                <label class="block text-sm font-medium text-muted-gray mb-2">Interest Rate (%)</label>
+                                <div class="flex items-center gap-4">
+                                    <input type="range" id="interestRateRange" min="7" max="12" step="0.1" value="8.5"
+                                        class="w-full">
+                                    <span id="interestRateVal" class="text-teal font-bold min-w-[3rem]">8.5%</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-muted-gray mb-2">Loan Tenure (Years)</label>
+                            <div class="flex items-center gap-4">
+                                <input type="range" id="tenureRange" min="5" max="30" step="1" value="20"
+                                    class="w-full">
+                                <span id="tenureVal" class="text-teal font-bold min-w-[3rem]">20Y</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Results Section -->
+            <div class="lg:col-span-5 relative h-full">
+                <div id="resultsContainer" class="glassmorphism p-8 rounded-2xl sticky top-24">
+                    <h2 class="text-2xl font-poppins font-semibold mb-8 border-b border-gray-700 pb-4">Estimated Total
+                    </h2>
+
+                    <div id="resultsContent" class="space-y-6">
+                        <div class="flex justify-between items-center py-2 border-b border-gray-800">
+                            <span class="text-muted-gray">Monthly EMI</span>
+                            <span id="resEmi" class="text-2xl font-bold text-teal">₹0</span>
+                        </div>
+                        <div class="flex justify-between items-center py-2">
+                            <span class="text-muted-gray">Total Cost of Ownership</span>
+                            <span id="resTotal" class="text-xl font-semibold">₹0</span>
+                        </div>
+
+                        <div class="space-y-4 pt-4 text-sm text-muted-gray">
+                            <div class="flex justify-between">
+                                <div class="flex items-center gap-1">
+                                    <span>Taxes & Registration</span>
+                                    <div class="group relative cursor-help">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-muted-gray"
+                                            fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                        </svg>
+                                        <div
+                                            class="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 hidden group-hover:block w-48 p-2 bg-charcoal border border-gray-700 rounded text-xs text-light-gray z-50">
+                                            Stamp Duty + 1% Registration Fees
+                                        </div>
+                                    </div>
+                                </div>
+                                <span id="resTax" class="text-light-gray">₹0</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span>Interior Cost</span>
+                                <span id="resInteriors" class="text-light-gray">₹0</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <div class="flex items-center gap-1">
+                                    <span>Loan Processing & MODT</span>
+                                    <div class="group relative cursor-help">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-muted-gray"
+                                            fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                        </svg>
+                                        <div
+                                            class="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 hidden group-hover:block w-48 p-2 bg-charcoal border border-gray-700 rounded text-xs text-light-gray z-50">
+                                            MODT is 0.5% of loan, capped at ₹50k.
+                                        </div>
+                                    </div>
+                                </div>
+                                <span id="resModt" class="text-light-gray">₹0</span>
+                            </div>
+                            <div class="flex justify-between border-t border-gray-800 pt-4 font-medium">
+                                <span class="text-gold">Upfront Cash Needed</span>
+                                <span id="resUpfront" class="text-gold text-lg">₹0</span>
+                            </div>
+                        </div>
+
+                        <button
+                            class="w-full bg-gradient-to-r from-teal to-gold text-navy font-bold py-4 rounded-xl mt-8 hover:scale-[1.02] transition-transform">
+                            Get Detailed Project Report
+                        </button>
+                    </div>
+
+                    <!-- Sign-up Wall with Fields -->
+                    <div id="signupWall"
+                        class="absolute inset-0 z-10 hidden flex flex-col items-center justify-center p-8 bg-black/80 backdrop-blur-lg rounded-2xl text-center">
+                        <div
+                            class="w-12 h-12 bg-gradient-to-br from-teal to-gold rounded-full flex items-center justify-center mb-4 shadow-lg shadow-teal/20">
+                            <svg class="w-6 h-6 text-navy" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2">View Full Breakdown</h3>
+                        <p class="text-sm text-muted-gray mb-6 px-4">See exact taxes, MODT, and interior costs for this
+                            project.</p>
+
+                        <form id="wall-form" class="w-full space-y-3">
+                            <input type="text" id="wall-name" name="fullName" placeholder="Full Name" required
+                                class="text-sm !py-2">
+                            <input type="email" id="wall-email" name="email" placeholder="Email Address" required
+                                class="text-sm !py-2">
+                            <input type="tel" id="wall-phone" name="phone" placeholder="Phone Number" required
+                                pattern="[0-9]{10}" title="Please enter a 10-digit number" class="text-sm !py-2">
+                            <button type="submit"
+                                class="w-full bg-teal text-navy py-2 rounded-lg font-bold hover:glow-effect transition-all text-sm mt-2">
+                                Unlock Calculations
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Modal (Optional for Nav Subscribe) -->
+    <div id="newsletter-modal"
+        class="fixed inset-0 bg-black bg-opacity-50 backdrop-blur-sm z-50 hidden items-center justify-center">
+        <div class="glassmorphism rounded-xl p-8 max-w-md w-full mx-4 relative overflow-hidden">
+            <div class="text-center mb-6">
+                <h3 class="text-2xl font-poppins font-bold gradient-text mb-2">Join NCR Launch Watch</h3>
+                <p class="text-muted-gray font-inter text-sm">Get weekly real estate intelligence delivered to your
+                    inbox.</p>
+            </div>
+            <form id="newsletter-form" class="space-y-4">
+                <input type="text" name="fullName" placeholder="Full Name" required>
+                <input type="email" name="email" placeholder="Email Address" required>
+                <input type="tel" name="phone" placeholder="Phone Number" required pattern="[0-9]{10}">
+                <button type="submit"
+                    class="w-full bg-teal hover:bg-opacity-80 text-navy py-3 rounded-lg font-semibold transition-all duration-200">
+                    Subscribe Free
+                </button>
+            </form>
+            <button onclick="hideModal()" class="absolute top-4 right-4 text-muted-gray hover:text-white">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+            </button>
+        </div>
+    </div>
+
+    <script>
+        // Google Apps Script URL provided by user
+        const G_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxNeSlaRZcl-1hdvGxMinFjSnC1Z5HeC6fYE2Eap3r01E48x_5hQMhKiZa8gUfXH6Pl/exec';
+
+        // -- Calculation Logic --
+        const formatINR = (val) => new Intl.NumberFormat('en-IN', { style: 'currency', currency: 'INR', maximumFractionDigits: 0 }).format(val);
+        const stripComma = (str) => String(str).replace(/,/g, '');
+
+        function toWords(num) {
+            if (!num) return "";
+            if (num >= 10000000) return "₹" + (num / 10000000).toFixed(2) + " Crore";
+            if (num >= 100000) return "₹" + (num / 100000).toFixed(2) + " Lakh";
+            return "₹" + num.toLocaleString('en-IN');
+        }
+
+        const inputs = ['propertyPrice', 'sqFt', 'interiorType', 'location', 'hasLoan', 'downPayment', 'interestRateRange', 'tenureRange'];
+
+        function calculate() {
+            const price = parseFloat(stripComma(document.getElementById('propertyPrice').value)) || 0;
+            const area = parseFloat(document.getElementById('sqFt').value) || 0;
+            const intRate = parseFloat(document.getElementById('interiorType').value) || 0;
+            const stampDutyRate = parseFloat(document.getElementById('location').value) || 0;
+            const isLoan = document.getElementById('hasLoan').checked;
+            const downPayment = isLoan ? (parseFloat(stripComma(document.getElementById('downPayment').value)) || 0) : price;
+            const rate = parseFloat(document.getElementById('interestRateRange').value) / 12 / 100;
+            const tenure = parseFloat(document.getElementById('tenureRange').value) * 12;
+
+            // Simple EMI logic
+            let emi = 0;
+            let totalInterest = 0;
+            let modt = 0;
+            const loanAmount = Math.max(0, price - downPayment);
+
+            if (isLoan && loanAmount > 0) {
+                // Standard EMI Formula
+                emi = (loanAmount * rate * Math.pow(1 + rate, tenure)) / (Math.pow(1 + rate, tenure) - 1);
+                totalInterest = (emi * tenure) - loanAmount;
+                // MODT: 0.5% capped at 50,000
+                modt = Math.min(loanAmount * 0.005, 50000);
+            }
+
+            const interiorCost = area * intRate;
+            const stampDuty = price * stampDutyRate;
+            const registrationFees = price * 0.01; // Standard 1% registration in NCR
+            const taxesAndReg = stampDuty + registrationFees;
+
+            const totalCost = price + interiorCost + taxesAndReg + totalInterest + modt;
+            const upfront = downPayment + taxesAndReg + modt;
+
+            // Update UI
+            document.getElementById('resEmi').innerText = isLoan ? formatINR(emi) : 'N/A';
+            document.getElementById('resTotal').innerText = formatINR(totalCost);
+            document.getElementById('resTax').innerText = formatINR(taxesAndReg);
+            document.getElementById('resInteriors').innerText = formatINR(interiorCost);
+            document.getElementById('resModt').innerText = formatINR(modt);
+            document.getElementById('resUpfront').innerText = formatINR(upfront);
+
+            document.getElementById('priceInWords').innerText = toWords(price);
+            document.getElementById('downPaymentInWords').innerText = toWords(downPayment);
+            document.getElementById('interestRateVal').innerText = document.getElementById('interestRateRange').value + '%';
+            document.getElementById('tenureVal').innerText = document.getElementById('tenureRange').value + 'Y';
+
+            document.getElementById('loanInputs').classList.toggle('opacity-50', !isLoan);
+            document.getElementById('loanInputs').style.pointerEvents = isLoan ? 'auto' : 'none';
+
+            // Show wall if not "unlocked"
+            const isUnlocked = localStorage.getItem('ncrwatch_unlocked') === 'true';
+            if (!isUnlocked) {
+                document.getElementById('signupWall').classList.remove('hidden');
+                document.getElementById('resultsContent').classList.add('input-blur');
+            } else {
+                document.getElementById('signupWall').classList.add('hidden');
+                document.getElementById('resultsContent').classList.remove('input-blur');
+            }
+        }
+
+        // Listeners
+        inputs.forEach(id => document.getElementById(id).addEventListener('input', calculate));
+
+        // Commas for numbers
+        ['propertyPrice', 'downPayment'].forEach(id => {
+            const el = document.getElementById(id);
+            el.addEventListener('blur', (e) => {
+                const val = parseFloat(stripComma(e.target.value)) || 0;
+                e.target.value = val.toLocaleString('en-IN');
+                calculate();
+            });
+        });
+
+        // GSheet Submission & Wall Logic
+        async function handleFormSubmit(e, formType) {
+            e.preventDefault();
+            const form = e.target;
+            const btn = form.querySelector('button[type="submit"]');
+            const originalBtnText = btn.innerText;
+
+            // Show loading state
+            btn.disabled = true;
+            btn.innerText = 'Submitting...';
+
+            const formData = new FormData(form);
+            const data = {};
+            formData.forEach((value, key) => data[key] = value);
+
+            // Add metadata for GSheet
+            data.source = 'EMI Calculator ' + formType;
+            data.timestamp = new Date().toLocaleString();
+            data.calculatorPrice = document.getElementById('propertyPrice').value;
+
+            try {
+                // Using fetch with no-cors if needed, but Google Apps Script typically needs redirect handling
+                // For direct integration, usually simple POST works if script is set up.
+                await fetch(G_SCRIPT_URL, {
+                    method: 'POST',
+                    mode: 'no-cors', // Common for Apps Script to avoid CORS preflight issues
+                    cache: 'no-cache',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(data)
+                });
+
+                // Success
+                localStorage.setItem('ncrwatch_unlocked', 'true');
+                if (formType === 'Nav') hideModal();
+                calculate();
+            } catch (error) {
+                console.error('Submission error:', error);
+                alert('Connection error. Please try again.');
+            } finally {
+                btn.disabled = false;
+                btn.innerText = originalBtnText;
+            }
+        }
+
+        // Bind Forms
+        document.getElementById('wall-form').onsubmit = (e) => handleFormSubmit(e, 'Wall');
+        document.getElementById('newsletter-form').onsubmit = (e) => handleFormSubmit(e, 'Nav');
+
+        // Modal Logic
+        function showModal() { document.getElementById('newsletter-modal').classList.add('flex'); document.getElementById('newsletter-modal').classList.remove('hidden'); }
+        function hideModal() { document.getElementById('newsletter-modal').classList.add('hidden'); document.getElementById('newsletter-modal').classList.remove('flex'); }
+
+        // Initial calc
+        calculate();
+    </script>
+</body>
+
+</html>
