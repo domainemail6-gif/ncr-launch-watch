@@ -88,11 +88,19 @@
     },
     {
       "source": "/2026/01/05",
-      "destination": "/public/newsletter/2026/1/5/index.html"
+      "destination": "/public/newsletter/2025/12/29/index.html"
     },
     {
       "source": "/2026/01/05/",
-      "destination": "/public/newsletter/2026/1/5/index.html"
+      "destination": "/public/newsletter/2025/12/29/index.html"
+    },
+    {
+      "source": "/2026/1/5",
+      "destination": "/public/newsletter/2025/12/29/index.html"
+    },
+    {
+      "source": "/2026/1/5/",
+      "destination": "/public/newsletter/2025/12/29/index.html"
     }
   ],
   "headers": [
