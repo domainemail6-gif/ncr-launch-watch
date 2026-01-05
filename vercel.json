@@ -77,6 +77,22 @@
     {
       "source": "/2025/12/22/",
       "destination": "/public/newsletter/2025/12/22/index.html"
+    },
+    {
+      "source": "/2025/12/29",
+      "destination": "/public/newsletter/2025/12/29/index.html"
+    },
+    {
+      "source": "/2025/12/29/",
+      "destination": "/public/newsletter/2025/12/29/index.html"
+    },
+    {
+      "source": "/2026/01/05",
+      "destination": "/public/newsletter/2026/1/5/index.html"
+    },
+    {
+      "source": "/2026/01/05/",
+      "destination": "/public/newsletter/2026/1/5/index.html"
     }
   ],
   "headers": [
